@@ -720,8 +720,62 @@
 /* ============================================================
    GLOBAL RESPONSIVE TWEAKS
    ============================================================ */
+@media (max-width: 1024px) {
+  /* Disable sticky filter bars on mobile/tablet so they don't block the viewport */
+  .filter-section {
+    position: relative !important;
+    top: auto !important;
+    box-shadow: none !important;
+    margin-bottom: var(--space-6) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Reductions for about section images */
+  .about-img-frame {
+    height: 320px !important;
+  }
+}
+
 @media (max-width: 640px) {
-  .lightbox-prev { left: -45px; }
-  .lightbox-next { right: -45px; }
-  .lightbox-nav { width: 40px; height: 40px; font-size: 1.1rem; }
+  /* Lightbox buttons positioned safely inside screen overlay on mobile */
+  .lightbox-prev { left: 12px !important; }
+  .lightbox-next { right: 12px !important; }
+  .lightbox-nav {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.25rem !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+  }
+  
+  /* Reduced padding for featured blog article card body on mobile */
+  .featured-article-body {
+    padding: var(--space-5) var(--space-4) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Hide text labels in multi-step booking stepper on mobile to avoid overlapping */
+  .stepper-label {
+    display: none !important;
+  }
+  .progress-stepper {
+    margin-bottom: var(--space-6) !important;
+  }
+  .stepper-item:not(:last-child)::after {
+    top: 22px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Collapse department equipment grid columns on extra small screens */
+  .dept-detail-equip-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* 2-column about stats grid collapse */
+  .about-stats-grid {
+    grid-template-columns: 1fr !important;
+  }
 }

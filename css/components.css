@@ -1868,3 +1868,143 @@ footer {
   border: none;
   border-radius: var(--radius-xl);
 }
+
+/* ============================================================
+   GLOBAL RESPONSIVENESS OVERRIDES & ALIGNMENT FIXES (2026)
+   ============================================================ */
+@media (max-width: 1024px) {
+  /* Fix the overlay menu so that the top sticky navbar is still visible and interactive */
+  .nav-menu {
+    top: 72px !important;
+    height: calc(100vh - 72px) !important;
+    justify-content: flex-start !important;
+    padding: var(--space-8) var(--space-6) var(--space-16) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Make all table wrappers support horizontal scrollbar on mobile to prevent layout breakage */
+  .data-table-wrap {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Form styling improvements for smaller viewports */
+  .auth-panel {
+    padding: var(--space-6) var(--space-4) var(--space-6) !important;
+  }
+  .login-card-header {
+    padding: var(--space-8) var(--space-4) var(--space-6) !important;
+  }
+  .profile-form-card {
+    padding: var(--space-5) var(--space-4) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Prevent header overflow: hide "Book Now" in header (already accessible in menu as "Appointment") */
+  #nav-book-btn {
+    display: none !important;
+  }
+
+  /* Make hero CTA buttons stack vertically with full width to align perfectly */
+  .hero-cta {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+  }
+  .hero-cta a {
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  /* Also align the index emergency CTA buttons vertically */
+  #emergency-cta .btn {
+    width: 100% !important;
+    margin-bottom: var(--space-2);
+  }
+
+  /* Grid layout for stats inside hero section */
+  .hero-stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-4) !important;
+    width: 100%;
+  }
+  .hero-stat-item {
+    text-align: center;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: var(--space-2);
+  }
+  .hero-stat-item:nth-child(3),
+  .hero-stat-item:nth-child(4) {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* Card padding reduction for mobile viewports */
+  .quick-card {
+    padding: var(--space-4) var(--space-3) !important;
+  }
+  .quick-card-icon {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.25rem !important;
+    margin-bottom: var(--space-2) !important;
+  }
+  .feature-card,
+  .dept-card,
+  .package-card-dark {
+    padding: var(--space-5) var(--space-4) !important;
+  }
+  
+  /* Fix rating and doctor meta overflow */
+  .doctor-meta {
+    flex-wrap: wrap !important;
+    gap: var(--space-2) var(--space-3) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Logo adjustments on small viewports to save space and align cleanly */
+  .nav-logo-tagline {
+    display: none !important;
+  }
+  .nav-logo-name {
+    font-size: 0.95rem !important;
+  }
+  .nav-logo-icon {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1.15rem !important;
+  }
+  
+  /* Mobile drop-down menu clean indentation, smaller font size and tinted bg */
+  .nav-dropdown {
+    background: var(--bg-secondary) !important;
+    border-left: 3px solid var(--primary) !important;
+    padding-left: var(--space-3) !important;
+  }
+  .nav-dropdown a {
+    font-size: 0.85rem !important;
+    padding: var(--space-2) var(--space-3) !important;
+  }
+  
+  /* Scale down floating action buttons on extra small screens */
+  .chat-toggle-btn {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.3rem !important;
+  }
+  .emergency-float-btn {
+    padding: 10px 16px !important;
+    font-size: 0.78rem !important;
+  }
+  #back-to-top {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1rem !important;
+    bottom: 80px !important;
+    right: 20px !important;
+  }
+}

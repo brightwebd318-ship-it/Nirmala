@@ -82,7 +82,7 @@ const AppointmentForm = {
       step.classList.toggle('active', i + 1 === this.currentStep);
     });
 
-    document.querySelectorAll('.step-item').forEach((step, i) => {
+    document.querySelectorAll('.stepper-item').forEach((step, i) => {
       step.classList.remove('active', 'completed');
       if (i + 1 === this.currentStep) step.classList.add('active');
       if (i + 1 < this.currentStep) step.classList.add('completed');
