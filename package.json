@@ -1,0 +1,17 @@
+{
+  "name": "nirmala-medical-center",
+  "version": "1.0.0",
+  "description": "Nirmala Medical Center — Premium 2026 Healthcare Website UI/UX Design",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y http-server -p 3000"
+  },
+  "keywords": [
+    "hospital",
+    "healthcare",
+    "medical",
+    "portal"
+  ],
+  "author": "Antigravity",
+  "license": "ISC"
+}

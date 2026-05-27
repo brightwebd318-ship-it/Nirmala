@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nirmala Medical Center — Advanced Care. Trusted Healing.</title>
+  <meta name="description" content="Nirmala Medical Center delivers world-class healthcare with trusted specialists and advanced medical technology. Book appointments online 24/7." />
+  <meta name="keywords" content="hospital, medical center, healthcare, doctors, appointment booking, emergency care, Nirmala Medical Center" />
+  <meta property="og:title" content="Nirmala Medical Center — Advanced Care. Trusted Healing." />
+  <meta property="og:description" content="World-class healthcare with trusted specialists and advanced medical technology." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0A0F2E 0%, #0D1B6E 45%, #001055 100%);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/images/hero_bg.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.12;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10,15,46,0.92) 0%, rgba(0,102,255,0.15) 60%, rgba(12,182,127,0.08) 100%);
+    }
+    /* Animated particles */
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+    }
+    .particle:nth-child(1) { width:300px;height:300px;background:radial-gradient(circle,#0066FF,transparent);top:-10%;left:-5%;animation:float 8s ease-in-out infinite; }
+    .particle:nth-child(2) { width:200px;height:200px;background:radial-gradient(circle,#0CB67F,transparent);bottom:10%;right:5%;animation:float 6s ease-in-out infinite reverse; }
+    .particle:nth-child(3) { width:150px;height:150px;background:radial-gradient(circle,#0066FF,transparent);top:40%;right:20%;animation:float 7s ease-in-out infinite; }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 100px 0 60px;
+    }
+    .hero-text { color: white; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,102,255,0.2);
+      border: 1px solid rgba(0,102,255,0.4);
+      color: #93C5FD;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      animation: fadeInUp 0.5s ease both;
+    }
+    .hero-badge::before { content:'✦'; color:#0CB67F; }
+    .hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: white;
+      margin-bottom: 24px;
+      animation: fadeInUp 0.6s 0.1s ease both;
+    }
+    .hero-title .accent {
+      background: linear-gradient(135deg, #60A5FA, #34D399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 36px;
+      max-width: 480px;
+      animation: fadeInUp 0.6s 0.2s ease both;
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 48px;
+      animation: fadeInUp 0.6s 0.3s ease both;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      animation: fadeInUp 0.6s 0.4s ease both;
+    }
+    .hero-stat-item {
+      text-align: center;
+    }
+    .hero-stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: white;
+      display: block;
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+    }
+    .hero-image-area {
+      position: relative;
+      animation: fadeInRight 0.8s 0.2s ease both;
+    }
+    .hero-img-frame {
+      position: relative;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+      border: 2px solid rgba(255,255,255,0.1);
+      background: linear-gradient(135deg, rgba(0,102,255,0.2), rgba(12,182,127,0.1));
+      height: 540px;
+    }
+    .hero-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .hero-card-float {
+      position: absolute;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      padding: 16px 20px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.82rem;
+    }
+    .hero-card-float-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .hero-card-float-title { font-weight: 700; font-size: 0.85rem; color: #0F172A; }
+    .hero-card-float-sub   { font-size: 0.7rem; color: #64748B; }
+    .hero-card-1 { bottom: 32px; left: -24px; animation: float 4s ease-in-out infinite; }
+    .hero-card-2 { top: 32px; right: -24px; animation: float 5s 0.5s ease-in-out infinite; }
+    .hero-card-3 { bottom: 120px; right: -20px; animation: float 3.5s 1s ease-in-out infinite; }
+
+    /* ── QUICK ACTIONS ── */
+    .quick-actions-section {
+      margin-top: -60px;
+      position: relative;
+      z-index: 10;
+      padding-bottom: 0;
+    }
+    .quick-actions-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+    @media (max-width:1200px){.quick-actions-grid{grid-template-columns:repeat(3,1fr);}}
+    @media (max-width:640px){.quick-actions-grid{grid-template-columns:repeat(2,1fr);}}
+
+    /* ── WHY US ── */
+    .why-us-section { background: var(--bg-secondary); }
+    .why-us-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    @media(max-width:768px){.why-us-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:480px){.why-us-grid{grid-template-columns:1fr;}}
+
+    /* ── DEPARTMENTS ── */
+    .departments-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    @media(max-width:1024px){.departments-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:768px){.departments-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:480px){.departments-grid{grid-template-columns:1fr;}}
+
+    /* ── DOCTORS ── */
+    .doctors-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+    @media(max-width:1024px){.doctors-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:640px){.doctors-grid{grid-template-columns:1fr;}}
+
+    /* ── PACKAGES ── */
+    .packages-section { background: linear-gradient(135deg,#0A0F2E,#0D1B6E); }
+    .packages-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:20px; }
+    @media(max-width:1200px){.packages-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:768px){.packages-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:480px){.packages-grid{grid-template-columns:1fr;}}
+    .package-card-dark {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .package-card-dark:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-6px);
+      border-color: rgba(0,102,255,0.5);
+    }
+    .package-card-dark .pkg-icon { font-size:2.5rem; margin-bottom:16px; }
+    .package-card-dark .pkg-name { font-family:'Poppins',sans-serif; font-weight:700; font-size:1rem; color:white; margin-bottom:8px; }
+    .package-card-dark .pkg-price { font-size:1.5rem; font-weight:800; color:#60A5FA; margin-bottom:16px; }
+    .package-card-dark .pkg-feature { font-size:0.78rem; color:rgba(255,255,255,0.6); padding:4px 0; display:flex; align-items:center; gap:6px; text-align:left; }
+    .package-card-dark .pkg-feature::before { content:'✓'; color:#34D399; font-weight:700; flex-shrink:0; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: var(--bg-secondary); }
+    .testimonial-slider-wrapper { position:relative; overflow:hidden; }
+    .slider-track { display:flex; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+    .slider-slide { min-width:100%; }
+    .testimonials-inner-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; padding:8px; }
+    @media(max-width:900px){.testimonials-inner-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:640px){.testimonials-inner-grid{grid-template-columns:1fr;}}
+
+    /* ── BLOG ── */
+    .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:640px){.blog-grid{grid-template-columns:1fr;}}
+
+    /* ── EMERGENCY BANNER ── */
+    .emergency-section {
+      background: linear-gradient(135deg,#991B1B,#EF4444,#DC2626);
+      position: relative;
+      overflow: hidden;
+      padding: 64px 0;
+    }
+    .emergency-section::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 60%);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){
+      .hero-content { grid-template-columns:1fr; text-align:center; gap:40px; }
+      .hero-subtitle { margin:0 auto 36px; }
+      .hero-cta { justify-content:center; }
+      .hero-stats { justify-content:center; }
+      .hero-img-frame { height:380px; }
+      .hero-card-1, .hero-card-2, .hero-card-3 { display:none; }
+    }
+    @media(max-width:640px){
+      .hero-img-frame { height:280px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <span class="top-bar-item">📍 Medical Campus Road, City – 500001</span>
+      <span class="top-bar-divider">|</span>
+      <a href="tel:+919876543210" class="top-bar-item">📞 +91-9876-543210</a>
+    </div>
+    <div class="top-bar-right">
+      <a href="#" class="top-bar-item">🕐 OPD: Mon–Sat 8AM–8PM</a>
+      <span class="top-bar-divider">|</span>
+      <a href="emergency.html" class="top-bar-item" style="color:#FCA5A5;font-weight:700;">🚨 Emergency: 108</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo" aria-label="Nirmala Medical Center Home">
+      <div class="nav-logo-icon">🏥</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Nirmala Medical</span>
+        <span class="nav-logo-tagline">Center of Excellence</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu" id="nav-menu" role="menubar">
+      <li role="none"><a href="index.html" class="nav-link active" role="menuitem">Home</a></li>
+      <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+      <li class="nav-item-dropdown" role="none">
+        <a href="departments.html" class="nav-link" role="menuitem">Departments ▾</a>
+        <div class="nav-dropdown">
+          <a href="departments.html#cardiology"><span class="nav-dropdown-icon">❤️</span> Cardiology</a>
+          <a href="departments.html#neurology"><span class="nav-dropdown-icon">🧠</span> Neurology</a>
+          <a href="departments.html#gynecology"><span class="nav-dropdown-icon">🌸</span> Gynecology</a>
+          <a href="departments.html#pediatrics"><span class="nav-dropdown-icon">👶</span> Pediatrics</a>
+          <a href="departments.html#orthopedics"><span class="nav-dropdown-icon">🦴</span> Orthopedics</a>
+          <a href="departments.html">View All Departments →</a>
+        </div>
+      </li>
+      <li role="none"><a href="doctors.html" class="nav-link" role="menuitem">Doctors</a></li>
+      <li role="none"><a href="appointment.html" class="nav-link" role="menuitem">Appointment</a></li>
+      <li role="none"><a href="patient-portal.html" class="nav-link" role="menuitem">Patient Portal</a></li>
+      <li role="none"><a href="emergency.html" class="nav-link" role="menuitem">Emergency</a></li>
+      <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙</button>
+      <a href="appointment.html" class="btn btn-primary btn-sm" id="nav-book-btn">📅 Book Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section class="hero" id="hero" aria-label="Hero section">
+  <div class="hero-bg" role="img" aria-label="Hospital background"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-particles" aria-hidden="true">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">🏆 NABH Accredited | ISO 9001:2015 Certified</div>
+        <h1 class="hero-title">
+          Advanced Care.<br />
+          <span class="accent">Trusted Healing.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Nirmala Medical Center delivering world-class healthcare with trusted specialists and advanced medical technology. Your health is our highest priority.
+        </p>
+        <div class="hero-cta">
+          <a href="appointment.html" class="btn btn-primary btn-lg" id="hero-book-btn">
+            📅 Book Appointment
+          </a>
+          <a href="emergency.html" class="btn btn-danger btn-lg" id="hero-emergency-btn">
+            🚨 Emergency Care
+          </a>
+          <a href="tel:+919876543210" class="btn btn-outline-white btn-lg" id="hero-call-btn">
+            📞 Call Now
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <span class="hero-stat-num counter" data-target="25" data-suffix="+">25+</span>
+            <span class="hero-stat-label">Years of Excellence</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-num counter" data-target="50" data-suffix="+">50+</span>
+            <span class="hero-stat-label">Specialist Doctors</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-num counter" data-target="100000" data-suffix="+">100K+</span>
+            <span class="hero-stat-label">Patients Treated</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-num" style="font-size:1.75rem;">24/7</span>
+            <span class="hero-stat-label">Emergency Care</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-area">
+        <div class="hero-img-frame">
+          <img src="assets/images/doctor_hero.png" alt="Senior specialist doctor at Nirmala Medical Center" loading="eager" />
+        </div>
+        <div class="hero-card-float hero-card-1">
+          <div class="hero-card-float-icon" style="background:#EFF6FF;">❤️</div>
+          <div>
+            <div class="hero-card-float-title">24/7 Emergency</div>
+            <div class="hero-card-float-sub">Always Ready For You</div>
+          </div>
+        </div>
+        <div class="hero-card-float hero-card-2">
+          <div class="hero-card-float-icon" style="background:#F0FDF4;">🏆</div>
+          <div>
+            <div class="hero-card-float-title">NABH Accredited</div>
+            <div class="hero-card-float-sub">Top Quality Care</div>
+          </div>
+        </div>
+        <div class="hero-card-float hero-card-3">
+          <div class="hero-card-float-icon" style="background:#FFF7ED;">⚡</div>
+          <div>
+            <div class="hero-card-float-title">Fast Diagnostics</div>
+            <div class="hero-card-float-sub">Results in 2 Hours</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     QUICK ACTION CARDS
+     ============================================================ -->
+<section class="quick-actions-section section-sm" id="quick-actions" aria-label="Quick actions">
+  <div class="container">
+    <div class="quick-actions-grid">
+      <a href="doctors.html" class="quick-card reveal" id="qa-find-doctor">
+        <div class="quick-card-icon">🔍</div>
+        <div class="quick-card-label">Find Doctor</div>
+        <div class="quick-card-desc">50+ Specialists</div>
+      </a>
+      <a href="appointment.html" class="quick-card reveal reveal-delay-1" id="qa-book-appt">
+        <div class="quick-card-icon">📅</div>
+        <div class="quick-card-label">Book Appointment</div>
+        <div class="quick-card-desc">Online & Instant</div>
+      </a>
+      <a href="departments.html" class="quick-card reveal reveal-delay-2" id="qa-departments">
+        <div class="quick-card-icon">🏥</div>
+        <div class="quick-card-label">Departments</div>
+        <div class="quick-card-desc">12+ Specialties</div>
+      </a>
+      <a href="emergency.html" class="quick-card reveal reveal-delay-3" id="qa-emergency">
+        <div class="quick-card-icon" style="background:#FEE2E2;">🚨</div>
+        <div class="quick-card-label">Emergency</div>
+        <div class="quick-card-desc">24/7 Ready</div>
+      </a>
+      <a href="#packages" class="quick-card reveal reveal-delay-2" id="qa-health-pkg">
+        <div class="quick-card-icon">💊</div>
+        <div class="quick-card-label">Health Packages</div>
+        <div class="quick-card-desc">Affordable Plans</div>
+      </a>
+      <a href="patient-portal.html" class="quick-card reveal reveal-delay-3" id="qa-lab-reports">
+        <div class="quick-card-icon">🧪</div>
+        <div class="quick-card-label">Lab Reports</div>
+        <div class="quick-card-desc">Download Online</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY CHOOSE US
+     ============================================================ -->
+<section class="section why-us-section" id="why-us" aria-label="Why choose Nirmala Medical Center">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">✦ Our Advantages</div>
+      <h2 class="section-title reveal reveal-delay-1">Why Choose <span>Nirmala Medical?</span></h2>
+      <p class="section-subtitle reveal reveal-delay-2">We combine cutting-edge technology with compassionate care to deliver the best medical outcomes for every patient.</p>
+    </div>
+    <div class="why-us-grid">
+      <div class="feature-card reveal" id="feature-emergency">
+        <div class="feature-icon" style="background:#FEE2E2;">🚨</div>
+        <h3 class="feature-title">24/7 Emergency Care</h3>
+        <p class="feature-desc">Our emergency department is open round the clock with a fully equipped trauma center and rapid response team ready at all times.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1" id="feature-doctors">
+        <div class="feature-icon" style="background:#EFF6FF;">👨‍⚕️</div>
+        <h3 class="feature-title">Expert Doctors</h3>
+        <p class="feature-desc">Over 50 highly qualified specialists with years of experience in their respective fields, committed to delivering superior patient outcomes.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2" id="feature-tech">
+        <div class="feature-icon" style="background:#F0FDF4;">🔬</div>
+        <h3 class="feature-title">Advanced Technology</h3>
+        <p class="feature-desc">State-of-the-art medical equipment including 3T MRI, 128-slice CT scan, robotic surgery systems, and advanced diagnostic tools.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1" id="feature-trust">
+        <div class="feature-icon" style="background:#FFF7ED;">🏆</div>
+        <h3 class="feature-title">Trusted Healthcare</h3>
+        <p class="feature-desc">NABH accredited and ISO certified, serving over 1 lakh patients with a 98% satisfaction rate and recognized national excellence awards.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2" id="feature-diag">
+        <div class="feature-icon" style="background:#F5F3FF;">⚡</div>
+        <h3 class="feature-title">Fast Diagnostics</h3>
+        <p class="feature-desc">Our in-house laboratory delivers accurate test results within 2 hours. Radiology reports available same day for faster treatment decisions.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3" id="feature-patient">
+        <div class="feature-icon" style="background:#FDF4FF;">💙</div>
+        <h3 class="feature-title">Patient-Centered Care</h3>
+        <p class="feature-desc">Every patient receives personalized attention with individual care plans, dedicated nursing staff, and a holistic approach to healing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DEPARTMENTS SECTION
+     ============================================================ -->
+<section class="section" id="departments" aria-label="Medical departments">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">🏥 Specialties</div>
+      <h2 class="section-title reveal reveal-delay-1">Our <span>Departments</span></h2>
+      <p class="section-subtitle reveal reveal-delay-2">Comprehensive medical care across 12+ specialties with world-class infrastructure and dedicated teams.</p>
+    </div>
+    <div class="departments-grid">
+      <a href="departments.html#cardiology" class="dept-card reveal" id="dept-cardiology">
+        <div class="dept-icon" style="background:#FEE2E2;">❤️</div>
+        <div class="dept-card-title">Cardiology</div>
+        <div class="dept-card-desc">Heart & Vascular Care</div>
+      </a>
+      <a href="departments.html#orthopedics" class="dept-card reveal reveal-delay-1" id="dept-ortho">
+        <div class="dept-icon" style="background:#FFF7ED;">🦴</div>
+        <div class="dept-card-title">Orthopedics</div>
+        <div class="dept-card-desc">Bone & Joint Specialists</div>
+      </a>
+      <a href="departments.html#gynecology" class="dept-card reveal reveal-delay-2" id="dept-gynec">
+        <div class="dept-icon" style="background:#FDF4FF;">🌸</div>
+        <div class="dept-card-title">Gynecology</div>
+        <div class="dept-card-desc">Women's Health</div>
+      </a>
+      <a href="departments.html#pediatrics" class="dept-card reveal reveal-delay-3" id="dept-pediatrics">
+        <div class="dept-icon" style="background:#F0FDF4;">👶</div>
+        <div class="dept-card-title">Pediatrics</div>
+        <div class="dept-card-desc">Child Healthcare</div>
+      </a>
+      <a href="departments.html#neurology" class="dept-card reveal" id="dept-neuro">
+        <div class="dept-icon" style="background:#EFF6FF;">🧠</div>
+        <div class="dept-card-title">Neurology</div>
+        <div class="dept-card-desc">Brain & Nerve Care</div>
+      </a>
+      <a href="departments.html#general" class="dept-card reveal reveal-delay-1" id="dept-general">
+        <div class="dept-icon" style="background:#F8FAFC;">🩺</div>
+        <div class="dept-card-title">General Medicine</div>
+        <div class="dept-card-desc">Primary Healthcare</div>
+      </a>
+      <a href="emergency.html" class="dept-card reveal reveal-delay-2" id="dept-emergency">
+        <div class="dept-icon" style="background:#FEE2E2;">🚨</div>
+        <div class="dept-card-title">Emergency Care</div>
+        <div class="dept-card-desc">24/7 Trauma Center</div>
+      </a>
+      <a href="departments.html#icu" class="dept-card reveal reveal-delay-3" id="dept-icu">
+        <div class="dept-icon" style="background:#ECFDF5;">🏥</div>
+        <div class="dept-card-title">ICU</div>
+        <div class="dept-card-desc">Critical Care Unit</div>
+      </a>
+      <a href="departments.html#lab" class="dept-card reveal" id="dept-lab">
+        <div class="dept-icon" style="background:#F0F9FF;">🧪</div>
+        <div class="dept-card-title">Laboratory</div>
+        <div class="dept-card-desc">Advanced Diagnostics</div>
+      </a>
+      <a href="departments.html#radiology" class="dept-card reveal reveal-delay-1" id="dept-radio">
+        <div class="dept-icon" style="background:#F5F3FF;">📷</div>
+        <div class="dept-card-title">Radiology</div>
+        <div class="dept-card-desc">Imaging & Scans</div>
+      </a>
+      <a href="departments.html#dermatology" class="dept-card reveal reveal-delay-2" id="dept-derma">
+        <div class="dept-icon" style="background:#FFFBEB;">✨</div>
+        <div class="dept-card-title">Dermatology</div>
+        <div class="dept-card-desc">Skin & Hair Care</div>
+      </a>
+      <a href="departments.html#surgery" class="dept-card reveal reveal-delay-3" id="dept-surgery">
+        <div class="dept-icon" style="background:#FFF1F2;">🔪</div>
+        <div class="dept-card-title">Surgery</div>
+        <div class="dept-card-desc">Surgical Excellence</div>
+      </a>
+    </div>
+    <div style="text-align:center; margin-top:40px;" class="reveal">
+      <a href="departments.html" class="btn btn-outline" id="view-all-depts">View All Departments →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FEATURED DOCTORS
+     ============================================================ -->
+<section class="section" style="background:var(--bg-secondary);" id="doctors-section" aria-label="Featured doctors">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag green reveal">👨‍⚕️ Our Team</div>
+      <h2 class="section-title reveal reveal-delay-1">Meet Our <span>Expert Doctors</span></h2>
+      <p class="section-subtitle reveal reveal-delay-2">Our team of highly qualified specialists is dedicated to providing you with the best possible medical care.</p>
+    </div>
+    <div class="doctors-grid">
+      <div class="doctor-card reveal" id="doctor-card-1">
+        <div class="doctor-card-image">
+          <img src="assets/images/doctor1.png" alt="Dr. Rajesh Kumar — Cardiologist" loading="lazy" />
+          <div class="doctor-card-overlay">
+            <span class="badge badge-success badge-dot">Available Today</span>
+          </div>
+        </div>
+        <div class="doctor-card-body">
+          <div class="doctor-name">Dr. Rajesh Kumar</div>
+          <div class="doctor-spec">Senior Cardiologist</div>
+          <div class="doctor-meta">
+            <span class="doctor-meta-item">⭐ 4.9</span>
+            <span class="doctor-meta-item">🩺 18 Yrs Exp</span>
+            <span class="doctor-meta-item">👥 5000+ Patients</span>
+          </div>
+          <a href="appointment.html?doctor=rajesh-kumar" class="btn btn-primary btn-sm" style="width:100%;" id="book-dr1">Book Appointment</a>
+        </div>
+      </div>
+
+      <div class="doctor-card reveal reveal-delay-1" id="doctor-card-2">
+        <div class="doctor-card-image">
+          <img src="assets/images/doctor2.png" alt="Dr. Priya Sharma — Gynecologist" loading="lazy" />
+          <div class="doctor-card-overlay">
+            <span class="badge badge-success badge-dot">Available Today</span>
+          </div>
+        </div>
+        <div class="doctor-card-body">
+          <div class="doctor-name">Dr. Priya Sharma</div>
+          <div class="doctor-spec">Senior Gynecologist</div>
+          <div class="doctor-meta">
+            <span class="doctor-meta-item">⭐ 4.8</span>
+            <span class="doctor-meta-item">🩺 12 Yrs Exp</span>
+            <span class="doctor-meta-item">👥 4000+ Patients</span>
+          </div>
+          <a href="appointment.html?doctor=priya-sharma" class="btn btn-primary btn-sm" style="width:100%;" id="book-dr2">Book Appointment</a>
+        </div>
+      </div>
+
+      <div class="doctor-card reveal reveal-delay-2" id="doctor-card-3">
+        <div class="doctor-card-image">
+          <img src="assets/images/doctor3.png" alt="Dr. Suresh Menon — Neurologist" loading="lazy" />
+          <div class="doctor-card-overlay">
+            <span class="badge badge-warning badge-dot">Tomorrow</span>
+          </div>
+        </div>
+        <div class="doctor-card-body">
+          <div class="doctor-name">Dr. Suresh Menon</div>
+          <div class="doctor-spec">Chief Neurologist</div>
+          <div class="doctor-meta">
+            <span class="doctor-meta-item">⭐ 5.0</span>
+            <span class="doctor-meta-item">🩺 22 Yrs Exp</span>
+            <span class="doctor-meta-item">👥 8000+ Patients</span>
+          </div>
+          <a href="appointment.html?doctor=suresh-menon" class="btn btn-primary btn-sm" style="width:100%;" id="book-dr3">Book Appointment</a>
+        </div>
+      </div>
+
+      <div class="doctor-card reveal reveal-delay-3" id="doctor-card-4">
+        <div class="doctor-card-image">
+          <img src="assets/images/doctor4.png" alt="Dr. Anitha Reddy — Pediatrician" loading="lazy" />
+          <div class="doctor-card-overlay">
+            <span class="badge badge-success badge-dot">Available Today</span>
+          </div>
+        </div>
+        <div class="doctor-card-body">
+          <div class="doctor-name">Dr. Anitha Reddy</div>
+          <div class="doctor-spec">Senior Pediatrician</div>
+          <div class="doctor-meta">
+            <span class="doctor-meta-item">⭐ 4.9</span>
+            <span class="doctor-meta-item">🩺 10 Yrs Exp</span>
+            <span class="doctor-meta-item">👥 6000+ Patients</span>
+          </div>
+          <a href="appointment.html?doctor=anitha-reddy" class="btn btn-primary btn-sm" style="width:100%;" id="book-dr4">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <a href="doctors.html" class="btn btn-outline" id="view-all-doctors">View All Doctors →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HEALTH PACKAGES
+     ============================================================ -->
+<section class="section packages-section" id="packages" aria-label="Health packages">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);">💊 Health Plans</div>
+      <h2 class="section-title reveal reveal-delay-1" style="color:white;">Comprehensive <span style="background:linear-gradient(135deg,#60A5FA,#34D399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Health Packages</span></h2>
+      <p class="section-subtitle reveal reveal-delay-2" style="color:rgba(255,255,255,0.65);">Preventive health checkups designed to keep you healthy. Early detection saves lives.</p>
+    </div>
+    <div class="packages-grid">
+      <div class="package-card-dark reveal" id="pkg-executive">
+        <div class="pkg-icon">👔</div>
+        <div class="pkg-name">Executive Health Checkup</div>
+        <div class="pkg-price">₹2,999</div>
+        <div class="pkg-feature">Full Body Checkup</div>
+        <div class="pkg-feature">ECG & Echo</div>
+        <div class="pkg-feature">Blood Panel (50+ tests)</div>
+        <div class="pkg-feature">Doctor Consultation</div>
+        <div class="pkg-feature">Diet Counseling</div>
+        <a href="appointment.html" class="btn btn-outline-white btn-sm" style="width:100%;margin-top:20px;" id="book-pkg-exec">Book Now</a>
+      </div>
+      <div class="package-card-dark reveal reveal-delay-1" id="pkg-womens">
+        <div class="pkg-icon">🌸</div>
+        <div class="pkg-name">Women's Health Package</div>
+        <div class="pkg-price">₹3,499</div>
+        <div class="pkg-feature">Mammography</div>
+        <div class="pkg-feature">Pap Smear</div>
+        <div class="pkg-feature">Thyroid Profile</div>
+        <div class="pkg-feature">Bone Density Scan</div>
+        <div class="pkg-feature">Gynec Consultation</div>
+        <a href="appointment.html" class="btn btn-outline-white btn-sm" style="width:100%;margin-top:20px;" id="book-pkg-womens">Book Now</a>
+      </div>
+      <div class="package-card-dark reveal reveal-delay-2" id="pkg-cardiac" style="border-color:rgba(0,102,255,0.5);">
+        <div class="pkg-icon">❤️</div>
+        <div class="pkg-name">Cardiac Package</div>
+        <div class="pkg-price">₹4,999</div>
+        <div class="pkg-feature">2D Echocardiogram</div>
+        <div class="pkg-feature">Stress Test (TMT)</div>
+        <div class="pkg-feature">Lipid Profile</div>
+        <div class="pkg-feature">Cardiac CT Scan</div>
+        <div class="pkg-feature">Cardiologist Review</div>
+        <a href="appointment.html" class="btn btn-primary btn-sm" style="width:100%;margin-top:20px;" id="book-pkg-cardiac">Book Now</a>
+      </div>
+      <div class="package-card-dark reveal reveal-delay-3" id="pkg-diabetes">
+        <div class="pkg-icon">🩸</div>
+        <div class="pkg-name">Diabetes Screening</div>
+        <div class="pkg-price">₹1,499</div>
+        <div class="pkg-feature">HbA1c Test</div>
+        <div class="pkg-feature">Fasting Glucose</div>
+        <div class="pkg-feature">Kidney Function</div>
+        <div class="pkg-feature">Eye Examination</div>
+        <div class="pkg-feature">Diabetologist Review</div>
+        <a href="appointment.html" class="btn btn-outline-white btn-sm" style="width:100%;margin-top:20px;" id="book-pkg-diabetes">Book Now</a>
+      </div>
+      <div class="package-card-dark reveal reveal-delay-4" id="pkg-child">
+        <div class="pkg-icon">👶</div>
+        <div class="pkg-name">Child Wellness Package</div>
+        <div class="pkg-price">₹1,999</div>
+        <div class="pkg-feature">Growth Assessment</div>
+        <div class="pkg-feature">Vaccination Review</div>
+        <div class="pkg-feature">Vision & Hearing</div>
+        <div class="pkg-feature">Nutrition Counseling</div>
+        <div class="pkg-feature">Pediatrician Consult</div>
+        <a href="appointment.html" class="btn btn-outline-white btn-sm" style="width:100%;margin-top:20px;" id="book-pkg-child">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="section testimonials-section" id="testimonials" aria-label="Patient testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">💬 Patient Stories</div>
+      <h2 class="section-title reveal reveal-delay-1">What Our <span>Patients Say</span></h2>
+      <p class="section-subtitle reveal reveal-delay-2">Real stories from real people who trusted us with their health. Their satisfaction is our greatest achievement.</p>
+    </div>
+    <div class="testimonial-slider-wrapper reveal">
+      <div class="slider-track">
+        <div class="slider-slide">
+          <div class="testimonials-inner-grid">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Exceptional care from the cardiology team. Dr. Rajesh Kumar performed my bypass surgery with incredible precision. The nursing staff was compassionate and attentive throughout my recovery."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">RK</div>
+                <div>
+                  <div class="testimonial-name">Ramesh Krishnan</div>
+                  <div class="testimonial-role">Cardiac Patient, Chennai</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"I delivered my baby here and the experience was wonderful. Dr. Priya Sharma and her team made me feel safe and supported throughout my pregnancy journey."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">SP</div>
+                <div>
+                  <div class="testimonial-name">Sunitha Pillai</div>
+                  <div class="testimonial-role">Maternity Patient, Hyderabad</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"The neurology department is world-class. After my stroke, Dr. Suresh Menon's team gave me a second chance at life. The rehabilitation program was outstanding."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">VN</div>
+                <div>
+                  <div class="testimonial-name">Vijay Nair</div>
+                  <div class="testimonial-role">Neuro Patient, Bangalore</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-slide">
+          <div class="testimonials-inner-grid">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"My knee replacement surgery was a complete success. The orthopedic team and physiotherapy department worked together seamlessly for my speedy recovery."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">AM</div>
+                <div>
+                  <div class="testimonial-name">Anand Murthy</div>
+                  <div class="testimonial-role">Orthopedic Patient, Pune</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Brought my child here with severe fever. Dr. Anitha Reddy's prompt diagnosis and treatment saved my son. The pediatric ward was clean and child-friendly."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">LP</div>
+                <div>
+                  <div class="testimonial-name">Lakshmi Patel</div>
+                  <div class="testimonial-role">Parent, Coimbatore</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"The online booking system is so convenient. I booked my appointment, got my reports online, and the consultation was thorough. Truly 21st century healthcare."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">PR</div>
+                <div>
+                  <div class="testimonial-name">Pradeep Rao</div>
+                  <div class="testimonial-role">General Patient, Mumbai</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn" data-slide="prev" aria-label="Previous testimonials">←</button>
+        <div class="slider-dots"></div>
+        <button class="slider-btn" data-slide="next" aria-label="Next testimonials">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LATEST BLOG
+     ============================================================ -->
+<section class="section" id="blog-section" aria-label="Latest health news">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">📰 Health Insights</div>
+      <h2 class="section-title reveal reveal-delay-1">Latest <span>News & Articles</span></h2>
+      <p class="section-subtitle reveal reveal-delay-2">Stay informed with the latest medical breakthroughs, health tips, and hospital updates.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal" id="blog-card-1">
+        <div class="blog-card-image">🫀</div>
+        <div class="blog-card-body">
+          <span class="blog-category">Cardiology</span>
+          <h3 class="blog-card-title">10 Warning Signs of Heart Disease You Should Never Ignore</h3>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Early detection of heart disease can save your life. Learn the key warning signs that require immediate medical attention...</p>
+          <div class="blog-meta">
+            <span>👨‍⚕️ Dr. Rajesh Kumar</span>
+            <span>📅 May 20, 2026</span>
+            <span>⏱️ 5 min read</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-1" id="blog-card-2">
+        <div class="blog-card-image">🧠</div>
+        <div class="blog-card-body">
+          <span class="blog-category">Neurology</span>
+          <h3 class="blog-card-title">Stroke Prevention: Lifestyle Changes That Can Save Your Brain</h3>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Strokes are largely preventable. Discover evidence-based lifestyle modifications that dramatically reduce your risk...</p>
+          <div class="blog-meta">
+            <span>👨‍⚕️ Dr. Suresh Menon</span>
+            <span>📅 May 15, 2026</span>
+            <span>⏱️ 7 min read</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-2" id="blog-card-3">
+        <div class="blog-card-image">👶</div>
+        <div class="blog-card-body">
+          <span class="blog-category" style="background:var(--secondary-light);color:var(--secondary);">Child Health</span>
+          <h3 class="blog-card-title">Complete Vaccination Schedule for Your Child in 2026</h3>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Stay up-to-date with the latest recommended vaccination schedule to protect your child from preventable diseases...</p>
+          <div class="blog-meta">
+            <span>👩‍⚕️ Dr. Anitha Reddy</span>
+            <span>📅 May 10, 2026</span>
+            <span>⏱️ 4 min read</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <a href="blog.html" class="btn btn-outline" id="view-all-blogs">View All Articles →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EMERGENCY CTA SECTION
+     ============================================================ -->
+<section class="emergency-section" id="emergency-cta" aria-label="Emergency services">
+  <div class="container" style="position:relative;z-index:1;">
+    <div style="text-align:center; color:white;">
+      <div style="font-size:3rem; margin-bottom:16px; animation: heartbeat 2s ease-in-out infinite;">🚨</div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;margin-bottom:16px;" class="reveal">
+        24/7 Emergency Services Available
+      </h2>
+      <p style="font-size:1.05rem;opacity:0.9;margin-bottom:36px;max-width:560px;margin-left:auto;margin-right:auto;" class="reveal reveal-delay-1">
+        Our fully equipped emergency department with trauma specialists, ICU, and ambulance services is operational round the clock. Don't wait when it matters most.
+      </p>
+      <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;" class="reveal reveal-delay-2">
+        <a href="tel:108" class="btn btn-outline-white btn-xl" id="emergency-call-108" style="border-color:white;">
+          🚑 Call Ambulance: 108
+        </a>
+        <a href="tel:+919876543210" class="btn btn-xl" style="background:white;color:#DC2626;font-weight:800;" id="emergency-call-hospital">
+          📞 +91-9876-543210
+        </a>
+        <a href="emergency.html" class="btn btn-outline-white btn-xl" id="emergency-learn-more">
+          Learn More →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-logo" style="margin-bottom:20px;">
+          <div class="nav-logo-icon">🏥</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Nirmala Medical</span>
+            <span class="nav-logo-tagline">Center of Excellence</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Delivering world-class healthcare with compassionate service since 2001. NABH accredited, ISO certified, and trusted by over 1 lakh patients across the region.
+        </p>
+        <div class="footer-emergency-number">
+          <span>🚨</span> 108 / +91-9876-543210
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+          <a href="https://wa.me/919876543210" class="social-link" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="doctors.html">Our Doctors</a>
+          <a href="appointment.html">Book Appointment</a>
+          <a href="patient-portal.html">Patient Portal</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Health Blog</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Departments</h4>
+        <div class="footer-links">
+          <a href="departments.html#cardiology">Cardiology</a>
+          <a href="departments.html#neurology">Neurology</a>
+          <a href="departments.html#gynecology">Gynecology</a>
+          <a href="departments.html#pediatrics">Pediatrics</a>
+          <a href="departments.html#orthopedics">Orthopedics</a>
+          <a href="departments.html#dermatology">Dermatology</a>
+          <a href="departments.html#lab">Laboratory</a>
+          <a href="emergency.html">Emergency / ICU</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Contact Info</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📍</div>
+          <div>Medical Campus Road, Near City Station, City – 500001</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <div><a href="tel:+919876543210" style="color:inherit;">+91-9876-543210</a><br/><a href="tel:+919876000000" style="color:inherit;">+91-9876-000000</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✉️</div>
+          <div><a href="mailto:info@nirmalamedicare.com" style="color:inherit;">info@nirmalamedicare.com</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">⏰</div>
+          <div>OPD: Mon–Sat 8AM–8PM<br/>Emergency: 24 × 7</div>
+        </div>
+        <h4 class="footer-heading" style="margin-top:20px;">Newsletter</h4>
+        <p style="font-size:0.8rem;margin-bottom:8px;color:rgba(255,255,255,0.5);">Get health tips & updates weekly.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" id="newsletter-submit">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Nirmala Medical Center. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- AI CHAT WIDGET -->
+<div class="chat-widget" id="chat-widget" aria-label="AI medical assistant">
+  <button class="chat-toggle-btn" id="chat-toggle" aria-label="Open AI medical assistant" aria-expanded="false">🤖</button>
+  <div class="chat-panel" id="chat-panel" role="dialog" aria-label="NirmalaCare AI Assistant">
+    <div class="chat-panel-header">
+      <div class="chat-bot-info">
+        <div class="chat-bot-avatar">🤖</div>
+        <div>
+          <div class="chat-bot-name">NirmalaCare AI</div>
+          <div class="chat-bot-status">Online — Always available</div>
+        </div>
+      </div>
+      <button class="modal-close chat-close" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+    <div class="chat-quick-replies">
+      <button class="quick-reply" id="qr-appointment">Book Appointment</button>
+      <button class="quick-reply" id="qr-emergency">Emergency?</button>
+      <button class="quick-reply" id="qr-doctors">Find Doctor</button>
+      <button class="quick-reply" id="qr-timing">OPD Timings</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chat-input" placeholder="Ask me anything..." aria-label="Chat message" />
+      <button class="chat-send-btn" id="chat-send" aria-label="Send message">➤</button>
+    </div>
+  </div>
+</div>
+
+<!-- EMERGENCY FLOAT BUTTON -->
+<div class="emergency-float" id="emergency-float">
+  <a href="tel:108" class="emergency-float-btn" id="emergency-float-call" aria-label="Call emergency 108">
+    🚨 Emergency: 108
+  </a>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  function handleNewsletter(e) {
+    e.preventDefault();
+    Toast.show('🎉 Successfully subscribed to our health newsletter!', 'success');
+    e.target.reset();
+  }
+</script>
+</body>
+</html>

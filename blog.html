@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Insights Blog — Nirmala Medical Center</title>
+  <meta name="description" content="Stay informed with the latest health tips, medical news, research breakthroughs, and hospital updates from our medical experts." />
+  <meta name="keywords" content="health blog, medical news, wellness tips, medical research, Nirmala Medical Center blog" />
+  <meta property="og:title" content="Health Insights Blog — Nirmala Medical Center" />
+  <meta property="og:description" content="Expert medical advice, health guidelines, and news updates from Nirmala Medical Center." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <style>
+    /* Custom pagination styling */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 40px;
+    }
+    .page-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .page-btn:hover, .page-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    
+    .blog-grid-3x3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 900px) {
+      .blog-grid-3x3 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .blog-grid-3x3 { grid-template-columns: 1fr; }
+    }
+    
+    /* Blog filter tab styling */
+    .blog-filter-container {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+    
+    /* Tag list cloud styling */
+    .tag-list-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    /* Sidebar list item count alignment */
+    .cat-item-link {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <span class="top-bar-item">📍 Medical Campus Road, City – 500001</span>
+      <span class="top-bar-divider">|</span>
+      <a href="tel:+919876543210" class="top-bar-item">📞 +91-9876-543210</a>
+    </div>
+    <div class="top-bar-right">
+      <a href="#" class="top-bar-item">🕐 OPD: Mon–Sat 8AM–8PM</a>
+      <span class="top-bar-divider">|</span>
+      <a href="emergency.html" class="top-bar-item" style="color:#FCA5A5;font-weight:700;">🚨 Emergency: 108</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo" aria-label="Nirmala Medical Center Home">
+      <div class="nav-logo-icon">🏥</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Nirmala Medical</span>
+        <span class="nav-logo-tagline">Center of Excellence</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu" id="nav-menu" role="menubar">
+      <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+      <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+      <li class="nav-item-dropdown" role="none">
+        <a href="departments.html" class="nav-link" role="menuitem">Departments ▾</a>
+        <div class="nav-dropdown">
+          <a href="departments.html#cardiology"><span class="nav-dropdown-icon">❤️</span> Cardiology</a>
+          <a href="departments.html#neurology"><span class="nav-dropdown-icon">🧠</span> Neurology</a>
+          <a href="departments.html#gynecology"><span class="nav-dropdown-icon">🌸</span> Gynecology</a>
+          <a href="departments.html#pediatrics"><span class="nav-dropdown-icon">👶</span> Pediatrics</a>
+          <a href="departments.html#orthopedics"><span class="nav-dropdown-icon">🦴</span> Orthopedics</a>
+          <a href="departments.html">View All Departments →</a>
+        </div>
+      </li>
+      <li role="none"><a href="doctors.html" class="nav-link" role="menuitem">Doctors</a></li>
+      <li role="none"><a href="appointment.html" class="nav-link" role="menuitem">Appointment</a></li>
+      <li role="none"><a href="patient-portal.html" class="nav-link" role="menuitem">Patient Portal</a></li>
+      <li role="none"><a href="emergency.html" class="nav-link" role="menuitem">Emergency</a></li>
+      <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙</button>
+      <a href="appointment.html" class="btn btn-primary btn-sm" id="nav-book-btn">📅 Book Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-label="Blog hero">
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="page-hero-particles" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="page-hero-tag">✦ Health Insights</div>
+      <h1 class="page-hero-title">Health <span>Blog & News</span></h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">Blog</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="section">
+  <div class="container">
+    
+    <!-- FEATURED ARTICLE HERO -->
+    <div class="featured-article-card reveal">
+      <div class="featured-article-image" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color:white;">
+        🦾
+      </div>
+      <div class="featured-article-body">
+        <span class="featured-badge">FEATURED</span>
+        <h2 class="heading-1" style="margin-bottom: var(--space-3); line-height: 1.3;">Revolutionizing Healthcare: How AI is Changing Medical Diagnosis in 2026</h2>
+        <p style="font-size:0.95rem; color:var(--text-secondary); margin-bottom: 24px; line-height:1.7;">Artificial Intelligence is transforming clinical decision making. From detecting micro-fractures in X-rays to predicting patient ICU durations, discover how AI integration is assisting specialists to save lives daily.</p>
+        <div class="blog-meta" style="margin-bottom: 24px;">
+          <span>👨‍⚕️ Dr. Rajesh Kumar</span>
+          <span>📅 May 25, 2026</span>
+          <span>⏱️ 12 min read</span>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="Toast.show('📖 Opening full article: Revolutionizing Healthcare with AI...', 'info')">Read Article</button>
+      </div>
+    </div>
+
+    <!-- BLOG LAYOUT -->
+    <div class="blog-layout">
+      <!-- Main Content (Articles Grid) -->
+      <div>
+        <!-- CATEGORY FILTER TABS -->
+        <div class="blog-filter-container reveal">
+          <div class="filter-tabs" data-target=".blog-article-card">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="news">Medical News</button>
+            <button class="filter-tab" data-filter="tips">Health Tips</button>
+            <button class="filter-tab" data-filter="updates">Hospital Updates</button>
+            <button class="filter-tab" data-filter="research">Research</button>
+          </div>
+        </div>
+
+        <!-- ARTICLE GRID -->
+        <div class="blog-grid-3x3">
+          
+          <!-- Article 1 -->
+          <div class="blog-card blog-article-card reveal" data-category="news">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #3B82F6, #1D4ED8); color:white;">💻</div>
+            <div class="blog-card-body">
+              <span class="blog-category">Medical News</span>
+              <h3 class="blog-card-title">Telemedicine: Virtual Consults Save 10K+ Lives</h3>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.6;">Virtual consults bridge the geographical gap, offering instant diagnostic access to remote patients in need...</p>
+              <div class="blog-meta">
+                <span>👨‍⚕️ Dr. Suresh Menon</span>
+                <span>📅 May 20, 2026</span>
+                <span>⏱️ 6 min</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="blog-card blog-article-card reveal reveal-delay-1" data-category="tips">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #EF4444, #B91C1C); color:white;">❤️</div>
+            <div class="blog-card-body">
+              <span class="blog-category">Health Tips</span>
+              <h3 class="blog-card-title">10 Warning Signs of Heart Disease to Avoid</h3>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.6;">Early warning indicators of coronary issues should never be ignored. Find out the top 10 symptoms...</p>
+              <div class="blog-meta">
+                <span>👨‍⚕️ Dr. Rajesh Kumar</span>
+                <span>📅 May 18, 2026</span>
+                <span>⏱️ 5 min</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="blog-card blog-article-card reveal reveal-delay-2" data-category="news">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #8B5CF6, #6D28D9); color:white;">🧠</div>
+            <div class="blog-card-body">
+              <span class="blog-category">Medical News</span>
+              <h3 class="blog-card-title">Alzheimer's Treatment Shows 80% Success</h3>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.6;">A new monoclonal antibody trial results in massive slowdown of cognitive decline, marking clinical history...</p>
+              <div class="blog-meta">
+                <span>👨‍⚕️ Dr. Suresh Menon</span>
+                <span>📅 May 15, 2026</span>
+                <span>⏱️ 8 min</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="blog-card blog-article-card reveal" data-category="tips">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #10B981, #047857); color:white;">🌱</div>
+            <div class="blog-card-body">
+              <span class="blog-category">Health Tips</span>
+              <h3 class="blog-card-title">7 Daily Habits to Reduce Cancer Risk</h3>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.6;">Simple changes in dietary choices and daily activity levels can reduce oncological vulnerabilities drastically...</p>
+              <div class="blog-meta">
+                <span>👩‍⚕️ Dr. Kavitha Iyer</span>
+                <span>📅 May 12, 2026</span>
+                <span>⏱️ 7 min</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="blog-card blog-article-card reveal reveal-delay-1" data-category="updates">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #06B6D4, #0891B2); color:white;">🏥</div>
+            <div class="blog-card-body">
+              <span class="blog-category">Hospital Updates</span>
+              <h3 class="blog-card-title">Robotic Surgery Suite Opens at Nirmala</h3>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.6;">Our state-of-the-art robotic assistance unit allows surgeons to perform complex procedures minimally invasively...</p>
+              <div class="blog-meta">
+                <span>👤 Admin Team</span>
+                <span>📅 May 10, 2026</span>
+                <span>⏱️ 3 min</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="blog-card blog-article-card reveal reveal-delay-2" data-category="tips">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #F59E0B, #D97706); color:white;">👶</div>
+            <div class="blog-card-body">
+              <span class="blog-category">Health Tips</span>
+              <h3 class="blog-card-title">Complete Vaccination Schedule for Kids</h3>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.6;">Learn about the updated 2026 immunization guidelines to protect children against common seasonal bugs...</p>
+              <div class="blog-meta">
+                <span>👩‍⚕️ Dr. Anitha Reddy</span>
+                <span>📅 May 8, 2026</span>
+                <span>⏱️ 4 min</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 7 -->
+          <div class="blog-card blog-article-card reveal" data-category="events">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #EC4899, #BE185D); color:white;">🫱‍🫲</div>
+            <div class="blog-card-body">
+              <span class="blog-category">Community Events</span>
+              <h3 class="blog-card-title">2,000 Screened in Free Medical Camp</h3>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.6;">Nirmala Medical Center hosted a mass welfare screening drive covering cardiac checkups and lab tests...</p>
+              <div class="blog-meta">
+                <span>👤 Admin Team</span>
+                <span>📅 May 5, 2026</span>
+                <span>⏱️ 2 min</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 8 -->
+          <div class="blog-card blog-article-card reveal reveal-delay-1" data-category="tips">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #6366F1, #4338CA); color:white;">🩸</div>
+            <div class="blog-card-body">
+              <span class="blog-category">Health Tips</span>
+              <h3 class="blog-card-title">Sleep Science: Why 8 Hours is Critical</h3>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.6;">Quality sleep acts as a regenerative medicine, keeping blood pressure and stress levels in optimal checks...</p>
+              <div class="blog-meta">
+                <span>👩‍⚕️ Dr. Kavitha Iyer</span>
+                <span>📅 May 3, 2026</span>
+                <span>⏱️ 6 min</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 9 -->
+          <div class="blog-card blog-article-card reveal reveal-delay-2" data-category="research">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #F97316, #C2410C); color:white;">💪</div>
+            <div class="blog-card-body">
+              <span class="blog-category">Research</span>
+              <h3 class="blog-card-title">Mediterranean Diet Cuts Diabetes by 40%</h3>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.6;">A longitudinal research validates how high olive oil and leafy greens intake restructures blood sugar responses...</p>
+              <div class="blog-meta">
+                <span>👩‍⚕️ Dr. Sunita Varma</span>
+                <span>📅 Apr 28, 2026</span>
+                <span>⏱️ 5 min</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PAGINATION -->
+        <div class="pagination reveal">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <span style="align-self:center; color:var(--text-muted);">...</span>
+          <button class="page-btn">8</button>
+          <button class="page-btn" style="width: auto; padding: 0 16px;">Next →</button>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar reveal reveal-delay-1">
+        
+        <!-- Search -->
+        <div class="sidebar-card">
+          <h4 class="sidebar-title">Search Articles</h4>
+          <div style="position:relative;">
+            <input type="text" id="blog-search" class="form-control" placeholder="Search news or tips..." style="margin-bottom:0; padding-right:40px;" />
+            <span style="position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:1.1rem; pointer-events:none;">🔍</span>
+          </div>
+        </div>
+
+        <!-- Categories List -->
+        <div class="sidebar-card">
+          <h4 class="sidebar-title">Categories</h4>
+          <div class="sidebar-category-item" data-category="all">
+            <span class="cat-item-link">All Articles <span class="sidebar-category-count">54</span></span>
+          </div>
+          <div class="sidebar-category-item" data-category="news">
+            <span class="cat-item-link">Medical News <span class="sidebar-category-count">12</span></span>
+          </div>
+          <div class="sidebar-category-item" data-category="tips">
+            <span class="cat-item-link">Health Tips <span class="sidebar-category-count">24</span></span>
+          </div>
+          <div class="sidebar-category-item" data-category="updates">
+            <span class="cat-item-link">Hospital Updates <span class="sidebar-category-count">8</span></span>
+          </div>
+          <div class="sidebar-category-item" data-category="events">
+            <span class="cat-item-link">Community Events <span class="sidebar-category-count">6</span></span>
+          </div>
+          <div class="sidebar-category-item" data-category="research">
+            <span class="cat-item-link">Research <span class="sidebar-category-count">4</span></span>
+          </div>
+        </div>
+
+        <!-- Popular Articles -->
+        <div class="sidebar-card">
+          <h4 class="sidebar-title">Popular Articles</h4>
+          <div class="blog-mini-card" onclick="Toast.show('📖 Opening: Warning Signs of Heart Disease...', 'info')">
+            <div class="blog-mini-thumb" style="background:var(--danger-light); color:var(--danger);">❤️</div>
+            <div>
+              <h5 class="blog-mini-title">10 Warning Signs of Heart Disease</h5>
+              <span class="blog-mini-date">May 18, 2026</span>
+            </div>
+          </div>
+          <div class="blog-mini-card" onclick="Toast.show('📖 Opening: Telemedicine Revolution...', 'info')">
+            <div class="blog-mini-thumb" style="background:var(--primary-light); color:var(--primary);">💻</div>
+            <div>
+              <h5 class="blog-mini-title">Telemedicine Revolution Saves Lives</h5>
+              <span class="blog-mini-date">May 20, 2026</span>
+            </div>
+          </div>
+          <div class="blog-mini-card" onclick="Toast.show('📖 Opening: Mediterranean Diet...', 'info')">
+            <div class="blog-mini-thumb" style="background:var(--warning-light); color:var(--warning);">💪</div>
+            <div>
+              <h5 class="blog-mini-title">Mediterranean Diet Cuts Diabetes Risk</h5>
+              <span class="blog-mini-date">Apr 28, 2026</span>
+            </div>
+          </div>
+          <div class="blog-mini-card" onclick="Toast.show('📖 Opening: Robotic Surgery Suite...', 'info')">
+            <div class="blog-mini-thumb" style="background:var(--secondary-light); color:var(--secondary);">🏥</div>
+            <div>
+              <h5 class="blog-mini-title">New Robotic Surgery Suite Opens</h5>
+              <span class="blog-mini-date">May 10, 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tag Cloud -->
+        <div class="sidebar-card">
+          <h4 class="sidebar-title">Tags</h4>
+          <div class="tag-list-cloud">
+            <span class="tag">Cardiology</span>
+            <span class="tag">Neurology</span>
+            <span class="tag">Diabetes</span>
+            <span class="tag">Cancer Prevention</span>
+            <span class="tag">Child Health</span>
+            <span class="tag">Women Health</span>
+            <span class="tag">Mental Health</span>
+            <span class="tag">Nutrition</span>
+            <span class="tag">Exercise</span>
+          </div>
+        </div>
+
+        <!-- Sidebar Newsletter -->
+        <div class="sidebar-card" style="background: var(--primary-light); border-color: var(--primary-glow);">
+          <h4 class="sidebar-title" style="border-bottom-color: var(--primary);">Health Newsletter</h4>
+          <p style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.5;">Subscribe to receive premium weekly health tips curated by our medical experts.</p>
+          <form onsubmit="event.preventDefault(); Toast.show('🎉 Subscribed successfully!', 'success'); this.reset();">
+            <input type="email" class="form-control" placeholder="Email address" required style="margin-bottom:12px; border-color:var(--border);" />
+            <button type="submit" class="btn btn-primary btn-sm" style="width:100%;">Subscribe</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+
+    <!-- NEWSLETTER CTA BOX -->
+    <div class="reveal" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); border-radius: 28px; padding: 48px; margin-top: 60px; color: white; text-align: center;">
+      <h2 class="heading-1" style="color:white; margin-bottom:12px;">Stay Informed with Health Tips</h2>
+      <p style="font-size:1rem; opacity:0.9; max-width:520px; margin:0 auto 28px; line-height:1.6;">Join 10,000+ subscribers who receive our health campaigns, diet charts, and doctor consulting schedules weekly.</p>
+      <form style="display:flex; justify-content:center; max-width:500px; margin:0 auto; gap:10px; flex-wrap:wrap;" onsubmit="event.preventDefault(); Toast.show('🎉 Subscribed successfully!', 'success'); this.reset();">
+        <input type="email" placeholder="Your email address" required style="padding:14px 20px; border-radius:12px; border:0; outline:0; flex:1; min-width:240px;" />
+        <button type="submit" class="btn btn-secondary" style="background:white; color:var(--primary); font-weight:700; border:0;">Join Newsletter</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-logo" style="margin-bottom:20px;">
+          <div class="nav-logo-icon">🏥</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Nirmala Medical</span>
+            <span class="nav-logo-tagline">Center of Excellence</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Delivering world-class healthcare with compassionate service since 2001. NABH accredited, ISO certified, and trusted by over 1 lakh patients across the region.
+        </p>
+        <div class="footer-emergency-number">
+          <span>🚨</span> 108 / +91-9876-543210
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+          <a href="https://wa.me/919876543210" class="social-link" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="doctors.html">Our Doctors</a>
+          <a href="appointment.html">Book Appointment</a>
+          <a href="patient-portal.html">Patient Portal</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Health Blog</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Departments</h4>
+        <div class="footer-links">
+          <a href="departments.html#cardiology">Cardiology</a>
+          <a href="departments.html#neurology">Neurology</a>
+          <a href="departments.html#gynecology">Gynecology</a>
+          <a href="departments.html#pediatrics">Pediatrics</a>
+          <a href="departments.html#orthopedics">Orthopedics</a>
+          <a href="departments.html#dermatology">Dermatology</a>
+          <a href="departments.html#lab">Laboratory</a>
+          <a href="emergency.html">Emergency / ICU</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Contact Info</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📍</div>
+          <div>Medical Campus Road, Near City Station, City – 500001</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <div><a href="tel:+919876543210" style="color:inherit;">+91-9876-543210</a><br/><a href="tel:+919876000000" style="color:inherit;">+91-9876-000000</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✉️</div>
+          <div><a href="mailto:info@nirmalamedicare.com" style="color:inherit;">info@nirmalamedicare.com</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">⏰</div>
+          <div>OPD: Mon–Sat 8AM–8PM<br/>Emergency: 24 × 7</div>
+        </div>
+        <h4 class="footer-heading" style="margin-top:20px;">Newsletter</h4>
+        <p style="font-size:0.8rem;margin-bottom:8px;color:rgba(255,255,255,0.5);">Get health tips & updates weekly.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" id="newsletter-submit">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Nirmala Medical Center. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- AI CHAT WIDGET -->
+<div class="chat-widget" id="chat-widget" aria-label="AI medical assistant">
+  <button class="chat-toggle-btn" id="chat-toggle" aria-label="Open AI medical assistant" aria-expanded="false">🤖</button>
+  <div class="chat-panel" id="chat-panel" role="dialog" aria-label="NirmalaCare AI Assistant">
+    <div class="chat-panel-header">
+      <div class="chat-bot-info">
+        <div class="chat-bot-avatar">🤖</div>
+        <div>
+          <div class="chat-bot-name">NirmalaCare AI</div>
+          <div class="chat-bot-status">Online — Always available</div>
+        </div>
+      </div>
+      <button class="modal-close chat-close" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+    <div class="chat-quick-replies">
+      <button class="quick-reply" id="qr-appointment">Book Appointment</button>
+      <button class="quick-reply" id="qr-emergency">Emergency?</button>
+      <button class="quick-reply" id="qr-doctors">Find Doctor</button>
+      <button class="quick-reply" id="qr-timing">OPD Timings</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chat-input" placeholder="Ask me anything..." aria-label="Chat message" />
+      <button class="chat-send-btn" id="chat-send" aria-label="Send message">➤</button>
+    </div>
+  </div>
+</div>
+
+<!-- EMERGENCY FLOAT BUTTON -->
+<div class="emergency-float" id="emergency-float">
+  <a href="tel:108" class="emergency-float-btn" id="emergency-float-call" aria-label="Call emergency 108">
+    🚨 Emergency: 108
+  </a>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/pages.js"></script>
+<script>
+  function handleNewsletter(e) {
+    e.preventDefault();
+    Toast.show('🎉 Successfully subscribed to our health newsletter!', 'success');
+    e.target.reset();
+  }
+</script>
+</body>
+</html>

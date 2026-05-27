@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Medical Departments — Nirmala Medical Center</title>
+  <meta name="description" content="Explore all 12+ specialist departments at Nirmala Medical Center. From Cardiology to Pediatrics, world-class care under one roof." />
+  <meta name="keywords" content="hospital departments, cardiology, neurology, gynecology, pediatrics, orthopedics, emergency care, ICU, Nirmala Medical Center" />
+  <meta property="og:title" content="Our Medical Departments — Nirmala Medical Center" />
+  <meta property="og:description" content="Comprehensive medical care across 12+ specialties with world-class infrastructure and dedicated teams." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    /* ============================================================
+       DEPARTMENTS PAGE — PAGE-SPECIFIC STYLES
+       ============================================================ */
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      position: relative;
+      background: linear-gradient(135deg, #0A0F2E 0%, #0D1B6E 50%, #001055 100%);
+      padding: 140px 0 80px;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(0,102,255,0.18) 0%, transparent 55%),
+        radial-gradient(circle at 85% 30%, rgba(12,182,127,0.12) 0%, transparent 50%);
+    }
+    .page-hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .page-hero-particles span {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.12;
+    }
+    .page-hero-particles span:nth-child(1) {
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, #0066FF, transparent);
+      top: -100px; left: -80px;
+      animation: float 9s ease-in-out infinite;
+    }
+    .page-hero-particles span:nth-child(2) {
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, #0CB67F, transparent);
+      bottom: -60px; right: 10%;
+      animation: float 7s 1s ease-in-out infinite reverse;
+    }
+    .page-hero-particles span:nth-child(3) {
+      width: 130px; height: 130px;
+      background: radial-gradient(circle, #0066FF, transparent);
+      top: 30%; right: 25%;
+      animation: float 5s 2s ease-in-out infinite;
+    }
+    .page-hero-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+    .page-hero-breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 20px;
+      font-family: 'Inter', sans-serif;
+    }
+    .page-hero-breadcrumb a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .page-hero-breadcrumb a:hover { color: #60A5FA; }
+    .page-hero-breadcrumb .sep { opacity: 0.4; }
+    .page-hero-breadcrumb .current { color: #93C5FD; font-weight: 600; }
+    .page-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,102,255,0.2);
+      border: 1px solid rgba(0,102,255,0.4);
+      color: #93C5FD;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.5s ease both;
+    }
+    .page-hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.6s 0.1s ease both;
+    }
+    .page-hero-title .accent-gradient {
+      background: linear-gradient(135deg, #60A5FA, #34D399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-hero-subtitle {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.65);
+      max-width: 580px;
+      margin: 0 auto 32px;
+      animation: fadeInUp 0.6s 0.2s ease both;
+    }
+    .page-hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.6s 0.3s ease both;
+    }
+
+    /* ── OVERVIEW STATS ── */
+    .dept-stats-section {
+      background: white;
+      padding: 0;
+      position: relative;
+      z-index: 10;
+      margin-top: -1px;
+    }
+    .dept-stats-bar {
+      background: linear-gradient(135deg, #0066FF 0%, #0D1B6E 100%);
+      padding: 32px 0;
+    }
+    .dept-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    @media(max-width:768px){ .dept-stats-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:400px){ .dept-stats-grid { grid-template-columns: 1fr 1fr; } }
+    .dept-stat-item {
+      text-align: center;
+      padding: 20px 16px;
+      border-right: 1px solid rgba(255,255,255,0.15);
+      position: relative;
+    }
+    .dept-stat-item:last-child { border-right: none; }
+    .dept-stat-icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .dept-stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+      display: block;
+    }
+    .dept-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 500;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ── SEARCH + FILTER BAR ── */
+    .dept-filter-section {
+      padding: 48px 0 0;
+    }
+    .dept-filter-bar {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      padding: 20px 24px;
+      border: 1px solid var(--border);
+    }
+    .dept-search-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 220px;
+    }
+    .dept-search-wrap .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .dept-search-input {
+      width: 100%;
+      padding: 12px 16px 12px 44px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      background: white;
+      color: var(--text-primary);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      box-sizing: border-box;
+    }
+    .dept-search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0,102,255,0.12);
+    }
+    .dept-filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-tab {
+      padding: 9px 20px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-tab:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .filter-tab.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px rgba(0,102,255,0.3);
+    }
+    .dept-results-count {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      font-family: 'Inter', sans-serif;
+    }
+    .dept-results-count strong { color: var(--primary); }
+
+    /* ── DEPARTMENTS GRID ── */
+    .departments-main-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-bottom: 16px;
+    }
+    @media(max-width:1200px){ .departments-main-grid { grid-template-columns: repeat(3,1fr); } }
+    @media(max-width:900px)  { .departments-main-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:520px)  { .departments-main-grid { grid-template-columns: 1fr; } }
+
+    /* Department Card */
+    .dept-full-card {
+      background: white;
+      border-radius: 20px;
+      border: 1.5px solid var(--border);
+      padding: 28px 24px 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .dept-full-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 60%, rgba(0,102,255,0.04) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .dept-full-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+      border-color: rgba(0,102,255,0.3);
+    }
+    .dept-full-card:hover::before { opacity: 1; }
+    .dept-full-card.active-detail {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0,102,255,0.15), 0 20px 50px rgba(0,0,0,0.1);
+    }
+    .dept-full-card.hidden {
+      display: none;
+    }
+    .dept-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .dept-full-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      flex-shrink: 0;
+    }
+    .dept-avail-badge {
+      font-size: 0.68rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .dept-avail-badge.always {
+      background: #DCFCE7;
+      color: #166534;
+    }
+    .dept-avail-badge.opd {
+      background: #EFF6FF;
+      color: #1E40AF;
+    }
+    .dept-full-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .dept-full-tagline {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .dept-spec-count {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: var(--primary);
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      padding: 6px 12px;
+      background: rgba(0,102,255,0.07);
+      border-radius: 8px;
+      width: fit-content;
+      margin-bottom: 16px;
+    }
+    .dept-card-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 16px;
+    }
+    .dept-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dept-view-btn {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: gap 0.2s ease;
+    }
+    .dept-full-card:hover .dept-view-btn { gap: 9px; }
+    .dept-expand-icon {
+      width: 30px; height: 30px;
+      border-radius: 8px;
+      background: rgba(0,102,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--primary);
+      font-weight: 700;
+      transition: background 0.2s, transform 0.3s;
+    }
+    .dept-full-card.active-detail .dept-expand-icon {
+      background: var(--primary);
+      color: white;
+      transform: rotate(180deg);
+    }
+
+    /* No results message */
+    .dept-no-results {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-secondary);
+      grid-column: 1 / -1;
+    }
+    .dept-no-results.show { display: block; }
+    .dept-no-results-icon { font-size: 3rem; margin-bottom: 16px; }
+    .dept-no-results-text { font-size: 1rem; color: var(--text-secondary); }
+
+    /* ── DEPARTMENT DETAIL PANEL ── */
+    .dept-detail-panel {
+      display: none;
+      background: white;
+      border-radius: 24px;
+      border: 1.5px solid var(--primary);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.1);
+      margin-bottom: 32px;
+      overflow: hidden;
+      animation: slideDown 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    .dept-detail-panel.open { display: block; }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .dept-detail-header {
+      background: linear-gradient(135deg, #0A0F2E 0%, #0D1B6E 100%);
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .dept-detail-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 50%, rgba(0,102,255,0.25) 0%, transparent 60%);
+    }
+    .dept-detail-header-icon {
+      width: 72px; height: 72px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .dept-detail-header-info {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+    }
+    .dept-detail-header-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .dept-detail-header-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      font-family: 'Inter', sans-serif;
+    }
+    .dept-detail-close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      z-index: 2;
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .dept-detail-close:hover { background: rgba(255,255,255,0.22); }
+    .dept-detail-body {
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    @media(max-width:900px){ .dept-detail-body { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:600px){ .dept-detail-body { grid-template-columns: 1fr; padding: 24px; } }
+    .dept-detail-overview p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      font-family: 'Inter', sans-serif;
+    }
+    .dept-detail-section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .dept-detail-section-title::before {
+      content: '';
+      width: 4px;
+      height: 18px;
+      background: var(--primary);
+      border-radius: 999px;
+      display: inline-block;
+    }
+    .dept-detail-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .dept-detail-list li {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+    .dept-detail-list li::before {
+      content: '✓';
+      color: var(--secondary);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .dept-detail-equip-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .dept-equip-item {
+      background: var(--bg-secondary);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+    }
+    .dept-equip-item span { font-size: 1rem; }
+    .dept-detail-footer {
+      padding: 0 36px 32px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    @media(max-width:600px){ .dept-detail-footer { padding: 0 24px 24px; } }
+
+    /* ── EMERGENCY DEPARTMENTS SECTION ── */
+    .emergency-depts-section {
+      background: linear-gradient(135deg, #7F1D1D 0%, #991B1B 40%, #DC2626 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 72px 0;
+    }
+    .emergency-depts-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 10% 50%, rgba(255,255,255,0.06) 0%, transparent 50%),
+        radial-gradient(circle at 90% 30%, rgba(255,255,255,0.04) 0%, transparent 40%);
+    }
+    .emergency-depts-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .emergency-depts-header {
+      text-align: center;
+      color: white;
+      margin-bottom: 48px;
+    }
+    .emergency-depts-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .emergency-depts-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .emergency-depts-subtitle {
+      font-size: 1rem;
+      opacity: 0.8;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .emergency-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media(max-width:700px){ .emergency-cards-grid { grid-template-columns: 1fr; } }
+    .emergency-dept-card {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 32px;
+      backdrop-filter: blur(10px);
+      transition: background 0.3s, transform 0.3s;
+      color: white;
+    }
+    .emergency-dept-card:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-4px);
+    }
+    .emergency-card-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .emergency-card-icon {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+    .emergency-card-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .emergency-card-sub {
+      font-size: 0.82rem;
+      opacity: 0.7;
+      font-family: 'Inter', sans-serif;
+    }
+    .always-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 16px;
+    }
+    .always-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #34D399;
+      animation: pulseDot 1.5s ease-in-out infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+    .emergency-card-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .emergency-card-features li {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .emergency-card-features li::before {
+      content: '→';
+      font-weight: 700;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+    .emergency-cta-row {
+      margin-top: 48px;
+      text-align: center;
+    }
+    .emergency-cta-row .emergency-nums {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .emergency-num-item {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 14px;
+      padding: 14px 28px;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+    }
+    .emergency-num-item .label {
+      font-size: 0.7rem;
+      opacity: 0.65;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+      font-family: 'Inter', sans-serif;
+    }
+    .emergency-num-item .number {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    /* ── BOOK APPOINTMENT CTA SECTION ── */
+    .appt-cta-section {
+      padding: 80px 0;
+      background: var(--bg-secondary);
+    }
+    .appt-cta-inner {
+      background: linear-gradient(135deg, #0066FF 0%, #0D1B6E 100%);
+      border-radius: 28px;
+      padding: 60px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .appt-cta-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 50%, rgba(12,182,127,0.2) 0%, transparent 55%);
+    }
+    @media(max-width:768px){ .appt-cta-inner { flex-direction:column; text-align:center; padding: 40px 28px; } }
+    .appt-cta-text { position: relative; z-index: 1; }
+    .appt-cta-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      font-family: 'Inter', sans-serif;
+    }
+    .appt-cta-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .appt-cta-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      font-family: 'Inter', sans-serif;
+    }
+    .appt-cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    @media(max-width:768px){ .appt-cta-actions { justify-content: center; } }
+
+    /* ── UTILITY ANIMATIONS ── */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-18px); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      14%  { transform: scale(1.1); }
+      28%  { transform: scale(1); }
+      42%  { transform: scale(1.08); }
+      70%  { transform: scale(1); }
+    }
+
+    /* Dark mode adjustments */
+    [data-theme="dark"] .dept-full-card,
+    [data-theme="dark"] .dept-detail-panel {
+      background: var(--surface);
+    }
+    [data-theme="dark"] .dept-filter-bar {
+      background: var(--surface);
+    }
+    [data-theme="dark"] .dept-search-input {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+    [data-theme="dark"] .filter-tab {
+      background: var(--surface);
+      color: var(--text-secondary);
+    }
+    [data-theme="dark"] .dept-equip-item {
+      background: var(--bg-primary);
+    }
+    [data-theme="dark"] .dept-stats-bar { }
+    [data-theme="dark"] .appt-cta-section { background: var(--bg-primary); }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     TOP BAR
+     ============================================================ -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <span class="top-bar-item">📍 Medical Campus Road, City – 500001</span>
+      <span class="top-bar-divider">|</span>
+      <a href="tel:+919876543210" class="top-bar-item">📞 +91-9876-543210</a>
+    </div>
+    <div class="top-bar-right">
+      <a href="#" class="top-bar-item">🕐 OPD: Mon–Sat 8AM–8PM</a>
+      <span class="top-bar-divider">|</span>
+      <a href="emergency.html" class="top-bar-item" style="color:#FCA5A5;font-weight:700;">🚨 Emergency: 108</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo" aria-label="Nirmala Medical Center Home">
+      <div class="nav-logo-icon">🏥</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Nirmala Medical</span>
+        <span class="nav-logo-tagline">Center of Excellence</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu" id="nav-menu" role="menubar">
+      <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+      <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+      <li class="nav-item-dropdown" role="none">
+        <a href="departments.html" class="nav-link active" role="menuitem">Departments ▾</a>
+        <div class="nav-dropdown">
+          <a href="departments.html#cardiology"><span class="nav-dropdown-icon">❤️</span> Cardiology</a>
+          <a href="departments.html#neurology"><span class="nav-dropdown-icon">🧠</span> Neurology</a>
+          <a href="departments.html#gynecology"><span class="nav-dropdown-icon">🌸</span> Gynecology</a>
+          <a href="departments.html#pediatrics"><span class="nav-dropdown-icon">👶</span> Pediatrics</a>
+          <a href="departments.html#orthopedics"><span class="nav-dropdown-icon">🦴</span> Orthopedics</a>
+          <a href="departments.html">View All Departments →</a>
+        </div>
+      </li>
+      <li role="none"><a href="doctors.html" class="nav-link" role="menuitem">Doctors</a></li>
+      <li role="none"><a href="appointment.html" class="nav-link" role="menuitem">Appointment</a></li>
+      <li role="none"><a href="patient-portal.html" class="nav-link" role="menuitem">Patient Portal</a></li>
+      <li role="none"><a href="emergency.html" class="nav-link" role="menuitem">Emergency</a></li>
+      <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙</button>
+      <a href="appointment.html" class="btn btn-primary btn-sm" id="nav-book-btn">📅 Book Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<section class="page-hero" aria-label="Departments hero">
+  <div class="page-hero-particles" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="container">
+    <div class="page-hero-inner">
+      <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">Departments</span>
+      </nav>
+      <div class="page-hero-tag">🏥 Medical Specialties</div>
+      <h1 class="page-hero-title">
+        Our Medical <span class="accent-gradient">Departments</span>
+      </h1>
+      <p class="page-hero-subtitle">
+        Comprehensive healthcare across 12+ specialties, powered by world-class specialists and cutting-edge technology — all under one roof.
+      </p>
+      <div class="page-hero-actions">
+        <a href="appointment.html" class="btn btn-primary btn-lg" id="hero-book-appt">📅 Book Appointment</a>
+        <a href="tel:108" class="btn btn-danger btn-lg" id="hero-emergency">🚨 Emergency: 108</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DEPARTMENT OVERVIEW STATS
+     ============================================================ -->
+<section class="dept-stats-section" aria-label="Department overview statistics">
+  <div class="dept-stats-bar">
+    <div class="container">
+      <div class="dept-stats-grid">
+        <div class="dept-stat-item">
+          <span class="dept-stat-icon">🏥</span>
+          <span class="dept-stat-num">12+</span>
+          <span class="dept-stat-label">Departments</span>
+        </div>
+        <div class="dept-stat-item">
+          <span class="dept-stat-icon">👨‍⚕️</span>
+          <span class="dept-stat-num">50+</span>
+          <span class="dept-stat-label">Specialists</span>
+        </div>
+        <div class="dept-stat-item">
+          <span class="dept-stat-icon">🛏️</span>
+          <span class="dept-stat-num">500+</span>
+          <span class="dept-stat-label">Beds</span>
+        </div>
+        <div class="dept-stat-item">
+          <span class="dept-stat-icon">⚡</span>
+          <span class="dept-stat-num">24/7</span>
+          <span class="dept-stat-label">ICU Available</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEARCH + FILTER BAR + DEPARTMENTS GRID
+     ============================================================ -->
+<section class="section dept-filter-section" id="all-departments" aria-label="All departments">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag reveal">🏥 All Specialties</div>
+      <h2 class="section-title reveal reveal-delay-1">Browse Our <span>Departments</span></h2>
+      <p class="section-subtitle reveal reveal-delay-2">Click on any department card to learn more about treatments offered, equipment available, and to book an appointment.</p>
+    </div>
+
+    <!-- Search + Filter Bar -->
+    <div class="dept-filter-bar reveal">
+      <div class="dept-search-wrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          class="dept-search-input"
+          id="dept-search"
+          placeholder="Search departments (e.g. Cardiology, Neurology…)"
+          aria-label="Search departments"
+          autocomplete="off"
+        />
+      </div>
+      <div class="dept-filter-tabs" role="tablist" aria-label="Filter departments by category">
+        <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-tab" data-filter="surgical" role="tab" aria-selected="false">Surgical</button>
+        <button class="filter-tab" data-filter="medical" role="tab" aria-selected="false">Medical</button>
+        <button class="filter-tab" data-filter="diagnostic" role="tab" aria-selected="false">Diagnostic</button>
+        <button class="filter-tab" data-filter="emergency" role="tab" aria-selected="false">Emergency</button>
+      </div>
+    </div>
+
+    <p class="dept-results-count" id="results-count">Showing <strong>12</strong> departments</p>
+
+    <!-- Departments Grid -->
+    <div class="departments-main-grid" id="departments-grid" role="list">
+
+      <!-- 1. Cardiology -->
+      <div class="dept-full-card reveal" id="cardiology" data-category="medical" data-name="Cardiology" role="listitem">
+        <div class="dept-card-top">
+          <div class="dept-full-icon" style="background:#FEE2E2;">❤️</div>
+          <span class="dept-avail-badge opd">OPD Available</span>
+        </div>
+        <div class="dept-full-name">Cardiology</div>
+        <div class="dept-full-tagline">Heart & Vascular Medicine — Advanced cardiac care with interventional procedures and non-invasive diagnostics.</div>
+        <div class="dept-spec-count">👨‍⚕️ 6 Specialists</div>
+        <div class="dept-card-divider"></div>
+        <div class="dept-card-footer">
+          <span class="dept-view-btn">View Department →</span>
+          <div class="dept-expand-icon">▼</div>
+        </div>
+      </div>
+
+      <!-- 2. Orthopedics -->
+      <div class="dept-full-card reveal reveal-delay-1" id="orthopedics" data-category="surgical" data-name="Orthopedics" role="listitem">
+        <div class="dept-card-top">
+          <div class="dept-full-icon" style="background:#FFF7ED;">🦴</div>
+          <span class="dept-avail-badge opd">OPD Available</span>
+        </div>
+        <div class="dept-full-name">Orthopedics</div>
+        <div class="dept-full-tagline">Bone, Joint & Spine — Comprehensive musculoskeletal care including joint replacement and sports medicine.</div>
+        <div class="dept-spec-count">👨‍⚕️ 5 Specialists</div>
+        <div class="dept-card-divider"></div>
+        <div class="dept-card-footer">
+          <span class="dept-view-btn">View Department →</span>
+          <div class="dept-expand-icon">▼</div>
+        </div>
+      </div>
+
+      <!-- 3. Gynecology -->
+      <div class="dept-full-card reveal reveal-delay-2" id="gynecology" data-category="surgical" data-name="Gynecology" role="listitem">
+        <div class="dept-card-top">
+          <div class="dept-full-icon" style="background:#FDF4FF;">🌸</div>
+          <span class="dept-avail-badge opd">OPD Available</span>
+        </div>
+        <div class="dept-full-name">Gynecology</div>
+        <div class="dept-full-tagline">Women's Health & Obstetrics — Complete care through pregnancy, delivery, and women's health milestones.</div>
+        <div class="dept-spec-count">👩‍⚕️ 7 Specialists</div>
+        <div class="dept-card-divider"></div>
+        <div class="dept-card-footer">
+          <span class="dept-view-btn">View Department →</span>
+          <div class="dept-expand-icon">▼</div>
+        </div>
+      </div>
+
+      <!-- 4. Pediatrics -->
+      <div class="dept-full-card reveal reveal-delay-3" id="pediatrics" data-category="medical" data-name="Pediatrics" role="listitem">
+        <div class="dept-card-top">
+          <div class="dept-full-icon" style="background:#F0FDF4;">👶</div>
+          <span class="dept-avail-badge opd">OPD Available</span>
+        </div>
+        <div class="dept-full-name">Pediatrics</div>
+        <div class="dept-full-tagline">Child Healthcare — Specialized medical care for newborns through adolescents in a child-friendly environment.</div>
+        <div class="dept-spec-count">👨‍⚕️ 5 Specialists</div>
+        <div class="dept-card-divider"></div>
+        <div class="dept-card-footer">
+          <span class="dept-view-btn">View Department →</span>
+          <div class="dept-expand-icon">▼</div>
+        </div>
+      </div>
+
+      <!-- 5. Neurology -->
+      <div class="dept-full-card reveal" id="neurology" data-category="medical" data-name="Neurology" role="listitem">
+        <div class="dept-card-top">
+          <div class="dept-full-icon" style="background:#EFF6FF;">🧠</div>
+          <span class="dept-avail-badge opd">OPD Available</span>
+        </div>
+        <div class="dept-full-name">Neurology</div>
+        <div class="dept-full-tagline">Brain & Nervous System — Diagnosis and treatment of neurological disorders using advanced imaging and therapy.</div>
+        <div class="dept-spec-count">👨‍⚕️ 4 Specialists</div>
+        <div class="dept-card-divider"></div>
+        <div class="dept-card-footer">
+          <span class="dept-view-btn">View Department →</span>
+          <div class="dept-expand-icon">▼</div>
+        </div>
+      </div>
+
+      <!-- 6. General Medicine -->
+      <div class="dept-full-card reveal reveal-delay-1" id="general-medicine" data-category="medical" data-name="General Medicine" role="listitem">
+        <div class="dept-card-top">
+          <div class="dept-full-icon" style="background:#F8FAFC;">🩺</div>
+          <span class="dept-avail-badge opd">OPD Available</span>
+        </div>
+        <div class="dept-full-name">General Medicine</div>
+        <div class="dept-full-tagline">Primary Care — Your first point of contact for all health concerns. Comprehensive diagnostic and management services.</div>
+        <div class="dept-spec-count">👨‍⚕️ 8 Specialists</div>
+        <div class="dept-card-divider"></div>
+        <div class="dept-card-footer">
+          <span class="dept-view-btn">View Department →</span>
+          <div class="dept-expand-icon">▼</div>
+        </div>
+      </div>
+
+      <!-- 7. Emergency Care -->
+      <div class="dept-full-card reveal reveal-delay-2" id="emergency-care" data-category="emergency" data-name="Emergency Care" role="listitem">
+        <div class="dept-card-top">
+          <div class="dept-full-icon" style="background:#FEE2E2;">🚨</div>
+          <span class="dept-avail-badge always">24/7 Active</span>
+        </div>
+        <div class="dept-full-name">Emergency Care</div>
+        <div class="dept-full-tagline">24/7 Trauma — Fully equipped Emergency Department with rapid response team, trauma bays, and life-support systems.</div>
+        <div class="dept-spec-count">👨‍⚕️ 10 Specialists</div>
+        <div class="dept-card-divider"></div>
+        <div class="dept-card-footer">
+          <span class="dept-view-btn">View Department →</span>
+          <div class="dept-expand-icon">▼</div>
+        </div>
+      </div>
+
+      <!-- 8. ICU -->
+      <div class="dept-full-card reveal reveal-delay-3" id="icu" data-category="emergency" data-name="ICU" role="listitem">
+        <div class="dept-card-top">
+          <div class="dept-full-icon" style="background:#ECFDF5;">🏥</div>
+          <span class="dept-avail-badge always">24/7 Active</span>
+        </div>
+        <div class="dept-full-name">ICU</div>
+        <div class="dept-full-tagline">Critical Care — Intensive monitoring and life-support care for critically ill patients with round-the-clock intensivists.</div>
+        <div class="dept-spec-count">👨‍⚕️ 6 Intensivists</div>
+        <div class="dept-card-divider"></div>
+        <div class="dept-card-footer">
+          <span class="dept-view-btn">View Department →</span>
+          <div class="dept-expand-icon">▼</div>
+        </div>
+      </div>
+
+      <!-- 9. Laboratory -->
+      <div class="dept-full-card reveal" id="lab" data-category="diagnostic" data-name="Laboratory" role="listitem">
+        <div class="dept-card-top">
+          <div class="dept-full-icon" style="background:#F0F9FF;">🧪</div>
+          <span class="dept-avail-badge opd">OPD Available</span>
+        </div>
+        <div class="dept-full-name">Laboratory</div>
+        <div class="dept-full-tagline">Advanced Diagnostics — Fully automated laboratory delivering 500+ tests with results in under 2 hours.</div>
+        <div class="dept-spec-count">🔬 10 Lab Staff</div>
+        <div class="dept-card-divider"></div>
+        <div class="dept-card-footer">
+          <span class="dept-view-btn">View Department →</span>
+          <div class="dept-expand-icon">▼</div>
+        </div>
+      </div>
+
+      <!-- 10. Radiology -->
+      <div class="dept-full-card reveal reveal-delay-1" id="radiology" data-category="diagnostic" data-name="Radiology" role="listitem">
+        <div class="dept-card-top">
+          <div class="dept-full-icon" style="background:#F5F3FF;">📷</div>
+          <span class="dept-avail-badge opd">OPD Available</span>
+        </div>
+        <div class="dept-full-name">Radiology</div>
+        <div class="dept-full-tagline">Imaging & Scans — Advanced imaging including 3T MRI, 128-Slice CT, Digital X-Ray, and Ultrasound.</div>
+        <div class="dept-spec-count">👨‍⚕️ 4 Radiologists</div>
+        <div class="dept-card-divider"></div>
+        <div class="dept-card-footer">
+          <span class="dept-view-btn">View Department →</span>
+          <div class="dept-expand-icon">▼</div>
+        </div>
+      </div>
+
+      <!-- 11. Dermatology -->
+      <div class="dept-full-card reveal reveal-delay-2" id="dermatology" data-category="medical" data-name="Dermatology" role="listitem">
+        <div class="dept-card-top">
+          <div class="dept-full-icon" style="background:#FFFBEB;">✨</div>
+          <span class="dept-avail-badge opd">OPD Available</span>
+        </div>
+        <div class="dept-full-name">Dermatology</div>
+        <div class="dept-full-tagline">Skin & Hair — Treatment of skin disorders, hair loss, cosmetic procedures, and laser therapies.</div>
+        <div class="dept-spec-count">👨‍⚕️ 3 Specialists</div>
+        <div class="dept-card-divider"></div>
+        <div class="dept-card-footer">
+          <span class="dept-view-btn">View Department →</span>
+          <div class="dept-expand-icon">▼</div>
+        </div>
+      </div>
+
+      <!-- 12. Surgery -->
+      <div class="dept-full-card reveal reveal-delay-3" id="surgery" data-category="surgical" data-name="Surgery" role="listitem">
+        <div class="dept-card-top">
+          <div class="dept-full-icon" style="background:#FFF1F2;">🔪</div>
+          <span class="dept-avail-badge opd">OPD Available</span>
+        </div>
+        <div class="dept-full-name">Surgery</div>
+        <div class="dept-full-tagline">General & Laparoscopic — Minimally invasive surgical procedures with faster recovery and reduced hospital stays.</div>
+        <div class="dept-spec-count">👨‍⚕️ 8 Surgeons</div>
+        <div class="dept-card-divider"></div>
+        <div class="dept-card-footer">
+          <span class="dept-view-btn">View Department →</span>
+          <div class="dept-expand-icon">▼</div>
+        </div>
+      </div>
+
+    </div><!-- /departments-main-grid -->
+
+    <!-- No Results -->
+    <div class="dept-no-results" id="dept-no-results" aria-live="polite">
+      <div class="dept-no-results-icon">🔍</div>
+      <p class="dept-no-results-text">No departments match your search. Try a different keyword or filter.</p>
+    </div>
+
+    <!-- ── DEPARTMENT DETAIL PANEL ── -->
+    <div class="dept-detail-panel" id="dept-detail-panel" role="region" aria-label="Department details" aria-live="polite">
+      <div class="dept-detail-header">
+        <div class="dept-detail-header-icon" id="detail-icon"></div>
+        <div class="dept-detail-header-info">
+          <div class="dept-detail-header-name" id="detail-name"></div>
+          <div class="dept-detail-header-sub" id="detail-sub"></div>
+        </div>
+        <button class="dept-detail-close" id="detail-close-btn" aria-label="Close department details">✕</button>
+      </div>
+      <div class="dept-detail-body">
+        <div class="dept-detail-overview">
+          <div class="dept-detail-section-title">Department Overview</div>
+          <p id="detail-overview"></p>
+        </div>
+        <div class="dept-detail-treatments">
+          <div class="dept-detail-section-title">Treatments Offered</div>
+          <ul class="dept-detail-list" id="detail-treatments"></ul>
+        </div>
+        <div class="dept-detail-equipment">
+          <div class="dept-detail-section-title">Available Equipment</div>
+          <div class="dept-detail-equip-grid" id="detail-equipment"></div>
+        </div>
+      </div>
+      <div class="dept-detail-footer">
+        <a href="appointment.html" class="btn btn-primary" id="detail-book-btn">📅 Book Appointment</a>
+        <a href="doctors.html" class="btn btn-outline" id="detail-doctors-btn">👨‍⚕️ View Doctors</a>
+      </div>
+    </div><!-- /dept-detail-panel -->
+
+  </div>
+</section>
+
+<!-- ============================================================
+     EMERGENCY DEPARTMENTS SECTION
+     ============================================================ -->
+<section class="emergency-depts-section" id="emergency-departments" aria-label="Always-available emergency departments">
+  <div class="container emergency-depts-inner">
+    <div class="emergency-depts-header">
+      <div class="emergency-depts-tag">🚨 Always Available</div>
+      <h2 class="emergency-depts-title">Emergency & Critical Care — 24 × 7</h2>
+      <p class="emergency-depts-subtitle">Our Emergency Department and ICU never close. Staffed around the clock with experienced specialists ready to respond within minutes.</p>
+    </div>
+
+    <div class="emergency-cards-grid">
+      <!-- Emergency Care Card -->
+      <div class="emergency-dept-card reveal">
+        <div class="emergency-card-top">
+          <div class="emergency-card-icon">🚨</div>
+          <div>
+            <div class="emergency-card-name">Emergency Care</div>
+            <div class="emergency-card-sub">10 Emergency Specialists</div>
+          </div>
+        </div>
+        <div class="always-badge">LIVE — Always Open</div>
+        <ul class="emergency-card-features">
+          <li>Fully equipped trauma bays with advanced life support</li>
+          <li>Rapid triage system — seen within 5 minutes of arrival</li>
+          <li>On-site blood bank and critical lab services</li>
+          <li>Direct escalation pathway to ICU, OT & Specialist</li>
+          <li>Ambulance dispatch & pre-hospital coordination: 108</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="tel:108" class="btn btn-outline-white btn-sm" style="border-color:rgba(255,255,255,0.5);">🚑 Call 108</a>
+          <a href="appointment.html" class="btn btn-sm" style="background:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.3);">Learn More</a>
+        </div>
+      </div>
+
+      <!-- ICU Card -->
+      <div class="emergency-dept-card reveal reveal-delay-1">
+        <div class="emergency-card-top">
+          <div class="emergency-card-icon">🏥</div>
+          <div>
+            <div class="emergency-card-name">Intensive Care Unit (ICU)</div>
+            <div class="emergency-card-sub">6 Intensivists + 20 ICU Nurses</div>
+          </div>
+        </div>
+        <div class="always-badge">LIVE — 24/7 Monitoring</div>
+        <ul class="emergency-card-features">
+          <li>30-bed fully equipped ICU with individual monitoring stations</li>
+          <li>Mechanical ventilators, CRRT, and IABP facilities</li>
+          <li>Dedicated Neuro-ICU, Cardiac ICU & Medical ICU bays</li>
+          <li>Infection control protocols — NABH compliant</li>
+          <li>Real-time family communication & updates every 6 hours</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="tel:+919876543210" class="btn btn-outline-white btn-sm" style="border-color:rgba(255,255,255,0.5);">📞 ICU Helpline</a>
+          <a href="appointment.html" class="btn btn-sm" style="background:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.3);">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Emergency Contact Numbers -->
+    <div class="emergency-cta-row">
+      <div class="emergency-nums">
+        <div class="emergency-num-item">
+          <span class="label">Ambulance</span>
+          <span class="number">108</span>
+        </div>
+        <div class="emergency-num-item">
+          <span class="label">Hospital Emergency</span>
+          <span class="number">+91-9876-543210</span>
+        </div>
+        <div class="emergency-num-item">
+          <span class="label">ICU Helpline</span>
+          <span class="number">+91-9876-000000</span>
+        </div>
+      </div>
+      <p style="color:rgba(255,255,255,0.6);font-size:0.8rem;font-family:'Inter',sans-serif;">All emergency numbers are active 24 hours a day, 365 days a year.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BOOK APPOINTMENT CTA
+     ============================================================ -->
+<section class="appt-cta-section" aria-label="Book appointment call to action">
+  <div class="container">
+    <div class="appt-cta-inner reveal">
+      <div class="appt-cta-text">
+        <div class="appt-cta-tag">📅 Quick Booking</div>
+        <h2 class="appt-cta-title">Ready to See a Specialist?</h2>
+        <p class="appt-cta-sub">Book your appointment online in under 2 minutes. Available Mon–Sat, 8AM–8PM. Same-day slots available.</p>
+      </div>
+      <div class="appt-cta-actions">
+        <a href="appointment.html" class="btn btn-lg" style="background:white;color:var(--primary);font-weight:700;" id="cta-book-appt">📅 Book Online</a>
+        <a href="tel:+919876543210" class="btn btn-outline-white btn-lg" id="cta-call-us">📞 Call Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-logo" style="margin-bottom:20px;">
+          <div class="nav-logo-icon">🏥</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Nirmala Medical</span>
+            <span class="nav-logo-tagline">Center of Excellence</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Delivering world-class healthcare with compassionate service since 2001. NABH accredited, ISO certified, and trusted by over 1 lakh patients across the region.
+        </p>
+        <div class="footer-emergency-number">
+          <span>🚨</span> 108 / +91-9876-543210
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+          <a href="https://wa.me/919876543210" class="social-link" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="doctors.html">Our Doctors</a>
+          <a href="appointment.html">Book Appointment</a>
+          <a href="patient-portal.html">Patient Portal</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Health Blog</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Departments</h4>
+        <div class="footer-links">
+          <a href="departments.html#cardiology">Cardiology</a>
+          <a href="departments.html#neurology">Neurology</a>
+          <a href="departments.html#gynecology">Gynecology</a>
+          <a href="departments.html#pediatrics">Pediatrics</a>
+          <a href="departments.html#orthopedics">Orthopedics</a>
+          <a href="departments.html#dermatology">Dermatology</a>
+          <a href="departments.html#lab">Laboratory</a>
+          <a href="emergency.html">Emergency / ICU</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Contact Info</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📍</div>
+          <div>Medical Campus Road, Near City Station, City – 500001</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <div><a href="tel:+919876543210" style="color:inherit;">+91-9876-543210</a><br/><a href="tel:+919876000000" style="color:inherit;">+91-9876-000000</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✉️</div>
+          <div><a href="mailto:info@nirmalamedicare.com" style="color:inherit;">info@nirmalamedicare.com</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">⏰</div>
+          <div>OPD: Mon–Sat 8AM–8PM<br/>Emergency: 24 × 7</div>
+        </div>
+        <h4 class="footer-heading" style="margin-top:20px;">Newsletter</h4>
+        <p style="font-size:0.8rem;margin-bottom:8px;color:rgba(255,255,255,0.5);">Get health tips &amp; updates weekly.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" id="newsletter-submit">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Nirmala Medical Center. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     AI CHAT WIDGET
+     ============================================================ -->
+<div class="chat-widget" id="chat-widget" aria-label="AI medical assistant">
+  <button class="chat-toggle-btn" id="chat-toggle" aria-label="Open AI medical assistant" aria-expanded="false">🤖</button>
+  <div class="chat-panel" id="chat-panel" role="dialog" aria-label="NirmalaCare AI Assistant">
+    <div class="chat-panel-header">
+      <div class="chat-bot-info">
+        <div class="chat-bot-avatar">🤖</div>
+        <div>
+          <div class="chat-bot-name">NirmalaCare AI</div>
+          <div class="chat-bot-status">Online — Always available</div>
+        </div>
+      </div>
+      <button class="modal-close chat-close" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+    <div class="chat-quick-replies">
+      <button class="quick-reply" id="qr-appointment">Book Appointment</button>
+      <button class="quick-reply" id="qr-emergency">Emergency?</button>
+      <button class="quick-reply" id="qr-doctors">Find Doctor</button>
+      <button class="quick-reply" id="qr-timing">OPD Timings</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chat-input" placeholder="Ask me anything..." aria-label="Chat message" />
+      <button class="chat-send-btn" id="chat-send" aria-label="Send message">➤</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     EMERGENCY FLOAT BUTTON
+     ============================================================ -->
+<div class="emergency-float" id="emergency-float">
+  <a href="tel:108" class="emergency-float-btn" id="emergency-float-call" aria-label="Call emergency 108">
+    🚨 Emergency: 108
+  </a>
+</div>
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script src="js/main.js"></script>
+<script>
+  /* ============================================================
+     DEPARTMENTS PAGE — JAVASCRIPT
+     ============================================================ */
+
+  // ── Department Data ──
+  const DEPT_DATA = {
+    'cardiology': {
+      icon: '❤️',
+      iconBg: '#FEE2E2',
+      name: 'Cardiology',
+      sub: 'Heart & Vascular Medicine — 6 Specialists',
+      overview: 'Our Cardiology department is a Centre of Excellence for cardiac care, offering both interventional and non-invasive treatments. Led by experienced cardiologists with over 20 years of expertise, we handle everything from routine cardiac checkups to complex angioplasties and electrophysiology studies. Our dedicated cardiac catheterization lab runs 24/7, ensuring no time is lost in critical situations.',
+      treatments: [
+        'Coronary Angiography & Angioplasty (PTCA)',
+        'Echocardiography (2D Echo & Stress Echo)',
+        'Pacemaker Implantation & Management',
+        'Cardiac Electrophysiology & Ablation',
+        'Heart Failure Management & Rehabilitation',
+        'Lipid Management & Preventive Cardiology'
+      ],
+      equipment: [
+        { icon: '💓', label: 'Cath Lab (24/7)' },
+        { icon: '📡', label: '3T Cardiac MRI' },
+        { icon: '🩺', label: 'Holter Monitor' },
+        { icon: '⚡', label: 'Defibrillators' }
+      ]
+    },
+    'orthopedics': {
+      icon: '🦴',
+      iconBg: '#FFF7ED',
+      name: 'Orthopedics',
+      sub: 'Bone, Joint & Spine — 5 Specialists',
+      overview: 'The Orthopedics department at Nirmala Medical Center provides comprehensive bone, joint, and spine care using the latest minimally invasive surgical techniques. Our orthopedic surgeons are trained in advanced joint replacement, arthroscopy, and complex spine surgeries. We also operate a dedicated Sports Medicine clinic and physiotherapy unit for holistic musculoskeletal rehabilitation.',
+      treatments: [
+        'Total Knee & Hip Replacement Surgery',
+        'Arthroscopic Surgery (Knee, Shoulder, Ankle)',
+        'Spine Surgery — Disc Replacement & Fusion',
+        'Fracture Fixation & Trauma Management',
+        'Sports Medicine & Ligament Reconstruction',
+        'Pediatric Orthopedics & Deformity Correction'
+      ],
+      equipment: [
+        { icon: '🦿', label: 'Robotic Knee System' },
+        { icon: '🔬', label: 'C-Arm Fluoroscopy' },
+        { icon: '📷', label: 'Arthroscopy Tower' },
+        { icon: '🏋️', label: 'Physio Rehab Unit' }
+      ]
+    },
+    'gynecology': {
+      icon: '🌸',
+      iconBg: '#FDF4FF',
+      name: 'Gynecology',
+      sub: "Women's Health & Obstetrics — 7 Specialists",
+      overview: "Our Gynecology & Obstetrics department provides complete women's healthcare from adolescence to menopause. With a team of 7 dedicated specialists, we offer comprehensive prenatal, antenatal, and postnatal care. Our state-of-the-art labor suites feature LDR (Labour, Delivery, Recovery) rooms, ensuring a comfortable and safe birthing experience. We are equipped for all types of deliveries including high-risk pregnancies.",
+      treatments: [
+        'High-Risk Pregnancy Management & Monitoring',
+        'Laparoscopic Gynecological Surgeries',
+        'PCOS / PCOD Diagnosis & Management',
+        'Infertility Workup & Assisted Reproduction',
+        'Cervical Cancer Screening (Pap Smear, Colposcopy)',
+        'Menopause Management & Hormone Therapy'
+      ],
+      equipment: [
+        { icon: '📡', label: '4D Ultrasound' },
+        { icon: '🌡️', label: 'Fetal Monitor' },
+        { icon: '🏥', label: 'LDR Birth Suites' },
+        { icon: '🔬', label: 'Colposcope' }
+      ]
+    },
+    'pediatrics': {
+      icon: '👶',
+      iconBg: '#F0FDF4',
+      name: 'Pediatrics',
+      sub: 'Child Healthcare — 5 Specialists',
+      overview: "Nirmala Medical Center's Pediatrics department provides holistic medical care for children from birth through adolescence in a warm, child-friendly environment. Our pediatricians are trained in neonatology, pediatric emergency care, and developmental medicine. The ward features dedicated play areas, child-sized equipment, and family-centered care protocols that put both the child and parents at ease.",
+      treatments: [
+        'Neonatal Care & NICU Management',
+        'Childhood Vaccination & Immunization',
+        'Growth & Developmental Assessment',
+        'Pediatric Respiratory & Allergy Management',
+        'Childhood Infections & Fever Management',
+        'Nutritional Counseling & Failure to Thrive'
+      ],
+      equipment: [
+        { icon: '🍼', label: 'Neonatal NICU' },
+        { icon: '💉', label: 'Pediatric Ventilator' },
+        { icon: '🌡️', label: 'Infant Warmer' },
+        { icon: '📡', label: 'Pulse Oximetry' }
+      ]
+    },
+    'neurology': {
+      icon: '🧠',
+      iconBg: '#EFF6FF',
+      name: 'Neurology',
+      sub: 'Brain & Nervous System — 4 Specialists',
+      overview: 'Our Neurology department specializes in the diagnosis and management of disorders affecting the brain, spinal cord, and peripheral nervous system. Led by a team of renowned neurologists and neurosurgeons, we offer advanced diagnostic tools including high-resolution MRI, EEG, and nerve conduction studies. Our Stroke Unit operates 24/7 ensuring rapid thrombolysis and neuro-intervention within the golden hour.',
+      treatments: [
+        'Stroke Management & Thrombolysis (tPA)',
+        'Epilepsy Diagnosis & Surgical Workup',
+        'Parkinson\'s Disease & Movement Disorders',
+        'Multiple Sclerosis Management',
+        'Headache & Migraine Clinic',
+        'Neuromuscular Disease & Nerve Conduction'
+      ],
+      equipment: [
+        { icon: '🔬', label: '3T MRI Brain' },
+        { icon: '📡', label: 'EEG & EMG Lab' },
+        { icon: '⚡', label: 'Stroke Unit' },
+        { icon: '🏥', label: 'Neuro ICU' }
+      ]
+    },
+    'general-medicine': {
+      icon: '🩺',
+      iconBg: '#F8FAFC',
+      name: 'General Medicine',
+      sub: 'Primary Care — 8 Specialists',
+      overview: 'The General Medicine department is your primary gateway to comprehensive healthcare at Nirmala Medical Center. Our team of 8 experienced physicians manage a wide spectrum of illnesses and chronic conditions. We provide evidence-based diagnostics, lifestyle counseling, and coordinate referrals to specialized departments when needed. Our general medicine OPD handles over 200 patients daily with efficiency and care.',
+      treatments: [
+        'Diabetes Mellitus Type 1 & Type 2 Management',
+        'Hypertension & Cardiovascular Risk Assessment',
+        'Thyroid Disorders & Endocrine Management',
+        'Infections — Fever, Respiratory, Gastrointestinal',
+        'Chronic Disease Monitoring & Preventive Care',
+        'Pre-operative Medical Clearance'
+      ],
+      equipment: [
+        { icon: '🩺', label: 'Digital Stethoscope' },
+        { icon: '💉', label: 'Point-of-Care Testing' },
+        { icon: '📊', label: 'Spirometer (Lung)' },
+        { icon: '🔬', label: 'In-house Lab' }
+      ]
+    },
+    'emergency-care': {
+      icon: '🚨',
+      iconBg: '#FEE2E2',
+      name: 'Emergency Care',
+      sub: '24/7 Trauma & Emergency — 10 Specialists',
+      overview: 'Our Emergency Department operates 24 hours a day, 7 days a week with a dedicated team of 10 emergency medicine specialists, trauma surgeons, and nurses. The department features 20 emergency bays, 4 advanced resuscitation bays, and a direct link to the Cath Lab and OT for time-critical interventions. We operate a rapid triage system ensuring all critical patients are assessed within 5 minutes of arrival.',
+      treatments: [
+        'Advanced Trauma Life Support (ATLS)',
+        'Cardiac Arrest & CPR / ACLS Management',
+        'Acute Stroke Protocol & Emergency Thrombolysis',
+        'Polytrauma & Road Accident Management',
+        'Poisoning & Drug Overdose Management',
+        'Pediatric Emergency & Neonatal Resuscitation'
+      ],
+      equipment: [
+        { icon: '⚡', label: 'Defibrillator (AED)' },
+        { icon: '🏥', label: '4 Resus Bays' },
+        { icon: '🩸', label: 'Blood Bank (24/7)' },
+        { icon: '🚑', label: 'Ambulance Fleet' }
+      ]
+    },
+    'icu': {
+      icon: '🏥',
+      iconBg: '#ECFDF5',
+      name: 'Intensive Care Unit (ICU)',
+      sub: 'Critical Care — 6 Intensivists',
+      overview: "Nirmala Medical Center's 30-bed ICU is a state-of-the-art critical care facility staffed round the clock by 6 dedicated intensivists and 20 specialized ICU nurses. The unit is sub-divided into Cardiac ICU, Neuro-ICU, and Medical ICU to provide disease-specific critical care. All beds are equipped with advanced multi-parameter monitoring, mechanical ventilators, and infusion pump systems.",
+      treatments: [
+        'Mechanical Ventilation & Respiratory Support',
+        'Continuous Renal Replacement Therapy (CRRT)',
+        'Hemodynamic Monitoring & Vasoactive Therapy',
+        'Post-Operative Critical Care Management',
+        'Sepsis & Multi-Organ Failure Management',
+        'Intra-Aortic Balloon Pump (IABP) Therapy'
+      ],
+      equipment: [
+        { icon: '💨', label: 'Ventilators (x30)' },
+        { icon: '📡', label: 'Multi-para Monitor' },
+        { icon: '🔬', label: 'CRRT Machine' },
+        { icon: '💉', label: 'Infusion Pumps' }
+      ]
+    },
+    'lab': {
+      icon: '🧪',
+      iconBg: '#F0F9FF',
+      name: 'Laboratory',
+      sub: 'Advanced Diagnostics — 10 Lab Staff',
+      overview: 'Our fully automated laboratory is accredited by NABL and capable of processing over 500 different diagnostic tests. Results for routine tests are delivered within 2 hours, with critical value reporting systems in place for urgent samples. The lab operates 24/7 and supports all clinical departments including emergency, OPD, and ICU with rapid turnaround times and high accuracy.',
+      treatments: [
+        'Complete Blood Count (CBC) & Haematology',
+        'Biochemistry — Liver, Kidney, Thyroid Panels',
+        'Microbiology & Culture Sensitivity Testing',
+        'Hormonal Assays & Immunology Testing',
+        'Molecular Diagnostics & PCR Testing',
+        'Histopathology & Cytology (Biopsy Reports)'
+      ],
+      equipment: [
+        { icon: '🤖', label: 'Auto Analyzer' },
+        { icon: '🔬', label: 'PCR Machine' },
+        { icon: '🧫', label: 'Culture System' },
+        { icon: '📊', label: 'LIMS Software' }
+      ]
+    },
+    'radiology': {
+      icon: '📷',
+      iconBg: '#F5F3FF',
+      name: 'Radiology',
+      sub: 'Imaging & Scans — 4 Radiologists',
+      overview: 'The Radiology department at Nirmala Medical Center is equipped with the latest imaging technology, providing high-resolution diagnostic images for accurate diagnosis. Staffed by 4 experienced radiologists, the department operates all major modalities including 3T MRI, 128-Slice CT, Digital X-Ray, and Colour Doppler Ultrasound. Reports are digitally available on the patient portal within hours.',
+      treatments: [
+        '3T MRI — Brain, Spine, Musculoskeletal, Cardiac',
+        '128-Slice CT Scan — Full Body & Coronary',
+        'Digital Radiography (X-Ray) — All Body Parts',
+        'Colour Doppler Ultrasound & Echocardiography',
+        'Mammography & Breast Ultrasound',
+        'Interventional Radiology — Guided Biopsies'
+      ],
+      equipment: [
+        { icon: '🔮', label: '3T MRI Scanner' },
+        { icon: '🔍', label: '128-Slice CT' },
+        { icon: '📡', label: 'Digital X-Ray' },
+        { icon: '🖥️', label: 'PACS System' }
+      ]
+    },
+    'dermatology': {
+      icon: '✨',
+      iconBg: '#FFFBEB',
+      name: 'Dermatology',
+      sub: 'Skin & Hair — 3 Specialists',
+      overview: "Our Dermatology department offers a comprehensive range of skin, hair, and nail treatments combining modern medical dermatology with cosmetic dermatology. Staffed by 3 experienced dermatologists, the clinic treats conditions ranging from common skin disorders to complex autoimmune skin diseases. Our advanced laser suite provides cutting-edge aesthetic procedures with minimal downtime.",
+      treatments: [
+        'Acne, Eczema & Psoriasis Treatment',
+        'Laser Hair Removal & Skin Resurfacing',
+        'Hair Loss (Alopecia) Diagnosis & PRP Therapy',
+        'Vitiligo & Pigmentation Disorders',
+        'Skin Cancer Screening & Dermoscopy',
+        'Chemical Peels & Anti-Aging Treatments'
+      ],
+      equipment: [
+        { icon: '✨', label: 'Diode Laser' },
+        { icon: '🔬', label: 'Dermoscope' },
+        { icon: '💉', label: 'PRP System' },
+        { icon: '💡', label: 'Phototherapy Unit' }
+      ]
+    },
+    'surgery': {
+      icon: '🔪',
+      iconBg: '#FFF1F2',
+      name: 'Surgery',
+      sub: 'General & Laparoscopic Surgery — 8 Surgeons',
+      overview: 'The Department of Surgery at Nirmala Medical Center is staffed by 8 highly experienced surgeons specializing in general and laparoscopic surgery. Our fully equipped operation theatres incorporate advanced laparoscopic towers, energy devices, and surgical navigation systems. We perform over 3,000 surgeries annually with a 99.5% success rate. Our enhanced recovery protocols ensure faster post-operative recovery and minimal hospital stay.',
+      treatments: [
+        'Laparoscopic Cholecystectomy (Gallbladder)',
+        'Appendicectomy — Open & Laparoscopic',
+        'Hernia Repair — Inguinal, Umbilical, Incisional',
+        'Thyroid & Parathyroid Surgery',
+        'Colorectal Surgery & Proctology',
+        'Bariatric & Weight Loss Surgery'
+      ],
+      equipment: [
+        { icon: '🔬', label: 'Laparoscopic Tower' },
+        { icon: '⚡', label: 'Harmonic Scalpel' },
+        { icon: '🏥', label: '6 Modular OTs' },
+        { icon: '📡', label: 'Surgical Navigation' }
+      ]
+    }
+  };
+
+  // ── DOM References ──
+  const deptGrid    = document.getElementById('departments-grid');
+  const detailPanel = document.getElementById('dept-detail-panel');
+  const searchInput = document.getElementById('dept-search');
+  const filterTabs  = document.querySelectorAll('.filter-tab');
+  const noResults   = document.getElementById('dept-no-results');
+  const resultsCount= document.getElementById('results-count');
+
+  let activeFilter = 'all';
+  let activeCardId = null;
+
+  // ── Detail Panel Elements ──
+  const detailIcon      = document.getElementById('detail-icon');
+  const detailName      = document.getElementById('detail-name');
+  const detailSub       = document.getElementById('detail-sub');
+  const detailOverview  = document.getElementById('detail-overview');
+  const detailTreatments= document.getElementById('detail-treatments');
+  const detailEquipment = document.getElementById('detail-equipment');
+  const detailCloseBtn  = document.getElementById('detail-close-btn');
+  const detailBookBtn   = document.getElementById('detail-book-btn');
+
+  // ── Open Detail Panel ──
+  function openDeptDetail(cardEl) {
+    const id   = cardEl.id;
+    const data = DEPT_DATA[id];
+    if (!data) return;
+
+    // Update active card styling
+    if (activeCardId && activeCardId !== id) {
+      const prev = document.getElementById(activeCardId);
+      if (prev) prev.classList.remove('active-detail');
+    }
+    cardEl.classList.toggle('active-detail');
+
+    if (activeCardId === id && detailPanel.classList.contains('open')) {
+      closeDeptDetail();
+      return;
+    }
+
+    activeCardId = id;
+
+    // Populate panel
+    detailIcon.textContent       = data.icon;
+    detailIcon.style.background  = data.iconBg;
+    detailName.textContent        = data.name;
+    detailSub.textContent         = data.sub;
+    detailOverview.textContent    = data.overview;
+
+    // Treatments list
+    detailTreatments.innerHTML = data.treatments
+      .map(t => `<li>${t}</li>`)
+      .join('');
+
+    // Equipment grid
+    detailEquipment.innerHTML = data.equipment
+      .map(e => `<div class="dept-equip-item"><span>${e.icon}</span>${e.label}</div>`)
+      .join('');
+
+    // Update book appointment link
+    detailBookBtn.href = `appointment.html?dept=${id}`;
+
+    // Show panel
+    detailPanel.classList.add('open');
+
+    // Scroll panel into view
+    setTimeout(() => {
+      detailPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
+  // ── Close Detail Panel ──
+  function closeDeptDetail() {
+    detailPanel.classList.remove('open');
+    if (activeCardId) {
+      const prev = document.getElementById(activeCardId);
+      if (prev) prev.classList.remove('active-detail');
+    }
+    activeCardId = null;
+  }
+
+  // ── Attach click events to department cards ──
+  const allCards = deptGrid.querySelectorAll('.dept-full-card');
+  allCards.forEach(card => {
+    card.addEventListener('click', () => openDeptDetail(card));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openDeptDetail(card);
+      }
+    });
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+  });
+
+  // ── Close button ──
+  detailCloseBtn.addEventListener('click', closeDeptDetail);
+
+  // ── Filter Logic ──
+  function applyFilters() {
+    const query = searchInput.value.toLowerCase().trim();
+    let visible = 0;
+
+    allCards.forEach(card => {
+      const category = card.dataset.category;
+      const name     = card.dataset.name.toLowerCase();
+      const tagline  = card.querySelector('.dept-full-tagline').textContent.toLowerCase();
+
+      const matchesFilter = activeFilter === 'all' || category === activeFilter;
+      const matchesSearch = query === '' || name.includes(query) || tagline.includes(query);
+
+      if (matchesFilter && matchesSearch) {
+        card.classList.remove('hidden');
+        visible++;
+      } else {
+        card.classList.add('hidden');
+        // If active card is now hidden, close the panel
+        if (card.id === activeCardId) closeDeptDetail();
+      }
+    });
+
+    // No results message
+    noResults.classList.toggle('show', visible === 0);
+
+    // Results count
+    resultsCount.innerHTML = `Showing <strong>${visible}</strong> department${visible !== 1 ? 's' : ''}`;
+  }
+
+  // ── Filter Tabs ──
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      activeFilter = tab.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  // ── Search Input ──
+  let searchDebounce;
+  searchInput.addEventListener('input', () => {
+    clearTimeout(searchDebounce);
+    searchDebounce = setTimeout(applyFilters, 180);
+  });
+
+  // ── Handle hash-based navigation (e.g., departments.html#cardiology) ──
+  function handleHashNav() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const targetCard = document.getElementById(hash);
+      if (targetCard && targetCard.classList.contains('dept-full-card')) {
+        setTimeout(() => {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => openDeptDetail(targetCard), 600);
+        }, 400);
+      }
+    }
+  }
+
+  // ── Newsletter handler ──
+  function handleNewsletter(e) {
+    e.preventDefault();
+    if (typeof Toast !== 'undefined') {
+      Toast.show('🎉 Successfully subscribed to our health newsletter!', 'success');
+    }
+    e.target.reset();
+  }
+
+  // ── Init ──
+  document.addEventListener('DOMContentLoaded', () => {
+    applyFilters();
+    handleHashNav();
+  });
+
+  // Also run on load in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') {
+    applyFilters();
+    handleHashNav();
+  }
+
+  // Handle hash changes (browser back/forward navigation)
+  window.addEventListener('hashchange', handleHashNav);
+
+</script>
+</body>
+</html>

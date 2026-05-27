@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Expert Doctors — Nirmala Medical Center</title>
+  <meta name="description" content="Meet our 50+ specialist doctors at Nirmala Medical Center. Browse by department, specialization, and availability. Book your appointment online instantly." />
+  <meta name="keywords" content="doctors, specialists, cardiologist, neurologist, gynecologist, pediatrician, Nirmala Medical Center" />
+  <meta property="og:title" content="Our Expert Doctors — Nirmala Medical Center" />
+  <meta property="og:description" content="50+ trusted specialists across all major medical departments. Book online, 24/7." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    /* ============================================================
+       PAGE HERO
+       ============================================================ */
+    .page-hero {
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0A0F2E 0%, #0D1B6E 45%, #001055 100%);
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/images/doctor_hero.png');
+      background-size: cover;
+      background-position: center top;
+      opacity: 0.07;
+    }
+    .page-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10,15,46,0.94) 0%, rgba(0,102,255,0.18) 60%, rgba(12,182,127,0.10) 100%);
+    }
+    .page-hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .page-hero-particles .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.12;
+    }
+    .page-hero-particles .particle:nth-child(1) { width:350px; height:350px; background:radial-gradient(circle, #0066FF, transparent); top:-15%; left:-8%; animation:float 9s ease-in-out infinite; }
+    .page-hero-particles .particle:nth-child(2) { width:220px; height:220px; background:radial-gradient(circle, #0CB67F, transparent); bottom:5%; right:3%; animation:float 7s ease-in-out infinite reverse; }
+    .page-hero-particles .particle:nth-child(3) { width:160px; height:160px; background:radial-gradient(circle, #0066FF, transparent); top:30%; right:15%; animation:float 8s ease-in-out infinite; }
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+    .page-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,102,255,0.2);
+      border: 1px solid rgba(0,102,255,0.4);
+      color: #93C5FD;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      animation: fadeInUp 0.5s ease both;
+    }
+    .page-hero-badge::before { content: '✦'; color: #0CB67F; }
+    .page-hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: white;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.6s 0.1s ease both;
+    }
+    .page-hero-title .accent {
+      background: linear-gradient(135deg, #60A5FA, #34D399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-hero-subtitle {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      margin: 0 auto 32px;
+      animation: fadeInUp 0.6s 0.2s ease both;
+    }
+    .page-hero-stats {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.6s 0.3s ease both;
+    }
+    .page-hero-stat {
+      text-align: center;
+    }
+    .page-hero-stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: white;
+      display: block;
+      line-height: 1;
+    }
+    .page-hero-stat-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      margin-top: 4px;
+      display: block;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      animation: fadeInUp 0.5s ease both;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .breadcrumb a:hover { color: #60A5FA; }
+    .breadcrumb-sep { color: rgba(255,255,255,0.3); }
+
+    /* ============================================================
+       SEARCH & FILTER BAR
+       ============================================================ */
+    .filter-section {
+      background: var(--bg-primary);
+      padding: 32px 0 0;
+      position: sticky;
+      top: 70px;
+      z-index: var(--z-sticky);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-bottom: 1px solid var(--border);
+    }
+    .filter-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 0;
+    }
+    .filter-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .filter-row {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr auto;
+      gap: 14px;
+      align-items: center;
+    }
+    @media (max-width: 1100px) {
+      .filter-row { grid-template-columns: 1fr 1fr 1fr; }
+      .filter-row .filter-clear-btn { grid-column: 1 / -1; justify-self: center; }
+    }
+    @media (max-width: 640px) {
+      .filter-row { grid-template-columns: 1fr; }
+      .filter-card { padding: 20px 16px; }
+    }
+    .filter-input-wrap {
+      position: relative;
+    }
+    .filter-input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.95rem;
+      pointer-events: none;
+      color: var(--text-muted);
+    }
+    .filter-input,
+    .filter-select {
+      width: 100%;
+      height: 48px;
+      padding: 0 16px 0 42px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      transition: all var(--transition-fast);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .filter-select {
+      padding-left: 42px;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2394A3B8'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd' /%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 18px;
+    }
+    .filter-input:focus,
+    .filter-select:focus {
+      border-color: var(--primary);
+      background: var(--bg-primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+    .filter-input::placeholder { color: var(--text-muted); }
+
+    .filter-avail-wrap {
+      position: relative;
+    }
+    .filter-avail-wrap .filter-input-icon { color: var(--text-muted); }
+
+    .filter-clear-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 20px;
+      height: 48px;
+      background: var(--danger-light);
+      color: var(--danger);
+      border: 1.5px solid var(--danger);
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }
+    .filter-clear-btn:hover {
+      background: var(--danger);
+      color: white;
+    }
+
+    /* Availability tabs */
+    .avail-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .avail-tab {
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .avail-tab:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .avail-tab.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: var(--shadow-primary);
+    }
+
+    /* ============================================================
+       RESULTS BAR
+       ============================================================ */
+    .results-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0 8px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .results-count {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .results-count strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .results-sort {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .results-sort select {
+      padding: 6px 32px 6px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2394A3B8'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd' /%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      background-size: 16px;
+    }
+    .results-sort select:focus { outline: none; border-color: var(--primary); }
+
+    /* No results */
+    .no-results {
+      text-align: center;
+      padding: 80px 0;
+      display: none;
+    }
+    .no-results-icon { font-size: 4rem; margin-bottom: 16px; }
+    .no-results-title { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+    .no-results-text { color: var(--text-secondary); margin-bottom: 24px; }
+
+    /* ============================================================
+       DOCTORS GRID
+       ============================================================ */
+    .doctors-page-section {
+      padding: 0 0 var(--space-20);
+      background: var(--bg-secondary);
+    }
+    .doctors-main-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 1200px) { .doctors-main-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 900px)  { .doctors-main-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px)  { .doctors-main-grid { grid-template-columns: 1fr; } }
+
+    /* Doctor Card — Premium Design */
+    .dr-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-base);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .dr-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary-light);
+    }
+    .dr-card-photo-wrap {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .dr-photo-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dr-photo-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.5s ease;
+    }
+    .dr-card:hover .dr-photo-bg img {
+      transform: scale(1.05);
+    }
+    .dr-avatar-wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dr-avatar-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: white;
+      border: 4px solid rgba(255,255,255,0.25);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      letter-spacing: -1px;
+    }
+    .dr-avail-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .dr-avail-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dr-avail-badge.today {
+      background: rgba(12,182,127,0.92);
+      color: white;
+    }
+    .dr-avail-badge.today::before { background: #fff; animation: blink 1.2s ease-in-out infinite; }
+    .dr-avail-badge.tomorrow {
+      background: rgba(245,158,11,0.92);
+      color: white;
+    }
+    .dr-avail-badge.tomorrow::before { background: #fff; }
+    .dr-avail-badge.week {
+      background: rgba(100,116,139,0.92);
+      color: white;
+    }
+    .dr-avail-badge.week::before { background: #fff; }
+    .dr-avail-badge.monsat {
+      background: rgba(99,102,241,0.92);
+      color: white;
+    }
+    .dr-avail-badge.monsat::before { background: #fff; }
+
+    .dr-exp-badge {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.7rem;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .dr-card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 10px;
+    }
+    .dr-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    .dr-spec {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: -6px;
+    }
+    .dr-qual {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .dr-rating-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dr-stars {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #F59E0B;
+    }
+    .dr-stars .star-filled { color: #F59E0B; }
+    .dr-reviews {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-left: 4px;
+    }
+    .dr-fee-label {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .dr-fee-amount {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+    .dr-slots {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      padding: 8px 12px;
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--border);
+    }
+    .dr-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 2px 0;
+    }
+    .dr-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .dr-btn-book {
+      flex: 1;
+      padding: 10px 12px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 4px 12px rgba(0,102,255,0.25);
+    }
+    .dr-btn-book:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(0,102,255,0.35);
+    }
+    .dr-btn-profile {
+      padding: 10px 14px;
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      font-family: 'Inter', sans-serif;
+      white-space: nowrap;
+    }
+    .dr-btn-profile:hover {
+      background: var(--primary-light);
+    }
+
+    /* ============================================================
+       PAGINATION
+       ============================================================ */
+    .pagination-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 40px 0 0;
+    }
+    .page-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+    }
+    .page-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+    .page-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: var(--shadow-primary);
+    }
+    .page-btn.nav {
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+    .page-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .page-btn:disabled:hover {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border-color: var(--border);
+    }
+
+    /* ============================================================
+       BOOKING MODAL
+       ============================================================ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15,23,42,0.7);
+      backdrop-filter: blur(6px);
+      z-index: var(--z-modal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-base);
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-box {
+      background: var(--bg-card);
+      border-radius: var(--radius-2xl);
+      width: 100%;
+      max-width: 560px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+      border: 1px solid var(--border);
+      transform: scale(0.95) translateY(20px);
+      transition: transform var(--transition-base);
+    }
+    .modal-overlay.open .modal-box {
+      transform: scale(1) translateY(0);
+    }
+    .modal-header {
+      background: linear-gradient(135deg, #0A0F2E 0%, #0D1B6E 100%);
+      padding: 28px 28px 24px;
+      border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .modal-doctor-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: white;
+      flex-shrink: 0;
+      border: 3px solid rgba(255,255,255,0.2);
+    }
+    .modal-doctor-info { flex: 1; }
+    .modal-doctor-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .modal-doctor-spec {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition-fast);
+    }
+    .modal-close-btn:hover { background: rgba(255,255,255,0.25); }
+    .modal-body {
+      padding: 28px;
+    }
+    .modal-section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    .form-control {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      transition: all var(--transition-fast);
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      background: var(--bg-primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+      outline: none;
+    }
+    .form-control::placeholder { color: var(--text-muted); }
+    .time-slots-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+    @media (max-width: 460px) { .time-slots-grid { grid-template-columns: repeat(2, 1fr); } }
+    .time-slot-label {
+      position: relative;
+      cursor: pointer;
+    }
+    .time-slot-label input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .time-slot-box {
+      padding: 10px 8px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: all var(--transition-fast);
+      background: var(--bg-secondary);
+    }
+    .time-slot-label input:checked + .time-slot-box {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+    .time-slot-label:hover .time-slot-box {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .time-slot-box .slot-period {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .time-slot-label input:checked + .time-slot-box .slot-period { color: var(--primary); }
+
+    .modal-book-btn {
+      width: 100%;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border: none;
+      border-radius: var(--radius-lg);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      font-family: 'Poppins', sans-serif;
+      box-shadow: var(--shadow-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .modal-book-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0,102,255,0.35);
+    }
+    .modal-success {
+      display: none;
+      text-align: center;
+      padding: 24px 0 8px;
+    }
+    .modal-success-icon {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+      animation: scaleIn 0.4s ease;
+    }
+    .modal-success-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 8px;
+    }
+    .modal-success-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .modal-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: var(--primary-light);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      margin-bottom: 22px;
+      font-size: 0.8rem;
+      color: var(--primary);
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       TOAST OVERRIDE (site-wide)
+       ============================================================ */
+    .toast-custom {
+      position: fixed;
+      bottom: 100px;
+      right: 24px;
+      background: var(--secondary);
+      color: white;
+      padding: 14px 22px;
+      border-radius: var(--radius-lg);
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-secondary);
+      z-index: var(--z-toast);
+      animation: fadeInUp 0.4s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 360px;
+    }
+
+    /* ============================================================
+       FILTER SECTION WRAPPER — so the sticky bar doesn't cover content
+       ============================================================ */
+    .doctors-content-wrapper {
+      padding-top: 24px;
+    }
+
+    /* ============================================================
+       ACTIVE FILTERS PILLS
+       ============================================================ */
+    .active-filters {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 12px 0 0;
+    }
+    .active-filter-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px 4px 12px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: var(--radius-full);
+      font-size: 0.76rem;
+      font-weight: 600;
+    }
+    .active-filter-pill button {
+      background: none;
+      border: none;
+      color: var(--primary);
+      cursor: pointer;
+      font-size: 0.85rem;
+      line-height: 1;
+      padding: 0;
+      margin-left: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <span class="top-bar-item">📍 Medical Campus Road, City – 500001</span>
+      <span class="top-bar-divider">|</span>
+      <a href="tel:+919876543210" class="top-bar-item">📞 +91-9876-543210</a>
+    </div>
+    <div class="top-bar-right">
+      <a href="#" class="top-bar-item">🕐 OPD: Mon–Sat 8AM–8PM</a>
+      <span class="top-bar-divider">|</span>
+      <a href="emergency.html" class="top-bar-item" style="color:#FCA5A5;font-weight:700;">🚨 Emergency: 108</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo" aria-label="Nirmala Medical Center Home">
+      <div class="nav-logo-icon">🏥</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Nirmala Medical</span>
+        <span class="nav-logo-tagline">Center of Excellence</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu" id="nav-menu" role="menubar">
+      <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+      <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+      <li class="nav-item-dropdown" role="none">
+        <a href="departments.html" class="nav-link" role="menuitem">Departments ▾</a>
+        <div class="nav-dropdown">
+          <a href="departments.html#cardiology"><span class="nav-dropdown-icon">❤️</span> Cardiology</a>
+          <a href="departments.html#neurology"><span class="nav-dropdown-icon">🧠</span> Neurology</a>
+          <a href="departments.html#gynecology"><span class="nav-dropdown-icon">🌸</span> Gynecology</a>
+          <a href="departments.html#pediatrics"><span class="nav-dropdown-icon">👶</span> Pediatrics</a>
+          <a href="departments.html#orthopedics"><span class="nav-dropdown-icon">🦴</span> Orthopedics</a>
+          <a href="departments.html">View All Departments →</a>
+        </div>
+      </li>
+      <li role="none"><a href="doctors.html" class="nav-link active" role="menuitem">Doctors</a></li>
+      <li role="none"><a href="appointment.html" class="nav-link" role="menuitem">Appointment</a></li>
+      <li role="none"><a href="patient-portal.html" class="nav-link" role="menuitem">Patient Portal</a></li>
+      <li role="none"><a href="emergency.html" class="nav-link" role="menuitem">Emergency</a></li>
+      <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙</button>
+      <a href="appointment.html" class="btn btn-primary btn-sm" id="nav-book-btn">📅 Book Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<section class="page-hero" aria-label="Doctors page hero">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-particles" aria-hidden="true">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span style="color:rgba(255,255,255,0.8);">Our Doctors</span>
+      </nav>
+      <div class="page-hero-badge">👨‍⚕️ Meet Our Specialists</div>
+      <h1 class="page-hero-title">Our <span class="accent">Expert Doctors</span></h1>
+      <p class="page-hero-subtitle">
+        Meet our team of 50+ highly qualified specialists committed to delivering world-class healthcare.
+        From consultation to complex procedures, our doctors are with you every step.
+      </p>
+      <div class="page-hero-stats">
+        <div class="page-hero-stat">
+          <span class="page-hero-stat-num">50+</span>
+          <span class="page-hero-stat-label">Specialist Doctors</span>
+        </div>
+        <div class="page-hero-stat">
+          <span class="page-hero-stat-num">12+</span>
+          <span class="page-hero-stat-label">Departments</span>
+        </div>
+        <div class="page-hero-stat">
+          <span class="page-hero-stat-num">4.9★</span>
+          <span class="page-hero-stat-label">Avg. Rating</span>
+        </div>
+        <div class="page-hero-stat">
+          <span class="page-hero-stat-num">1L+</span>
+          <span class="page-hero-stat-label">Patients Treated</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEARCH & FILTER BAR
+     ============================================================ -->
+<div class="filter-section" id="filter-section">
+  <div class="container">
+    <div class="filter-card">
+      <div class="filter-title">🔍 Find Your Doctor</div>
+      <div class="filter-row">
+        <!-- Search by name -->
+        <div class="filter-input-wrap">
+          <span class="filter-input-icon">🔍</span>
+          <input
+            type="text"
+            class="filter-input"
+            id="search-name"
+            placeholder="Search by doctor name..."
+            aria-label="Search by name"
+            oninput="applyFilters()"
+          />
+        </div>
+
+        <!-- Department -->
+        <div class="filter-input-wrap">
+          <span class="filter-input-icon">🏥</span>
+          <select class="filter-select" id="filter-dept" aria-label="Filter by department" onchange="applyFilters()">
+            <option value="">All Departments</option>
+            <option value="cardiology">Cardiology</option>
+            <option value="gynecology">Gynecology</option>
+            <option value="neurology">Neurology</option>
+            <option value="pediatrics">Pediatrics</option>
+            <option value="orthopedics">Orthopedics</option>
+            <option value="dermatology">Dermatology</option>
+            <option value="surgery">General Surgery</option>
+            <option value="medicine">Internal Medicine</option>
+            <option value="radiology">Radiology</option>
+            <option value="neonatology">Neonatology</option>
+            <option value="gastroenterology">Gastroenterology</option>
+            <option value="endocrinology">Endocrinology</option>
+          </select>
+        </div>
+
+        <!-- Specialization -->
+        <div class="filter-input-wrap">
+          <span class="filter-input-icon">🩺</span>
+          <select class="filter-select" id="filter-spec" aria-label="Filter by specialization" onchange="applyFilters()">
+            <option value="">All Specializations</option>
+            <option value="cardiologist">Cardiologist</option>
+            <option value="gynecologist">Gynecologist</option>
+            <option value="neurologist">Neurologist</option>
+            <option value="pediatrician">Pediatrician</option>
+            <option value="orthopedic">Orthopedic Surgeon</option>
+            <option value="dermatologist">Dermatologist</option>
+            <option value="surgeon">General Surgeon</option>
+            <option value="internist">Internal Medicine</option>
+            <option value="radiologist">Radiologist</option>
+            <option value="neonatologist">Neonatologist</option>
+            <option value="gastroenterologist">Gastroenterologist</option>
+            <option value="endocrinologist">Endocrinologist</option>
+          </select>
+        </div>
+
+        <!-- Availability -->
+        <div class="filter-input-wrap filter-avail-wrap">
+          <span class="filter-input-icon">📅</span>
+          <select class="filter-select" id="filter-avail" aria-label="Filter by availability" onchange="applyFilters()">
+            <option value="">All Availability</option>
+            <option value="today">Available Today</option>
+            <option value="tomorrow">Tomorrow</option>
+            <option value="week">This Week</option>
+          </select>
+        </div>
+
+        <!-- Clear -->
+        <button class="filter-clear-btn" onclick="clearFilters()" aria-label="Clear all filters">
+          ✕ Clear
+        </button>
+      </div>
+
+      <!-- Active filter pills -->
+      <div class="active-filters" id="active-filters" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     DOCTORS PAGE SECTION
+     ============================================================ -->
+<section class="doctors-page-section" id="doctors-section" aria-label="Doctors listing">
+  <div class="container">
+    <div class="doctors-content-wrapper">
+      <!-- Results Bar -->
+      <div class="results-bar">
+        <p class="results-count" id="results-count">
+          Showing <strong id="visible-count">12</strong> of <strong>50+</strong> doctors
+        </p>
+        <div class="results-sort">
+          <span>Sort by:</span>
+          <select id="sort-select" aria-label="Sort doctors" onchange="applyFilters()">
+            <option value="rating">Highest Rating</option>
+            <option value="experience">Most Experienced</option>
+            <option value="fee-low">Fee: Low to High</option>
+            <option value="fee-high">Fee: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Doctors Grid -->
+      <div class="doctors-main-grid" id="doctors-grid">
+
+        <!-- ── Doctor 1: Dr. Rajesh Kumar ── -->
+        <article class="dr-card reveal"
+          data-name="dr. rajesh kumar"
+          data-dept="cardiology"
+          data-spec="cardiologist"
+          data-avail="today"
+          data-rating="4.9"
+          data-exp="18"
+          data-fee="600">
+          <div class="dr-card-photo-wrap">
+            <div class="dr-photo-bg">
+              <img src="assets/images/doctor1.png" alt="Dr. Rajesh Kumar — Cardiologist" loading="lazy" />
+            </div>
+            <span class="dr-avail-badge today">Available Today</span>
+            <span class="dr-exp-badge">🏅 18 Yrs Exp</span>
+          </div>
+          <div class="dr-card-body">
+            <div class="dr-name">Dr. Rajesh Kumar</div>
+            <div class="dr-spec">Senior Cardiologist</div>
+            <div class="dr-qual">MBBS, MD (Cardiology), DM</div>
+            <div class="dr-rating-row">
+              <span class="dr-stars">⭐ 4.9 <span class="dr-reviews">(312 reviews)</span></span>
+              <div>
+                <div class="dr-fee-label">Consultation</div>
+                <div class="dr-fee-amount">₹600</div>
+              </div>
+            </div>
+            <div class="dr-slots">🕘 Today: 10AM – 1PM &amp; 5PM – 7PM</div>
+            <div class="dr-divider"></div>
+            <div class="dr-actions">
+              <button class="dr-btn-book" onclick="openModal('Dr. Rajesh Kumar','Senior Cardiologist','RK','linear-gradient(135deg,#EF4444,#DC2626)')">📅 Book Appointment</button>
+              <button class="dr-btn-profile" onclick="viewProfile('rajesh-kumar')">Profile</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Doctor 2: Dr. Priya Sharma ── -->
+        <article class="dr-card reveal reveal-delay-1"
+          data-name="dr. priya sharma"
+          data-dept="gynecology"
+          data-spec="gynecologist"
+          data-avail="today"
+          data-rating="4.8"
+          data-exp="12"
+          data-fee="500">
+          <div class="dr-card-photo-wrap">
+            <div class="dr-photo-bg">
+              <img src="assets/images/doctor2.png" alt="Dr. Priya Sharma — Gynecologist" loading="lazy" />
+            </div>
+            <span class="dr-avail-badge today">Available Today</span>
+            <span class="dr-exp-badge">🏅 12 Yrs Exp</span>
+          </div>
+          <div class="dr-card-body">
+            <div class="dr-name">Dr. Priya Sharma</div>
+            <div class="dr-spec">Senior Gynecologist</div>
+            <div class="dr-qual">MBBS, MS (OBG), FRCOG</div>
+            <div class="dr-rating-row">
+              <span class="dr-stars">⭐ 4.8 <span class="dr-reviews">(278 reviews)</span></span>
+              <div>
+                <div class="dr-fee-label">Consultation</div>
+                <div class="dr-fee-amount">₹500</div>
+              </div>
+            </div>
+            <div class="dr-slots">🕘 Today: 9AM – 12PM &amp; 4PM – 7PM</div>
+            <div class="dr-divider"></div>
+            <div class="dr-actions">
+              <button class="dr-btn-book" onclick="openModal('Dr. Priya Sharma','Senior Gynecologist','PS','linear-gradient(135deg,#EC4899,#BE185D)')">📅 Book Appointment</button>
+              <button class="dr-btn-profile" onclick="viewProfile('priya-sharma')">Profile</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Doctor 3: Dr. Suresh Menon ── -->
+        <article class="dr-card reveal reveal-delay-2"
+          data-name="dr. suresh menon"
+          data-dept="neurology"
+          data-spec="neurologist"
+          data-avail="tomorrow"
+          data-rating="5.0"
+          data-exp="22"
+          data-fee="800">
+          <div class="dr-card-photo-wrap">
+            <div class="dr-photo-bg">
+              <img src="assets/images/doctor3.png" alt="Dr. Suresh Menon — Neurologist" loading="lazy" />
+            </div>
+            <span class="dr-avail-badge tomorrow">Tomorrow</span>
+            <span class="dr-exp-badge">🏅 22 Yrs Exp</span>
+          </div>
+          <div class="dr-card-body">
+            <div class="dr-name">Dr. Suresh Menon</div>
+            <div class="dr-spec">Chief Neurologist</div>
+            <div class="dr-qual">MBBS, MD, DM (Neurology)</div>
+            <div class="dr-rating-row">
+              <span class="dr-stars">⭐ 5.0 <span class="dr-reviews">(425 reviews)</span></span>
+              <div>
+                <div class="dr-fee-label">Consultation</div>
+                <div class="dr-fee-amount">₹800</div>
+              </div>
+            </div>
+            <div class="dr-slots">🕘 Tomorrow: 10AM – 2PM</div>
+            <div class="dr-divider"></div>
+            <div class="dr-actions">
+              <button class="dr-btn-book" onclick="openModal('Dr. Suresh Menon','Chief Neurologist','SM','linear-gradient(135deg,#6366F1,#4338CA)')">📅 Book Appointment</button>
+              <button class="dr-btn-profile" onclick="viewProfile('suresh-menon')">Profile</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Doctor 4: Dr. Anitha Reddy ── -->
+        <article class="dr-card reveal reveal-delay-3"
+          data-name="dr. anitha reddy"
+          data-dept="pediatrics"
+          data-spec="pediatrician"
+          data-avail="today"
+          data-rating="4.9"
+          data-exp="10"
+          data-fee="400">
+          <div class="dr-card-photo-wrap">
+            <div class="dr-photo-bg">
+              <img src="assets/images/doctor4.png" alt="Dr. Anitha Reddy — Pediatrician" loading="lazy" />
+            </div>
+            <span class="dr-avail-badge today">Available Today</span>
+            <span class="dr-exp-badge">🏅 10 Yrs Exp</span>
+          </div>
+          <div class="dr-card-body">
+            <div class="dr-name">Dr. Anitha Reddy</div>
+            <div class="dr-spec">Senior Pediatrician</div>
+            <div class="dr-qual">MBBS, MD (Pediatrics)</div>
+            <div class="dr-rating-row">
+              <span class="dr-stars">⭐ 4.9 <span class="dr-reviews">(389 reviews)</span></span>
+              <div>
+                <div class="dr-fee-label">Consultation</div>
+                <div class="dr-fee-amount">₹400</div>
+              </div>
+            </div>
+            <div class="dr-slots">🕘 Today: 8AM – 12PM &amp; 3PM – 6PM</div>
+            <div class="dr-divider"></div>
+            <div class="dr-actions">
+              <button class="dr-btn-book" onclick="openModal('Dr. Anitha Reddy','Senior Pediatrician','AR','linear-gradient(135deg,#10B981,#059669)')">📅 Book Appointment</button>
+              <button class="dr-btn-profile" onclick="viewProfile('anitha-reddy')">Profile</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Doctor 5: Dr. Vikram Nair ── -->
+        <article class="dr-card reveal"
+          data-name="dr. vikram nair"
+          data-dept="orthopedics"
+          data-spec="orthopedic"
+          data-avail="today"
+          data-rating="4.7"
+          data-exp="15"
+          data-fee="700">
+          <div class="dr-card-photo-wrap">
+            <div class="dr-photo-bg">
+              <div class="dr-avatar-wrap">
+                <div class="dr-avatar-circle" style="background: linear-gradient(135deg,#F59E0B,#D97706);">VN</div>
+              </div>
+            </div>
+            <span class="dr-avail-badge today">Available Today</span>
+            <span class="dr-exp-badge">🏅 15 Yrs Exp</span>
+          </div>
+          <div class="dr-card-body">
+            <div class="dr-name">Dr. Vikram Nair</div>
+            <div class="dr-spec">Orthopedic Surgeon</div>
+            <div class="dr-qual">MBBS, MS (Ortho), DNB</div>
+            <div class="dr-rating-row">
+              <span class="dr-stars">⭐ 4.7 <span class="dr-reviews">(241 reviews)</span></span>
+              <div>
+                <div class="dr-fee-label">Consultation</div>
+                <div class="dr-fee-amount">₹700</div>
+              </div>
+            </div>
+            <div class="dr-slots">🕘 Today: 11AM – 2PM &amp; 5PM – 7PM</div>
+            <div class="dr-divider"></div>
+            <div class="dr-actions">
+              <button class="dr-btn-book" onclick="openModal('Dr. Vikram Nair','Orthopedic Surgeon','VN','linear-gradient(135deg,#F59E0B,#D97706)')">📅 Book Appointment</button>
+              <button class="dr-btn-profile" onclick="viewProfile('vikram-nair')">Profile</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Doctor 6: Dr. Meena Krishnan ── -->
+        <article class="dr-card reveal reveal-delay-1"
+          data-name="dr. meena krishnan"
+          data-dept="dermatology"
+          data-spec="dermatologist"
+          data-avail="today"
+          data-rating="4.8"
+          data-exp="8"
+          data-fee="450">
+          <div class="dr-card-photo-wrap">
+            <div class="dr-photo-bg">
+              <div class="dr-avatar-wrap">
+                <div class="dr-avatar-circle" style="background: linear-gradient(135deg,#8B5CF6,#7C3AED);">MK</div>
+              </div>
+            </div>
+            <span class="dr-avail-badge today">Available Today</span>
+            <span class="dr-exp-badge">🏅 8 Yrs Exp</span>
+          </div>
+          <div class="dr-card-body">
+            <div class="dr-name">Dr. Meena Krishnan</div>
+            <div class="dr-spec">Dermatologist</div>
+            <div class="dr-qual">MBBS, MD (Dermatology)</div>
+            <div class="dr-rating-row">
+              <span class="dr-stars">⭐ 4.8 <span class="dr-reviews">(198 reviews)</span></span>
+              <div>
+                <div class="dr-fee-label">Consultation</div>
+                <div class="dr-fee-amount">₹450</div>
+              </div>
+            </div>
+            <div class="dr-slots">🕘 Today: 10AM – 1PM &amp; 4PM – 6:30PM</div>
+            <div class="dr-divider"></div>
+            <div class="dr-actions">
+              <button class="dr-btn-book" onclick="openModal('Dr. Meena Krishnan','Dermatologist','MK','linear-gradient(135deg,#8B5CF6,#7C3AED)')">📅 Book Appointment</button>
+              <button class="dr-btn-profile" onclick="viewProfile('meena-krishnan')">Profile</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Doctor 7: Dr. Samuel Thomas ── -->
+        <article class="dr-card reveal reveal-delay-2"
+          data-name="dr. samuel thomas"
+          data-dept="surgery"
+          data-spec="surgeon"
+          data-avail="tomorrow"
+          data-rating="4.9"
+          data-exp="20"
+          data-fee="650">
+          <div class="dr-card-photo-wrap">
+            <div class="dr-photo-bg">
+              <div class="dr-avatar-wrap">
+                <div class="dr-avatar-circle" style="background: linear-gradient(135deg,#0066FF,#0052CC);">ST</div>
+              </div>
+            </div>
+            <span class="dr-avail-badge tomorrow">Tomorrow</span>
+            <span class="dr-exp-badge">🏅 20 Yrs Exp</span>
+          </div>
+          <div class="dr-card-body">
+            <div class="dr-name">Dr. Samuel Thomas</div>
+            <div class="dr-spec">General Surgeon</div>
+            <div class="dr-qual">MBBS, MS (Surgery)</div>
+            <div class="dr-rating-row">
+              <span class="dr-stars">⭐ 4.9 <span class="dr-reviews">(356 reviews)</span></span>
+              <div>
+                <div class="dr-fee-label">Consultation</div>
+                <div class="dr-fee-amount">₹650</div>
+              </div>
+            </div>
+            <div class="dr-slots">🕘 Tomorrow: 9AM – 1PM &amp; 3PM – 5PM</div>
+            <div class="dr-divider"></div>
+            <div class="dr-actions">
+              <button class="dr-btn-book" onclick="openModal('Dr. Samuel Thomas','General Surgeon','ST','linear-gradient(135deg,#0066FF,#0052CC)')">📅 Book Appointment</button>
+              <button class="dr-btn-profile" onclick="viewProfile('samuel-thomas')">Profile</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Doctor 8: Dr. Kavitha Iyer ── -->
+        <article class="dr-card reveal reveal-delay-3"
+          data-name="dr. kavitha iyer"
+          data-dept="medicine"
+          data-spec="internist"
+          data-avail="today"
+          data-rating="4.7"
+          data-exp="14"
+          data-fee="400">
+          <div class="dr-card-photo-wrap">
+            <div class="dr-photo-bg">
+              <div class="dr-avatar-wrap">
+                <div class="dr-avatar-circle" style="background: linear-gradient(135deg,#0CB67F,#059669);">KI</div>
+              </div>
+            </div>
+            <span class="dr-avail-badge today">Available Today</span>
+            <span class="dr-exp-badge">🏅 14 Yrs Exp</span>
+          </div>
+          <div class="dr-card-body">
+            <div class="dr-name">Dr. Kavitha Iyer</div>
+            <div class="dr-spec">Internal Medicine</div>
+            <div class="dr-qual">MBBS, MD</div>
+            <div class="dr-rating-row">
+              <span class="dr-stars">⭐ 4.7 <span class="dr-reviews">(215 reviews)</span></span>
+              <div>
+                <div class="dr-fee-label">Consultation</div>
+                <div class="dr-fee-amount">₹400</div>
+              </div>
+            </div>
+            <div class="dr-slots">🕘 Today: 8AM – 11AM &amp; 4PM – 7PM</div>
+            <div class="dr-divider"></div>
+            <div class="dr-actions">
+              <button class="dr-btn-book" onclick="openModal('Dr. Kavitha Iyer','Internal Medicine','KI','linear-gradient(135deg,#0CB67F,#059669)')">📅 Book Appointment</button>
+              <button class="dr-btn-profile" onclick="viewProfile('kavitha-iyer')">Profile</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Doctor 9: Dr. Arjun Pillai ── -->
+        <article class="dr-card reveal"
+          data-name="dr. arjun pillai"
+          data-dept="radiology"
+          data-spec="radiologist"
+          data-avail="week"
+          data-rating="4.8"
+          data-exp="11"
+          data-fee="350">
+          <div class="dr-card-photo-wrap">
+            <div class="dr-photo-bg">
+              <div class="dr-avatar-wrap">
+                <div class="dr-avatar-circle" style="background: linear-gradient(135deg,#06B6D4,#0891B2);">AP</div>
+              </div>
+            </div>
+            <span class="dr-avail-badge monsat">Mon – Sat</span>
+            <span class="dr-exp-badge">🏅 11 Yrs Exp</span>
+          </div>
+          <div class="dr-card-body">
+            <div class="dr-name">Dr. Arjun Pillai</div>
+            <div class="dr-spec">Radiologist</div>
+            <div class="dr-qual">MBBS, MD (Radiology)</div>
+            <div class="dr-rating-row">
+              <span class="dr-stars">⭐ 4.8 <span class="dr-reviews">(184 reviews)</span></span>
+              <div>
+                <div class="dr-fee-label">Consultation</div>
+                <div class="dr-fee-amount">₹350</div>
+              </div>
+            </div>
+            <div class="dr-slots">🕘 Mon–Sat: 9AM – 5PM</div>
+            <div class="dr-divider"></div>
+            <div class="dr-actions">
+              <button class="dr-btn-book" onclick="openModal('Dr. Arjun Pillai','Radiologist','AP','linear-gradient(135deg,#06B6D4,#0891B2)')">📅 Book Appointment</button>
+              <button class="dr-btn-profile" onclick="viewProfile('arjun-pillai')">Profile</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Doctor 10: Dr. Lalitha Devi ── -->
+        <article class="dr-card reveal reveal-delay-1"
+          data-name="dr. lalitha devi"
+          data-dept="neonatology"
+          data-spec="neonatologist"
+          data-avail="today"
+          data-rating="5.0"
+          data-exp="9"
+          data-fee="550">
+          <div class="dr-card-photo-wrap">
+            <div class="dr-photo-bg">
+              <div class="dr-avatar-wrap">
+                <div class="dr-avatar-circle" style="background: linear-gradient(135deg,#F472B6,#DB2777);">LD</div>
+              </div>
+            </div>
+            <span class="dr-avail-badge today">Available Today</span>
+            <span class="dr-exp-badge">🏅 9 Yrs Exp</span>
+          </div>
+          <div class="dr-card-body">
+            <div class="dr-name">Dr. Lalitha Devi</div>
+            <div class="dr-spec">Neonatologist</div>
+            <div class="dr-qual">MBBS, MD, DNB</div>
+            <div class="dr-rating-row">
+              <span class="dr-stars">⭐ 5.0 <span class="dr-reviews">(267 reviews)</span></span>
+              <div>
+                <div class="dr-fee-label">Consultation</div>
+                <div class="dr-fee-amount">₹550</div>
+              </div>
+            </div>
+            <div class="dr-slots">🕘 Today: 9AM – 12PM &amp; 2PM – 5PM</div>
+            <div class="dr-divider"></div>
+            <div class="dr-actions">
+              <button class="dr-btn-book" onclick="openModal('Dr. Lalitha Devi','Neonatologist','LD','linear-gradient(135deg,#F472B6,#DB2777)')">📅 Book Appointment</button>
+              <button class="dr-btn-profile" onclick="viewProfile('lalitha-devi')">Profile</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Doctor 11: Dr. Roshan Shah ── -->
+        <article class="dr-card reveal reveal-delay-2"
+          data-name="dr. roshan shah"
+          data-dept="gastroenterology"
+          data-spec="gastroenterologist"
+          data-avail="week"
+          data-rating="4.7"
+          data-exp="16"
+          data-fee="700">
+          <div class="dr-card-photo-wrap">
+            <div class="dr-photo-bg">
+              <div class="dr-avatar-wrap">
+                <div class="dr-avatar-circle" style="background: linear-gradient(135deg,#84CC16,#65A30D);">RS</div>
+              </div>
+            </div>
+            <span class="dr-avail-badge week">This Week</span>
+            <span class="dr-exp-badge">🏅 16 Yrs Exp</span>
+          </div>
+          <div class="dr-card-body">
+            <div class="dr-name">Dr. Roshan Shah</div>
+            <div class="dr-spec">Gastroenterologist</div>
+            <div class="dr-qual">MBBS, DM (Gastro)</div>
+            <div class="dr-rating-row">
+              <span class="dr-stars">⭐ 4.7 <span class="dr-reviews">(203 reviews)</span></span>
+              <div>
+                <div class="dr-fee-label">Consultation</div>
+                <div class="dr-fee-amount">₹700</div>
+              </div>
+            </div>
+            <div class="dr-slots">🕘 Wed & Fri: 10AM – 1PM</div>
+            <div class="dr-divider"></div>
+            <div class="dr-actions">
+              <button class="dr-btn-book" onclick="openModal('Dr. Roshan Shah','Gastroenterologist','RS','linear-gradient(135deg,#84CC16,#65A30D)')">📅 Book Appointment</button>
+              <button class="dr-btn-profile" onclick="viewProfile('roshan-shah')">Profile</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Doctor 12: Dr. Sunita Varma ── -->
+        <article class="dr-card reveal reveal-delay-3"
+          data-name="dr. sunita varma"
+          data-dept="endocrinology"
+          data-spec="endocrinologist"
+          data-avail="today"
+          data-rating="4.9"
+          data-exp="13"
+          data-fee="600">
+          <div class="dr-card-photo-wrap">
+            <div class="dr-photo-bg">
+              <div class="dr-avatar-wrap">
+                <div class="dr-avatar-circle" style="background: linear-gradient(135deg,#F97316,#EA580C);">SV</div>
+              </div>
+            </div>
+            <span class="dr-avail-badge today">Available Today</span>
+            <span class="dr-exp-badge">🏅 13 Yrs Exp</span>
+          </div>
+          <div class="dr-card-body">
+            <div class="dr-name">Dr. Sunita Varma</div>
+            <div class="dr-spec">Endocrinologist</div>
+            <div class="dr-qual">MBBS, MD, DM</div>
+            <div class="dr-rating-row">
+              <span class="dr-stars">⭐ 4.9 <span class="dr-reviews">(299 reviews)</span></span>
+              <div>
+                <div class="dr-fee-label">Consultation</div>
+                <div class="dr-fee-amount">₹600</div>
+              </div>
+            </div>
+            <div class="dr-slots">🕘 Today: 10AM – 1PM &amp; 5PM – 7PM</div>
+            <div class="dr-divider"></div>
+            <div class="dr-actions">
+              <button class="dr-btn-book" onclick="openModal('Dr. Sunita Varma','Endocrinologist','SV','linear-gradient(135deg,#F97316,#EA580C)')">📅 Book Appointment</button>
+              <button class="dr-btn-profile" onclick="viewProfile('sunita-varma')">Profile</button>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /doctors-main-grid -->
+
+      <!-- No Results -->
+      <div class="no-results" id="no-results">
+        <div class="no-results-icon">🔍</div>
+        <div class="no-results-title">No Doctors Found</div>
+        <p class="no-results-text">Try adjusting your filters or search terms.<br/>We have 50+ specialists — they're here!</p>
+        <button class="btn btn-primary" onclick="clearFilters()">✕ Clear All Filters</button>
+      </div>
+
+      <!-- PAGINATION -->
+      <nav class="pagination-wrap" aria-label="Doctors pagination" id="pagination-wrap">
+        <button class="page-btn nav" aria-label="Previous page" disabled>←</button>
+        <button class="page-btn active" aria-label="Page 1">1</button>
+        <button class="page-btn" aria-label="Page 2" onclick="showToast('Loading page 2 of doctors...')">2</button>
+        <button class="page-btn" aria-label="Page 3" onclick="showToast('Loading page 3 of doctors...')">3</button>
+        <span style="color:var(--text-muted);font-size:0.85rem;">…</span>
+        <button class="page-btn" aria-label="Page 6" onclick="showToast('Loading page 6 of doctors...')">6</button>
+        <button class="page-btn nav" aria-label="Next page" onclick="showToast('Loading next page...')">→</button>
+      </nav>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     APPOINTMENT BOOKING MODAL
+     ============================================================ -->
+<div class="modal-overlay" id="booking-modal" role="dialog" aria-modal="true" aria-label="Book Appointment">
+  <div class="modal-box" id="modal-box">
+    <!-- Header -->
+    <div class="modal-header" id="modal-header">
+      <div class="modal-doctor-avatar" id="modal-avatar"></div>
+      <div class="modal-doctor-info">
+        <div class="modal-doctor-name" id="modal-doctor-name">Doctor Name</div>
+        <div class="modal-doctor-spec" id="modal-doctor-spec">Specialization</div>
+        <div style="margin-top:8px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+          <span style="font-size:0.72rem; color:rgba(255,255,255,0.5); background:rgba(255,255,255,0.08); padding:3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.12);">📅 Instant Confirmation</span>
+          <span style="font-size:0.72rem; color:rgba(255,255,255,0.5); background:rgba(255,255,255,0.08); padding:3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.12);">🔒 Secure Booking</span>
+        </div>
+      </div>
+      <button class="modal-close-btn" onclick="closeModal()" aria-label="Close modal">×</button>
+    </div>
+
+    <!-- Body -->
+    <div class="modal-body">
+      <div id="modal-form-area">
+        <div class="modal-note">
+          ℹ️ Fill in your details below. You will receive a confirmation SMS &amp; email after booking.
+        </div>
+
+        <p class="modal-section-title">Patient Information</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="modal-patient-name">Full Name *</label>
+            <input type="text" class="form-control" id="modal-patient-name" placeholder="Enter your full name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modal-phone">Phone Number *</label>
+            <input type="tel" class="form-control" id="modal-phone" placeholder="+91 98765 43210" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="modal-age">Age</label>
+            <input type="number" class="form-control" id="modal-age" placeholder="e.g. 35" min="0" max="120" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modal-date">Preferred Date *</label>
+            <input type="date" class="form-control" id="modal-date" required />
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:20px;">
+          <label class="form-label" for="modal-reason">Reason for Visit</label>
+          <input type="text" class="form-control" id="modal-reason" placeholder="Brief description (optional)" />
+        </div>
+
+        <p class="modal-section-title">Select Time Slot *</p>
+        <div class="time-slots-grid">
+          <label class="time-slot-label">
+            <input type="radio" name="timeslot" value="09:00 AM" />
+            <div class="time-slot-box">09:00 AM<span class="slot-period">Morning</span></div>
+          </label>
+          <label class="time-slot-label">
+            <input type="radio" name="timeslot" value="10:00 AM" checked />
+            <div class="time-slot-box">10:00 AM<span class="slot-period">Morning</span></div>
+          </label>
+          <label class="time-slot-label">
+            <input type="radio" name="timeslot" value="11:00 AM" />
+            <div class="time-slot-box">11:00 AM<span class="slot-period">Morning</span></div>
+          </label>
+          <label class="time-slot-label">
+            <input type="radio" name="timeslot" value="12:00 PM" />
+            <div class="time-slot-box">12:00 PM<span class="slot-period">Afternoon</span></div>
+          </label>
+          <label class="time-slot-label">
+            <input type="radio" name="timeslot" value="05:00 PM" />
+            <div class="time-slot-box">05:00 PM<span class="slot-period">Evening</span></div>
+          </label>
+          <label class="time-slot-label">
+            <input type="radio" name="timeslot" value="06:00 PM" />
+            <div class="time-slot-box">06:00 PM<span class="slot-period">Evening</span></div>
+          </label>
+        </div>
+
+        <button class="modal-book-btn" onclick="submitBooking()" id="modal-submit-btn">
+          📅 Confirm Appointment
+        </button>
+      </div>
+
+      <!-- Success State -->
+      <div class="modal-success" id="modal-success">
+        <div class="modal-success-icon">🎉</div>
+        <div class="modal-success-title">Appointment Booked!</div>
+        <p class="modal-success-text">
+          Your appointment has been confirmed.<br />
+          A confirmation SMS and email will be sent to you shortly.<br /><br />
+          <strong>Reference ID: <span id="booking-ref" style="color:var(--primary);"></span></strong>
+        </p>
+        <div style="margin-top:24px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <button class="btn btn-primary btn-sm" onclick="closeModal()">Done</button>
+          <a href="appointment.html" class="btn btn-outline btn-sm">View All Appointments</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-logo" style="margin-bottom:20px;">
+          <div class="nav-logo-icon">🏥</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Nirmala Medical</span>
+            <span class="nav-logo-tagline">Center of Excellence</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Delivering world-class healthcare with compassionate service since 2001. NABH accredited, ISO certified, and trusted by over 1 lakh patients across the region.
+        </p>
+        <div class="footer-emergency-number">
+          <span>🚨</span> 108 / +91-9876-543210
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+          <a href="https://wa.me/919876543210" class="social-link" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="doctors.html">Our Doctors</a>
+          <a href="appointment.html">Book Appointment</a>
+          <a href="patient-portal.html">Patient Portal</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Health Blog</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Departments</h4>
+        <div class="footer-links">
+          <a href="departments.html#cardiology">Cardiology</a>
+          <a href="departments.html#neurology">Neurology</a>
+          <a href="departments.html#gynecology">Gynecology</a>
+          <a href="departments.html#pediatrics">Pediatrics</a>
+          <a href="departments.html#orthopedics">Orthopedics</a>
+          <a href="departments.html#dermatology">Dermatology</a>
+          <a href="departments.html#lab">Laboratory</a>
+          <a href="emergency.html">Emergency / ICU</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Contact Info</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📍</div>
+          <div>Medical Campus Road, Near City Station, City – 500001</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <div><a href="tel:+919876543210" style="color:inherit;">+91-9876-543210</a><br/><a href="tel:+919876000000" style="color:inherit;">+91-9876-000000</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✉️</div>
+          <div><a href="mailto:info@nirmalamedicare.com" style="color:inherit;">info@nirmalamedicare.com</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">⏰</div>
+          <div>OPD: Mon–Sat 8AM–8PM<br/>Emergency: 24 × 7</div>
+        </div>
+        <h4 class="footer-heading" style="margin-top:20px;">Newsletter</h4>
+        <p style="font-size:0.8rem;margin-bottom:8px;color:rgba(255,255,255,0.5);">Get health tips &amp; updates weekly.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" id="newsletter-submit">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Nirmala Medical Center. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- AI CHAT WIDGET -->
+<div class="chat-widget" id="chat-widget" aria-label="AI medical assistant">
+  <button class="chat-toggle-btn" id="chat-toggle" aria-label="Open AI medical assistant" aria-expanded="false">🤖</button>
+  <div class="chat-panel" id="chat-panel" role="dialog" aria-label="NirmalaCare AI Assistant">
+    <div class="chat-panel-header">
+      <div class="chat-bot-info">
+        <div class="chat-bot-avatar">🤖</div>
+        <div>
+          <div class="chat-bot-name">NirmalaCare AI</div>
+          <div class="chat-bot-status">Online — Always available</div>
+        </div>
+      </div>
+      <button class="modal-close chat-close" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+    <div class="chat-quick-replies">
+      <button class="quick-reply" id="qr-appointment">Book Appointment</button>
+      <button class="quick-reply" id="qr-emergency">Emergency?</button>
+      <button class="quick-reply" id="qr-doctors">Find Doctor</button>
+      <button class="quick-reply" id="qr-timing">OPD Timings</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chat-input" placeholder="Ask me anything..." aria-label="Chat message" />
+      <button class="chat-send-btn" id="chat-send" aria-label="Send message">➤</button>
+    </div>
+  </div>
+</div>
+
+<!-- EMERGENCY FLOAT BUTTON -->
+<div class="emergency-float" id="emergency-float">
+  <a href="tel:108" class="emergency-float-btn" id="emergency-float-call" aria-label="Call emergency 108">
+    🚨 Emergency: 108
+  </a>
+</div>
+
+<!-- SCRIPTS -->
+<script src="js/main.js"></script>
+<script>
+  /* ============================================================
+     DOCTORS PAGE — JavaScript
+     ============================================================ */
+
+  // ── Set minimum date for booking to today ──
+  (function setMinDate() {
+    const dateInput = document.getElementById('modal-date');
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.min = today;
+      dateInput.value = today;
+    }
+  })();
+
+  // ── Newsletter handler ──
+  function handleNewsletter(e) {
+    e.preventDefault();
+    if (typeof Toast !== 'undefined') {
+      Toast.show('🎉 Successfully subscribed to our health newsletter!', 'success');
+    } else {
+      showToast('🎉 Subscribed successfully!');
+    }
+    e.target.reset();
+  }
+
+  // ── Toast helper (fallback if Toast from main.js differs) ──
+  function showToast(message, type) {
+    if (typeof Toast !== 'undefined') {
+      Toast.show(message, type || 'success');
+      return;
+    }
+    const existing = document.querySelector('.toast-custom');
+    if (existing) existing.remove();
+    const toast = document.createElement('div');
+    toast.className = 'toast-custom';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3500);
+  }
+
+  // ── Filter Logic ──
+  const doctorCards = Array.from(document.querySelectorAll('.dr-card'));
+
+  function applyFilters() {
+    const nameQuery  = document.getElementById('search-name').value.trim().toLowerCase();
+    const deptFilter = document.getElementById('filter-dept').value;
+    const specFilter = document.getElementById('filter-spec').value;
+    const availFilter = document.getElementById('filter-avail').value;
+    const sortVal    = document.getElementById('sort-select').value;
+
+    let visibleCards = [];
+
+    doctorCards.forEach(card => {
+      const name  = card.dataset.name  || '';
+      const dept  = card.dataset.dept  || '';
+      const spec  = card.dataset.spec  || '';
+      const avail = card.dataset.avail || '';
+
+      const matchName  = !nameQuery  || name.includes(nameQuery);
+      const matchDept  = !deptFilter || dept === deptFilter;
+      const matchSpec  = !specFilter || spec === specFilter;
+      const matchAvail = !availFilter || avail === availFilter || (availFilter === 'week' && (avail === 'week' || avail === 'today' || avail === 'tomorrow'));
+
+      const show = matchName && matchDept && matchSpec && matchAvail;
+      card.style.display = show ? '' : 'none';
+      if (show) visibleCards.push(card);
+    });
+
+    // Sort
+    const grid = document.getElementById('doctors-grid');
+    visibleCards.sort((a, b) => {
+      if (sortVal === 'rating')   return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
+      if (sortVal === 'experience') return parseInt(b.dataset.exp) - parseInt(a.dataset.exp);
+      if (sortVal === 'fee-low')  return parseInt(a.dataset.fee) - parseInt(b.dataset.fee);
+      if (sortVal === 'fee-high') return parseInt(b.dataset.fee) - parseInt(a.dataset.fee);
+      return 0;
+    });
+    visibleCards.forEach(card => grid.appendChild(card));
+
+    // Update count
+    document.getElementById('visible-count').textContent = visibleCards.length;
+
+    // Toggle no-results
+    const noResults = document.getElementById('no-results');
+    const pagination = document.getElementById('pagination-wrap');
+    if (visibleCards.length === 0) {
+      noResults.style.display = 'block';
+      pagination.style.display = 'none';
+    } else {
+      noResults.style.display = 'none';
+      pagination.style.display = visibleCards.length < 12 ? 'none' : '';
+    }
+
+    // Update active filter pills
+    updateFilterPills(nameQuery, deptFilter, specFilter, availFilter);
+  }
+
+  function updateFilterPills(name, dept, spec, avail) {
+    const container = document.getElementById('active-filters');
+    container.innerHTML = '';
+
+    const pills = [];
+    if (name)  pills.push({ label: `Name: "${name}"`,       clear: () => { document.getElementById('search-name').value = ''; applyFilters(); } });
+    if (dept)  pills.push({ label: `Dept: ${capitalise(dept)}`, clear: () => { document.getElementById('filter-dept').value = ''; applyFilters(); } });
+    if (spec)  pills.push({ label: `Spec: ${capitalise(spec)}`, clear: () => { document.getElementById('filter-spec').value = ''; applyFilters(); } });
+    if (avail) pills.push({ label: `Avail: ${capitalise(avail)}`, clear: () => { document.getElementById('filter-avail').value = ''; applyFilters(); } });
+
+    if (pills.length > 0) {
+      container.style.display = 'flex';
+      pills.forEach(pill => {
+        const el = document.createElement('span');
+        el.className = 'active-filter-pill';
+        el.innerHTML = `${pill.label}<button onclick="(${pill.clear.toString()})()" aria-label="Remove filter">×</button>`;
+        container.appendChild(el);
+      });
+    } else {
+      container.style.display = 'none';
+    }
+  }
+
+  function capitalise(s) {
+    return s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
+  }
+
+  function clearFilters() {
+    document.getElementById('search-name').value   = '';
+    document.getElementById('filter-dept').value   = '';
+    document.getElementById('filter-spec').value   = '';
+    document.getElementById('filter-avail').value  = '';
+    document.getElementById('sort-select').value   = 'rating';
+    applyFilters();
+  }
+
+  // ── MODAL ──
+  let activeDoctor = {};
+
+  function openModal(name, spec, initials, gradient) {
+    activeDoctor = { name, spec, initials, gradient };
+    document.getElementById('modal-doctor-name').textContent = name;
+    document.getElementById('modal-doctor-spec').textContent = spec;
+    const avatar = document.getElementById('modal-avatar');
+    avatar.textContent   = initials;
+    avatar.style.background = gradient;
+
+    // Reset form
+    document.getElementById('modal-form-area').style.display = '';
+    document.getElementById('modal-success').style.display   = 'none';
+    document.getElementById('modal-patient-name').value = '';
+    document.getElementById('modal-phone').value         = '';
+    document.getElementById('modal-age').value           = '';
+    document.getElementById('modal-reason').value        = '';
+    const todayStr = new Date().toISOString().split('T')[0];
+    document.getElementById('modal-date').value          = todayStr;
+    const firstSlot = document.querySelector('input[name="timeslot"]');
+    if (firstSlot) { document.querySelectorAll('input[name="timeslot"]').forEach(r => r.checked = false); document.querySelectorAll('input[name="timeslot"]')[1].checked = true; }
+
+    document.getElementById('booking-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    // Focus first input for accessibility
+    setTimeout(() => {
+      const nameInput = document.getElementById('modal-patient-name');
+      if (nameInput) nameInput.focus();
+    }, 300);
+  }
+
+  function closeModal() {
+    document.getElementById('booking-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close on overlay click
+  document.getElementById('booking-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.getElementById('booking-modal').classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  function submitBooking() {
+    const name  = document.getElementById('modal-patient-name').value.trim();
+    const phone = document.getElementById('modal-phone').value.trim();
+    const date  = document.getElementById('modal-date').value;
+    const slot  = document.querySelector('input[name="timeslot"]:checked');
+
+    if (!name) {
+      showToast('⚠️ Please enter your full name.', 'warning');
+      document.getElementById('modal-patient-name').focus();
+      return;
+    }
+    if (!phone || phone.replace(/\D/g, '').length < 10) {
+      showToast('⚠️ Please enter a valid phone number.', 'warning');
+      document.getElementById('modal-phone').focus();
+      return;
+    }
+    if (!date) {
+      showToast('⚠️ Please select a date.', 'warning');
+      document.getElementById('modal-date').focus();
+      return;
+    }
+    if (!slot) {
+      showToast('⚠️ Please select a time slot.', 'warning');
+      return;
+    }
+
+    // Simulate submission
+    const btn = document.getElementById('modal-submit-btn');
+    btn.disabled = true;
+    btn.innerHTML = '⏳ Confirming...';
+
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = '📅 Confirm Appointment';
+
+      // Generate ref ID
+      const refId = 'NMC-' + Math.random().toString(36).substr(2,4).toUpperCase() + '-' + Date.now().toString().slice(-4);
+      document.getElementById('booking-ref').textContent = refId;
+
+      // Show success
+      document.getElementById('modal-form-area').style.display = 'none';
+      document.getElementById('modal-success').style.display   = 'block';
+
+      // Toast
+      showToast('✅ Appointment booked with ' + activeDoctor.name + '!', 'success');
+    }, 1400);
+  }
+
+  // ── View Profile ──
+  function viewProfile(slug) {
+    showToast('📋 Loading Dr. ' + slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) + '\'s profile...', 'info');
+  }
+
+  // ── Trigger initial filter apply to set counts ──
+  document.addEventListener('DOMContentLoaded', function() {
+    applyFilters();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Nirmala Medical Center</title>
+  <meta name="description" content="Learn about Nirmala Medical Center's 25-year journey of healthcare excellence, our mission, vision, values, and dedicated team of specialists." />
+  <meta name="keywords" content="about Nirmala Medical Center, hospital history, healthcare mission, NABH accredited hospital, Dr. N. Krishnamurthy" />
+  <meta property="og:title" content="About Us — Nirmala Medical Center" />
+  <meta property="og:description" content="25+ years of trusted healthcare excellence. Learn about our mission, journey and commitment to your wellbeing." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    /* ══════════════════════════════════════
+       PAGE HERO
+    ══════════════════════════════════════ */
+    .page-hero {
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0A0F2E 0%, #0D1B6E 50%, #001055 100%);
+      overflow: hidden;
+      padding-top: 100px;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(0,102,255,0.18) 0%, transparent 55%),
+        radial-gradient(circle at 85% 30%, rgba(12,182,127,0.12) 0%, transparent 50%);
+    }
+    .page-hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .page-hero-particles span {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.08;
+    }
+    .page-hero-particles span:nth-child(1) {
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, #0066FF, transparent);
+      top: -80px; left: -80px;
+      animation: float 9s ease-in-out infinite;
+    }
+    .page-hero-particles span:nth-child(2) {
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, #0CB67F, transparent);
+      bottom: -40px; right: 10%;
+      animation: float 7s 1s ease-in-out infinite reverse;
+    }
+    .page-hero-particles span:nth-child(3) {
+      width: 140px; height: 140px;
+      background: radial-gradient(circle, #60A5FA, transparent);
+      top: 30%; right: 25%;
+      animation: float 6s 0.5s ease-in-out infinite;
+    }
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding: 60px 0;
+    }
+    .page-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,102,255,0.2);
+      border: 1px solid rgba(0,102,255,0.4);
+      color: #93C5FD;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.5s ease both;
+    }
+    .page-hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      animation: fadeInUp 0.6s 0.1s ease both;
+    }
+    .page-hero-title span {
+      background: linear-gradient(135deg, #60A5FA, #34D399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      animation: fadeInUp 0.6s 0.2s ease both;
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: #60A5FA; }
+    .breadcrumb-sep { color: rgba(255,255,255,0.3); }
+    .breadcrumb-current { color: #60A5FA; font-weight: 600; }
+
+    /* Decorative grid lines */
+    .page-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* ══════════════════════════════════════
+       HOSPITAL INTRO SECTION
+    ══════════════════════════════════════ */
+    .about-intro-section { background: var(--bg-primary); }
+    .about-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .about-intro-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+    .about-intro-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .about-intro-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+    .about-intro-title span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-intro-text {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+    }
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .about-stat-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .about-stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .about-stat-card:hover::before { transform: scaleX(1); }
+    .about-stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .about-stat-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* About banner image */
+    .about-image-wrap {
+      position: relative;
+    }
+    .about-img-frame {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.18);
+      border: 2px solid var(--border);
+      position: relative;
+      height: 520px;
+    }
+    .about-img-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .about-img-badge {
+      position: absolute;
+      bottom: 28px;
+      left: -24px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      padding: 16px 20px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: float 5s ease-in-out infinite;
+    }
+    .about-img-badge-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .about-img-badge-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0F172A;
+    }
+    .about-img-badge-sub {
+      font-size: 0.75rem;
+      color: #64748B;
+    }
+    .about-img-badge2 {
+      position: absolute;
+      top: 32px;
+      right: -20px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(20px);
+      border-radius: 14px;
+      padding: 14px 18px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      animation: float 4.5s 0.8s ease-in-out infinite;
+    }
+    .about-img-badge2-icon {
+      font-size: 1.4rem;
+    }
+    .about-img-badge2-text { font-weight: 700; font-size: 0.88rem; color: #0F172A; }
+    .about-img-badge2-sub  { font-size: 0.72rem; color: #64748B; }
+    @media (max-width: 640px) {
+      .about-img-badge { display: none; }
+      .about-img-badge2 { display: none; }
+      .about-img-frame { height: 280px; }
+    }
+
+    /* ══════════════════════════════════════
+       MISSION VISION VALUES
+    ══════════════════════════════════════ */
+    .mvv-section {
+      background: linear-gradient(135deg, #0A0F2E 0%, #0D1B6E 60%, #001055 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .mvv-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 10% 50%, rgba(0,102,255,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 90% 40%, rgba(12,182,127,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .mvv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    @media (max-width: 900px) { .mvv-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .mvv-grid { grid-template-columns: 1fr; } }
+    .mvv-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      padding: 40px 32px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .mvv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: 24px 24px 0 0;
+    }
+    .mvv-card.mission::before { background: linear-gradient(90deg, #0066FF, #60A5FA); }
+    .mvv-card.vision::before  { background: linear-gradient(90deg, #0CB67F, #34D399); }
+    .mvv-card.values::before  { background: linear-gradient(90deg, #F59E0B, #FCD34D); }
+    .mvv-card:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .mvv-icon-wrap {
+      width: 68px; height: 68px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 24px;
+    }
+    .mvv-card.mission .mvv-icon-wrap { background: rgba(0,102,255,0.2); }
+    .mvv-card.vision  .mvv-icon-wrap { background: rgba(12,182,127,0.2); }
+    .mvv-card.values  .mvv-icon-wrap { background: rgba(245,158,11,0.2); }
+    .mvv-card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .mvv-card.mission .mvv-card-tag { color: #60A5FA; }
+    .mvv-card.vision  .mvv-card-tag { color: #34D399; }
+    .mvv-card.values  .mvv-card-tag { color: #FCD34D; }
+    .mvv-card-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+    }
+    .mvv-card-text {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.65);
+    }
+    .values-list {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+    }
+    .values-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .values-list li:last-child { border-bottom: none; }
+    .values-list li::before {
+      content: '✦';
+      color: #FCD34D;
+      font-size: 0.65rem;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════
+       CHAIRMAN'S MESSAGE
+    ══════════════════════════════════════ */
+    .chairman-section { background: var(--bg-secondary); }
+    .chairman-inner {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .chairman-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .chairman-avatar-wrap { display: flex; justify-content: center; }
+    }
+    .chairman-avatar-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .chairman-avatar {
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0066FF 0%, #0CB67F 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 4rem;
+      font-weight: 800;
+      color: white;
+      box-shadow: 0 24px 60px rgba(0,102,255,0.3), 0 0 0 8px rgba(0,102,255,0.1), 0 0 0 16px rgba(0,102,255,0.05);
+      position: relative;
+      animation: float 6s ease-in-out infinite;
+    }
+    .chairman-avatar::after {
+      content: '🏥';
+      position: absolute;
+      bottom: 8px; right: 8px;
+      width: 48px; height: 48px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .chairman-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--dark);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .chairman-title-role {
+      font-size: 0.82rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .chairman-signature {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-style: italic;
+      margin-top: 8px;
+    }
+    .chairman-quote-wrap {
+      position: relative;
+    }
+    .chairman-quote-mark {
+      font-family: 'Poppins', sans-serif;
+      font-size: 8rem;
+      line-height: 0.8;
+      color: var(--primary);
+      opacity: 0.12;
+      font-weight: 900;
+      margin-bottom: -20px;
+      display: block;
+    }
+    .chairman-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      background: var(--secondary-light, rgba(12,182,127,0.1));
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .chairman-quote-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-weight: 500;
+      line-height: 1.7;
+      color: var(--dark);
+      font-style: italic;
+      margin-bottom: 28px;
+      border-left: 4px solid var(--primary);
+      padding-left: 24px;
+    }
+    .chairman-body {
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .chairman-accreditations {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .accred-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      transition: all 0.25s;
+    }
+    .accred-badge:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* ══════════════════════════════════════
+       TIMELINE
+    ══════════════════════════════════════ */
+    .timeline-section { background: var(--bg-primary); }
+    .timeline-wrapper {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    .timeline-wrapper::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--primary), var(--secondary));
+      transform: translateX(-50%);
+      border-radius: 999px;
+    }
+    @media (max-width: 640px) {
+      .timeline-wrapper::before { left: 20px; }
+    }
+    .timeline-item {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: calc(50% + 48px);
+      margin-bottom: 48px;
+      position: relative;
+    }
+    .timeline-item.right {
+      justify-content: flex-start;
+      padding-right: 0;
+      padding-left: calc(50% + 48px);
+    }
+    @media (max-width: 640px) {
+      .timeline-item,
+      .timeline-item.right {
+        justify-content: flex-start;
+        padding-left: 56px;
+        padding-right: 0;
+      }
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      transform: translateX(-50%);
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: white;
+      border: 4px solid var(--primary);
+      box-shadow: 0 0 0 6px rgba(0,102,255,0.12);
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    .timeline-item:hover .timeline-dot {
+      background: var(--primary);
+      box-shadow: 0 0 0 8px rgba(0,102,255,0.18);
+    }
+    .timeline-item.milestone .timeline-dot {
+      background: var(--secondary);
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 6px rgba(12,182,127,0.15);
+    }
+    @media (max-width: 640px) {
+      .timeline-dot { left: 20px; }
+    }
+    .timeline-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 28px;
+      max-width: 360px;
+      width: 100%;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .timeline-card::after {
+      content: '';
+      position: absolute;
+      top: 22px;
+      width: 28px; height: 2px;
+      background: var(--border);
+    }
+    .timeline-item .timeline-card::after {
+      right: -28px;
+    }
+    .timeline-item.right .timeline-card::after {
+      left: -28px;
+    }
+    @media (max-width: 640px) {
+      .timeline-card::after { display: none; }
+      .timeline-card { max-width: 100%; }
+    }
+    .timeline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+    .timeline-year {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .timeline-card-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .timeline-card-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .timeline-card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    /* ══════════════════════════════════════
+       ACHIEVEMENTS
+    ══════════════════════════════════════ */
+    .achievements-section {
+      background: linear-gradient(135deg, #0A0F2E 0%, #0D1B6E 60%, #001055 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .achievements-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 50% 50%, rgba(0,102,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    @media (max-width: 900px) { .achievements-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .achievements-grid { grid-template-columns: 1fr; } }
+    .achievement-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 36px 24px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .achievement-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(0,102,255,0.1), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .achievement-card:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+      border-color: rgba(0,102,255,0.4);
+    }
+    .achievement-card:hover::before { opacity: 1; }
+    .achievement-icon {
+      width: 72px; height: 72px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 20px;
+      transition: all 0.3s ease;
+    }
+    .achievement-card:hover .achievement-icon {
+      background: rgba(0,102,255,0.2);
+      border-color: rgba(0,102,255,0.4);
+    }
+    .achievement-value {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #60A5FA, #34D399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .achievement-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .achievement-desc {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.55;
+    }
+
+    /* ══════════════════════════════════════
+       FACILITIES SHOWCASE
+    ══════════════════════════════════════ */
+    .facilities-section { background: var(--bg-secondary); }
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 900px) { .facilities-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .facilities-grid { grid-template-columns: 1fr; } }
+    .facility-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 36px 28px;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+    .facility-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .facility-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl, 0 24px 64px rgba(0,0,0,0.12));
+      border-color: var(--primary);
+    }
+    .facility-card:hover::before { transform: scaleX(1); }
+    .facility-icon-wrap {
+      width: 70px; height: 70px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+    .facility-card:hover .facility-icon-wrap {
+      transform: scale(1.1) rotate(-3deg);
+    }
+    .facility-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .facility-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .facility-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .facility-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    /* ══════════════════════════════════════
+       SECTION HEADER OVERRIDES
+    ══════════════════════════════════════ */
+    .section-header-light .section-tag {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.8);
+    }
+    .section-header-light .section-title { color: white; }
+    .section-header-light .section-title span {
+      background: linear-gradient(135deg, #60A5FA, #34D399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-header-light .section-subtitle { color: rgba(255,255,255,0.6); }
+
+    /* ══════════════════════════════════════
+       CTA STRIP
+    ══════════════════════════════════════ */
+    .about-cta-strip {
+      background: linear-gradient(135deg, var(--primary) 0%, #0052D4 50%, var(--secondary) 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 72px 0;
+    }
+    .about-cta-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255,255,255,0.06) 0%, transparent 50%);
+    }
+    .about-cta-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+    }
+    .about-cta-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .about-cta-sub {
+      font-size: 1rem;
+      opacity: 0.85;
+      margin-bottom: 36px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .about-cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .about-stats-grid { grid-template-columns: 1fr 1fr; }
+      .chairman-inner { gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <span class="top-bar-item">📍 Medical Campus Road, City – 500001</span>
+      <span class="top-bar-divider">|</span>
+      <a href="tel:+919876543210" class="top-bar-item">📞 +91-9876-543210</a>
+    </div>
+    <div class="top-bar-right">
+      <a href="#" class="top-bar-item">🕐 OPD: Mon–Sat 8AM–8PM</a>
+      <span class="top-bar-divider">|</span>
+      <a href="emergency.html" class="top-bar-item" style="color:#FCA5A5;font-weight:700;">🚨 Emergency: 108</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo" aria-label="Nirmala Medical Center Home">
+      <div class="nav-logo-icon">🏥</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Nirmala Medical</span>
+        <span class="nav-logo-tagline">Center of Excellence</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu" id="nav-menu" role="menubar">
+      <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+      <li role="none"><a href="about.html" class="nav-link active" role="menuitem">About</a></li>
+      <li class="nav-item-dropdown" role="none">
+        <a href="departments.html" class="nav-link" role="menuitem">Departments ▾</a>
+        <div class="nav-dropdown">
+          <a href="departments.html#cardiology"><span class="nav-dropdown-icon">❤️</span> Cardiology</a>
+          <a href="departments.html#neurology"><span class="nav-dropdown-icon">🧠</span> Neurology</a>
+          <a href="departments.html#gynecology"><span class="nav-dropdown-icon">🌸</span> Gynecology</a>
+          <a href="departments.html#pediatrics"><span class="nav-dropdown-icon">👶</span> Pediatrics</a>
+          <a href="departments.html#orthopedics"><span class="nav-dropdown-icon">🦴</span> Orthopedics</a>
+          <a href="departments.html">View All Departments →</a>
+        </div>
+      </li>
+      <li role="none"><a href="doctors.html" class="nav-link" role="menuitem">Doctors</a></li>
+      <li role="none"><a href="appointment.html" class="nav-link" role="menuitem">Appointment</a></li>
+      <li role="none"><a href="patient-portal.html" class="nav-link" role="menuitem">Patient Portal</a></li>
+      <li role="none"><a href="emergency.html" class="nav-link" role="menuitem">Emergency</a></li>
+      <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙</button>
+      <a href="appointment.html" class="btn btn-primary btn-sm" id="nav-book-btn">📅 Book Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<section class="page-hero" aria-label="About Us hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-particles" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="page-hero-tag">✦ Est. 2001 — 25 Years of Excellence</div>
+      <h1 class="page-hero-title">
+        About <span>Nirmala Medical</span><br />Center
+      </h1>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="breadcrumb-current" aria-current="page">About Us</span>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOSPITAL INTRO SECTION
+     ============================================================ -->
+<section class="section about-intro-section" id="about-intro" aria-label="About Nirmala Medical Center">
+  <div class="container">
+    <div class="about-intro-grid">
+
+      <!-- Left: Text & Stats -->
+      <div>
+        <div class="about-intro-label reveal">🏥 Our Story</div>
+        <h2 class="about-intro-title reveal reveal-delay-1">
+          A Legacy Built on <span>Trust &amp; Compassion</span>
+        </h2>
+        <p class="about-intro-text reveal reveal-delay-2">
+          Founded in 2001 with a modest 50-bed facility and a singular vision, Nirmala Medical Center has grown into the region's most trusted multi-specialty hospital. Over two and a half decades, we have served more than one lakh patients, pioneered life-saving technologies, and earned the trust of families across generations. Our journey is defined not by the walls we have built, but by the lives we have transformed.
+        </p>
+        <p class="about-intro-text reveal reveal-delay-2" style="margin-top:-8px;">
+          Today, our 500-bed state-of-the-art campus houses 50+ specialist doctors, cutting-edge robotic surgery suites, a 24/7 trauma center, and digital health platforms that bring world-class care to every patient's fingertips. NABH accredited and ISO 9001:2015 certified, we set the benchmark for clinical excellence in the region.
+        </p>
+
+        <div class="about-stats-grid reveal reveal-delay-3">
+          <div class="about-stat-card">
+            <span class="about-stat-num counter" data-target="25" data-suffix="+">25+</span>
+            <span class="about-stat-label">Years of Excellence</span>
+          </div>
+          <div class="about-stat-card">
+            <span class="about-stat-num counter" data-target="50" data-suffix="+">50+</span>
+            <span class="about-stat-label">Expert Doctors</span>
+          </div>
+          <div class="about-stat-card">
+            <span class="about-stat-num">100K+</span>
+            <span class="about-stat-label">Patients Treated</span>
+          </div>
+          <div class="about-stat-card">
+            <span class="about-stat-num counter" data-target="15" data-suffix="+">15+</span>
+            <span class="about-stat-label">National Awards</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Banner Image -->
+      <div class="about-image-wrap reveal">
+        <div class="about-img-frame">
+          <img src="assets/images/about_banner.png" alt="Nirmala Medical Center hospital building and facilities" loading="lazy" />
+        </div>
+        <div class="about-img-badge">
+          <div class="about-img-badge-icon">🏆</div>
+          <div>
+            <div class="about-img-badge-title">NABH Accredited</div>
+            <div class="about-img-badge-sub">National Quality Standard</div>
+          </div>
+        </div>
+        <div class="about-img-badge2">
+          <div class="about-img-badge2-icon">⭐</div>
+          <div>
+            <div class="about-img-badge2-text">4.9 / 5 Rating</div>
+            <div class="about-img-badge2-sub">1,00,000+ Reviews</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MISSION, VISION & VALUES
+     ============================================================ -->
+<section class="section mvv-section" id="mission-vision" aria-label="Mission Vision Values">
+  <div class="container">
+    <div class="section-header section-header-light">
+      <div class="section-tag reveal" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);">✦ Our Foundation</div>
+      <h2 class="section-title reveal reveal-delay-1" style="color:white;">
+        Mission, Vision &amp; <span>Values</span>
+      </h2>
+      <p class="section-subtitle reveal reveal-delay-2" style="color:rgba(255,255,255,0.6);">
+        The principles that guide every decision, every procedure, and every interaction at Nirmala Medical Center.
+      </p>
+    </div>
+
+    <div class="mvv-grid">
+
+      <!-- Mission -->
+      <div class="mvv-card mission reveal">
+        <div class="mvv-icon-wrap">🎯</div>
+        <div class="mvv-card-tag">Our Mission</div>
+        <h3 class="mvv-card-title">Accessible World-Class Care</h3>
+        <p class="mvv-card-text">
+          To deliver world-class healthcare accessible to all, regardless of social or economic background — combining medical excellence with genuine human compassion so that every patient receives the highest standard of dignified, evidence-based treatment.
+        </p>
+      </div>
+
+      <!-- Vision -->
+      <div class="mvv-card vision reveal reveal-delay-1">
+        <div class="mvv-icon-wrap">🌟</div>
+        <div class="mvv-card-tag">Our Vision</div>
+        <h3 class="mvv-card-title">Most Trusted Institution</h3>
+        <p class="mvv-card-text">
+          To be the most trusted and respected healthcare institution in the region — a place where patients and their families feel safe, informed, and cared for, and where our teams are inspired to continuously innovate in service of health and healing.
+        </p>
+      </div>
+
+      <!-- Values -->
+      <div class="mvv-card values reveal reveal-delay-2">
+        <div class="mvv-icon-wrap">💎</div>
+        <div class="mvv-card-tag">Our Core Values</div>
+        <h3 class="mvv-card-title">What We Stand For</h3>
+        <ul class="values-list">
+          <li>
+            <div>
+              <strong style="color:rgba(255,255,255,0.9);">Patient First</strong>
+              <div style="font-size:0.8rem;margin-top:2px;">Every decision centers on patient welfare</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong style="color:rgba(255,255,255,0.9);">Integrity</strong>
+              <div style="font-size:0.8rem;margin-top:2px;">Transparency and honesty in all we do</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong style="color:rgba(255,255,255,0.9);">Innovation</strong>
+              <div style="font-size:0.8rem;margin-top:2px;">Pioneering new frontiers in medicine</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong style="color:rgba(255,255,255,0.9);">Compassion</strong>
+              <div style="font-size:0.8rem;margin-top:2px;">Treating every soul with empathy and dignity</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAIRMAN'S MESSAGE
+     ============================================================ -->
+<section class="section chairman-section" id="chairmans-message" aria-label="Chairman's message">
+  <div class="container">
+    <div class="chairman-inner">
+
+      <!-- Avatar / Photo -->
+      <div class="chairman-avatar-wrap reveal">
+        <div class="chairman-avatar" role="img" aria-label="Dr. N. Krishnamurthy">NK</div>
+        <div style="text-align:center;">
+          <div class="chairman-name">Dr. N. Krishnamurthy</div>
+          <div class="chairman-title-role">Chairman &amp; Managing Director</div>
+          <div class="chairman-signature">Dr. N. Krishnamurthy</div>
+        </div>
+        <div class="chairman-accreditations">
+          <div class="accred-badge">🏆 NABH</div>
+          <div class="accred-badge">✅ ISO 9001</div>
+          <div class="accred-badge">⭐ 25 Yrs</div>
+        </div>
+      </div>
+
+      <!-- Quote & Message -->
+      <div class="chairman-quote-wrap reveal reveal-delay-1">
+        <div class="chairman-label">💬 Chairman's Message</div>
+        <span class="chairman-quote-mark">"</span>
+        <blockquote class="chairman-quote-text">
+          "Healthcare is not merely a profession — it is a sacred covenant between a healer and a patient. At Nirmala Medical Center, we have honoured that covenant for twenty-five years, and we will continue to do so with unwavering commitment to excellence, innovation, and compassion."
+        </blockquote>
+        <p class="chairman-body">
+          When I founded Nirmala Medical Center in 2001, my dream was simple: to build a hospital where every patient is treated as family — where clinical precision meets heartfelt care. Today, with 500 beds, 50+ specialist doctors, and world-class infrastructure, that dream has grown beyond what I ever imagined. Yet our core promise remains unchanged.
+        </p>
+        <p class="chairman-body">
+          We have invested relentlessly in cutting-edge technologies — from robotic surgery systems to AI-powered diagnostics — not because it is fashionable, but because our patients deserve the very best. NABH accreditation and ISO certification are not trophies on a wall; they are daily commitments lived by every member of our team.
+        </p>
+        <p class="chairman-body">
+          As we celebrate 25 years of excellence in 2026, I extend my heartfelt gratitude to every patient who trusted us, every family member who stood by their loved ones in our corridors, and every colleague who dedicated their skills and hearts to this mission. Our journey continues — and the best chapters are yet to be written.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOSPITAL TIMELINE
+     ============================================================ -->
+<section class="section timeline-section" id="our-timeline" aria-label="Hospital timeline">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">📅 Our Journey</div>
+      <h2 class="section-title reveal reveal-delay-1">25 Years of <span>Milestones</span></h2>
+      <p class="section-subtitle reveal reveal-delay-2">
+        From a humble 50-bed clinic to a 500-bed multi-specialty hospital — trace the milestones that shaped Nirmala Medical Center.
+      </p>
+    </div>
+
+    <div class="timeline-wrapper reveal">
+
+      <!-- 2001 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-card-icon">🏥</div>
+          <div class="timeline-year">2001</div>
+          <div class="timeline-card-title">The Beginning</div>
+          <div class="timeline-card-desc">Nirmala Medical Center was founded by Dr. N. Krishnamurthy with a 50-bed facility and a team of 8 dedicated doctors, serving the local community with primary and secondary care.</div>
+        </div>
+      </div>
+
+      <!-- 2005 -->
+      <div class="timeline-item right milestone">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-card-icon">🏗️</div>
+          <div class="timeline-year">2005</div>
+          <div class="timeline-card-title">Expansion to 200 Beds &amp; ICU</div>
+          <div class="timeline-card-desc">Expanded to 200 beds with the inauguration of a modern Intensive Care Unit (ICU), Trauma Center, and multi-specialty OPD. Doctor count grew to 25 specialists.</div>
+        </div>
+      </div>
+
+      <!-- 2008 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-card-icon">🏆</div>
+          <div class="timeline-year">2008</div>
+          <div class="timeline-card-title">NABH Accreditation</div>
+          <div class="timeline-card-desc">Became one of the first hospitals in the region to achieve NABH (National Accreditation Board for Hospitals) accreditation, affirming our commitment to national quality standards.</div>
+        </div>
+      </div>
+
+      <!-- 2012 -->
+      <div class="timeline-item right milestone">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-card-icon">❤️</div>
+          <div class="timeline-year">2012</div>
+          <div class="timeline-card-title">Cardiac Center of Excellence</div>
+          <div class="timeline-card-desc">Launched a dedicated Cardiac Center of Excellence with catheterization labs, open-heart surgery facilities, and a specialized cardiac rehabilitation program.</div>
+        </div>
+      </div>
+
+      <!-- 2015 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-card-icon">🏨</div>
+          <div class="timeline-year">2015</div>
+          <div class="timeline-card-title">500-Bed Multi-Specialty Hospital</div>
+          <div class="timeline-card-desc">Completed the major expansion to 500 beds with 12 clinical departments, modern operation theatres, NICU, and a state-of-the-art radiology suite featuring 3T MRI and 128-slice CT.</div>
+        </div>
+      </div>
+
+      <!-- 2018 -->
+      <div class="timeline-item right milestone">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-card-icon">🤖</div>
+          <div class="timeline-year">2018</div>
+          <div class="timeline-card-title">Robotic Surgery Unit Inaugurated</div>
+          <div class="timeline-card-desc">Inaugurated the region's first robotic surgery unit, offering minimally invasive procedures with sub-millimetre precision across urology, gynecology, and general surgery.</div>
+        </div>
+      </div>
+
+      <!-- 2020 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-card-icon">💻</div>
+          <div class="timeline-year">2020</div>
+          <div class="timeline-card-title">Digital Health Transformation</div>
+          <div class="timeline-card-desc">Launched online appointment booking, telemedicine consultations, digital patient portal, and AI-assisted triage — bringing world-class care to patients' homes during and beyond the pandemic.</div>
+        </div>
+      </div>
+
+      <!-- 2023 -->
+      <div class="timeline-item right milestone">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-card-icon">✅</div>
+          <div class="timeline-year">2023</div>
+          <div class="timeline-card-title">ISO 9001:2015 Certification</div>
+          <div class="timeline-card-desc">Achieved ISO 9001:2015 certification across all departments, reinforcing our quality management systems and commitment to continual improvement in patient safety and service delivery.</div>
+        </div>
+      </div>
+
+      <!-- 2026 -->
+      <div class="timeline-item milestone">
+        <div class="timeline-dot" style="background:linear-gradient(135deg,#0066FF,#0CB67F);border-color:#0066FF;box-shadow:0 0 0 8px rgba(0,102,255,0.2),0 0 20px rgba(0,102,255,0.4);"></div>
+        <div class="timeline-card" style="border-color:var(--primary);background:linear-gradient(135deg,rgba(0,102,255,0.05),rgba(12,182,127,0.05));">
+          <div class="timeline-card-icon">🎉</div>
+          <div class="timeline-year">2026</div>
+          <div class="timeline-card-title">Celebrating 25 Years of Excellence</div>
+          <div class="timeline-card-desc">Marking a silver jubilee of healthcare excellence with the launch of a new Cancer Care Center, expanded telemedicine network, and commitment to serve the next generation with even greater innovation and compassion.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ACHIEVEMENTS SECTION
+     ============================================================ -->
+<section class="section achievements-section" id="achievements" aria-label="Hospital achievements and accreditations">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);">🏆 Recognition</div>
+      <h2 class="section-title reveal reveal-delay-1" style="color:white;">Our <span style="background:linear-gradient(135deg,#60A5FA,#34D399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Achievements</span></h2>
+      <p class="section-subtitle reveal reveal-delay-2" style="color:rgba(255,255,255,0.6);">
+        Recognized nationally and internationally for clinical excellence, patient safety, and innovation in healthcare.
+      </p>
+    </div>
+
+    <div class="achievements-grid">
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">🥇</div>
+        <div class="achievement-value">15+</div>
+        <div class="achievement-title">National Awards</div>
+        <div class="achievement-desc">Recognized by the Ministry of Health and leading medical bodies for outstanding healthcare delivery and community service.</div>
+      </div>
+      <div class="achievement-card reveal reveal-delay-1">
+        <div class="achievement-icon">🏆</div>
+        <div class="achievement-value">NABH</div>
+        <div class="achievement-title">NABH Accredited</div>
+        <div class="achievement-desc">Nationally accredited since 2008, meeting the highest standards of hospital quality, patient safety, and clinical governance.</div>
+      </div>
+      <div class="achievement-card reveal reveal-delay-2">
+        <div class="achievement-icon">✅</div>
+        <div class="achievement-value">ISO</div>
+        <div class="achievement-title">ISO 9001:2015 Certified</div>
+        <div class="achievement-desc">ISO certified across all operational departments, ensuring consistent quality management systems and continual improvement.</div>
+      </div>
+      <div class="achievement-card reveal reveal-delay-3">
+        <div class="achievement-icon">⭐</div>
+        <div class="achievement-value">#1</div>
+        <div class="achievement-title">Best Hospital Award 2024</div>
+        <div class="achievement-desc">Ranked #1 Best Multi-Specialty Hospital in the region by the National Healthcare Excellence Awards 2024.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FACILITIES SHOWCASE
+     ============================================================ -->
+<section class="section facilities-section" id="facilities" aria-label="Hospital facilities">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">🏗️ Infrastructure</div>
+      <h2 class="section-title reveal reveal-delay-1">World-Class <span>Facilities</span></h2>
+      <p class="section-subtitle reveal reveal-delay-2">
+        State-of-the-art infrastructure designed to deliver precision care with maximum safety, comfort, and clinical efficiency.
+      </p>
+    </div>
+
+    <div class="facilities-grid">
+
+      <!-- ICU -->
+      <div class="facility-card reveal" id="facility-icu">
+        <div class="facility-icon-wrap" style="background:#FEE2E2;">🏥</div>
+        <h3 class="facility-title">Intensive Care Unit (ICU)</h3>
+        <p class="facility-desc">32-bed multi-disciplinary ICU with continuous hemodynamic monitoring, ventilator support, and round-the-clock intensivist care for the most critically ill patients.</p>
+        <div class="facility-features">
+          <span class="facility-tag">32 Beds</span>
+          <span class="facility-tag">24/7 Intensivists</span>
+          <span class="facility-tag">Hemodynamic Monitoring</span>
+        </div>
+      </div>
+
+      <!-- Operation Theatre -->
+      <div class="facility-card reveal reveal-delay-1" id="facility-ot">
+        <div class="facility-icon-wrap" style="background:#EFF6FF;">🔬</div>
+        <h3 class="facility-title">Operation Theatres</h3>
+        <p class="facility-desc">8 modular laminar-flow operation theatres equipped with robotic surgery systems, advanced anaesthesia workstations, and HEPA-filtered ultra-clean air environments.</p>
+        <div class="facility-features">
+          <span class="facility-tag">8 OTs</span>
+          <span class="facility-tag">Robotic Surgery</span>
+          <span class="facility-tag">Laminar Flow</span>
+        </div>
+      </div>
+
+      <!-- NICU -->
+      <div class="facility-card reveal reveal-delay-2" id="facility-nicu">
+        <div class="facility-icon-wrap" style="background:#F0FDF4;">👶</div>
+        <h3 class="facility-title">NICU (Neonatal ICU)</h3>
+        <p class="facility-desc">Level III NICU with 20 incubators, high-frequency ventilators, phototherapy units, and dedicated neonatologists providing 24/7 specialized care for premature and critically ill newborns.</p>
+        <div class="facility-features">
+          <span class="facility-tag">Level III NICU</span>
+          <span class="facility-tag">20 Incubators</span>
+          <span class="facility-tag">24/7 Neonatologist</span>
+        </div>
+      </div>
+
+      <!-- Radiology Suite -->
+      <div class="facility-card reveal reveal-delay-1" id="facility-radiology">
+        <div class="facility-icon-wrap" style="background:#F5F3FF;">📷</div>
+        <h3 class="facility-title">Radiology Suite</h3>
+        <p class="facility-desc">Fully digital radiology department featuring 3 Tesla MRI, 128-slice CT scanner, digital X-ray, bone densitometry, mammography, and interventional radiology suites.</p>
+        <div class="facility-features">
+          <span class="facility-tag">3T MRI</span>
+          <span class="facility-tag">128-slice CT</span>
+          <span class="facility-tag">Digital X-Ray</span>
+        </div>
+      </div>
+
+      <!-- Laboratory -->
+      <div class="facility-card reveal reveal-delay-2" id="facility-lab">
+        <div class="facility-icon-wrap" style="background:#FFFBEB;">🧪</div>
+        <h3 class="facility-title">Advanced Laboratory</h3>
+        <p class="facility-desc">NABL-certified laboratory processing 500+ tests daily with automated analysers, rapid turnaround (2-hour results), molecular diagnostics, and a centralized specimen tracking system.</p>
+        <div class="facility-features">
+          <span class="facility-tag">NABL Certified</span>
+          <span class="facility-tag">2-Hr Reports</span>
+          <span class="facility-tag">500+ Tests</span>
+        </div>
+      </div>
+
+      <!-- Consultation Rooms -->
+      <div class="facility-card reveal reveal-delay-3" id="facility-opd">
+        <div class="facility-icon-wrap" style="background:#FDF4FF;">🩺</div>
+        <h3 class="facility-title">Consultation Rooms</h3>
+        <p class="facility-desc">40 fully equipped, private consultation rooms with integrated electronic health records, video consultation capabilities, and specialized procedure rooms for minor OPD interventions.</p>
+        <div class="facility-features">
+          <span class="facility-tag">40 Rooms</span>
+          <span class="facility-tag">Electronic HRs</span>
+          <span class="facility-tag">Telemedicine Ready</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA STRIP
+     ============================================================ -->
+<section class="about-cta-strip" aria-label="Book appointment CTA">
+  <div class="container">
+    <div class="about-cta-inner">
+      <h2 class="about-cta-title reveal">Ready to Experience World-Class Care?</h2>
+      <p class="about-cta-sub reveal reveal-delay-1">
+        Book an appointment with our specialists today and take the first step toward better health and lasting wellbeing.
+      </p>
+      <div class="about-cta-btns reveal reveal-delay-2">
+        <a href="appointment.html" class="btn btn-xl" style="background:white;color:#0066FF;font-weight:800;" id="about-cta-book">
+          📅 Book Appointment
+        </a>
+        <a href="tel:+919876543210" class="btn btn-outline-white btn-xl" id="about-cta-call">
+          📞 Call Us Now
+        </a>
+        <a href="doctors.html" class="btn btn-outline-white btn-xl" id="about-cta-doctors">
+          👨‍⚕️ Meet Our Doctors
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-logo" style="margin-bottom:20px;">
+          <div class="nav-logo-icon">🏥</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Nirmala Medical</span>
+            <span class="nav-logo-tagline">Center of Excellence</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Delivering world-class healthcare with compassionate service since 2001. NABH accredited, ISO certified, and trusted by over 1 lakh patients across the region.
+        </p>
+        <div class="footer-emergency-number">
+          <span>🚨</span> 108 / +91-9876-543210
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+          <a href="https://wa.me/919876543210" class="social-link" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="doctors.html">Our Doctors</a>
+          <a href="appointment.html">Book Appointment</a>
+          <a href="patient-portal.html">Patient Portal</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Health Blog</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Departments</h4>
+        <div class="footer-links">
+          <a href="departments.html#cardiology">Cardiology</a>
+          <a href="departments.html#neurology">Neurology</a>
+          <a href="departments.html#gynecology">Gynecology</a>
+          <a href="departments.html#pediatrics">Pediatrics</a>
+          <a href="departments.html#orthopedics">Orthopedics</a>
+          <a href="departments.html#dermatology">Dermatology</a>
+          <a href="departments.html#lab">Laboratory</a>
+          <a href="emergency.html">Emergency / ICU</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Contact Info</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📍</div>
+          <div>Medical Campus Road, Near City Station, City – 500001</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <div><a href="tel:+919876543210" style="color:inherit;">+91-9876-543210</a><br/><a href="tel:+919876000000" style="color:inherit;">+91-9876-000000</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✉️</div>
+          <div><a href="mailto:info@nirmalamedicare.com" style="color:inherit;">info@nirmalamedicare.com</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">⏰</div>
+          <div>OPD: Mon–Sat 8AM–8PM<br/>Emergency: 24 × 7</div>
+        </div>
+        <h4 class="footer-heading" style="margin-top:20px;">Newsletter</h4>
+        <p style="font-size:0.8rem;margin-bottom:8px;color:rgba(255,255,255,0.5);">Get health tips &amp; updates weekly.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" id="newsletter-submit">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Nirmala Medical Center. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- AI CHAT WIDGET -->
+<div class="chat-widget" id="chat-widget" aria-label="AI medical assistant">
+  <button class="chat-toggle-btn" id="chat-toggle" aria-label="Open AI medical assistant" aria-expanded="false">🤖</button>
+  <div class="chat-panel" id="chat-panel" role="dialog" aria-label="NirmalaCare AI Assistant">
+    <div class="chat-panel-header">
+      <div class="chat-bot-info">
+        <div class="chat-bot-avatar">🤖</div>
+        <div>
+          <div class="chat-bot-name">NirmalaCare AI</div>
+          <div class="chat-bot-status">Online — Always available</div>
+        </div>
+      </div>
+      <button class="modal-close chat-close" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+    <div class="chat-quick-replies">
+      <button class="quick-reply" id="qr-appointment">Book Appointment</button>
+      <button class="quick-reply" id="qr-emergency">Emergency?</button>
+      <button class="quick-reply" id="qr-doctors">Find Doctor</button>
+      <button class="quick-reply" id="qr-timing">OPD Timings</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chat-input" placeholder="Ask me anything..." aria-label="Chat message" />
+      <button class="chat-send-btn" id="chat-send" aria-label="Send message">➤</button>
+    </div>
+  </div>
+</div>
+
+<!-- EMERGENCY FLOAT BUTTON -->
+<div class="emergency-float" id="emergency-float">
+  <a href="tel:108" class="emergency-float-btn" id="emergency-float-call" aria-label="Call emergency 108">
+    🚨 Emergency: 108
+  </a>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  function handleNewsletter(e) {
+    e.preventDefault();
+    Toast.show('🎉 Successfully subscribed to our health newsletter!', 'success');
+    e.target.reset();
+  }
+</script>
+</body>
+</html>

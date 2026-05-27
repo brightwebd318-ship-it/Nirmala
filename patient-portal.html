@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Portal — Nirmala Medical Center</title>
+  <meta name="description" content="Access your health records, appointments, prescriptions, lab reports, and billing securely through the Nirmala Medical Center Patient Portal." />
+  <meta name="keywords" content="patient portal, medical records, lab reports, prescriptions, appointment history, Nirmala Medical Center" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+
+    /* ══════════════════════════════════════════════
+       PAGE HERO
+    ══════════════════════════════════════════════ */
+    .portal-hero {
+      background: linear-gradient(135deg, #0A0F2E 0%, #0D1B6E 45%, #001055 100%);
+      padding: 100px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .portal-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(0,102,255,0.18) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 30%, rgba(12,182,127,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .portal-hero-particles {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+    }
+    .portal-hero-particles span {
+      position: absolute; border-radius: 50%; opacity: 0.12;
+    }
+    .portal-hero-particles span:nth-child(1) {
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, #0066FF, transparent);
+      top: -15%; left: -5%; animation: float 9s ease-in-out infinite;
+    }
+    .portal-hero-particles span:nth-child(2) {
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, #0CB67F, transparent);
+      bottom: 5%; right: 8%; animation: float 7s 1s ease-in-out infinite reverse;
+    }
+    .portal-hero-particles span:nth-child(3) {
+      width: 120px; height: 120px;
+      background: radial-gradient(circle, #60A5FA, transparent);
+      top: 50%; right: 25%; animation: float 5s 0.5s ease-in-out infinite;
+    }
+    .portal-hero-content { position: relative; z-index: 2; text-align: center; color: white; }
+    .portal-hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,102,255,0.2); border: 1px solid rgba(0,102,255,0.4);
+      color: #93C5FD; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 6px 18px; border-radius: 999px;
+      margin-bottom: 20px; animation: fadeInUp 0.5s ease both;
+    }
+    .portal-hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 800; line-height: 1.15; color: white; margin-bottom: 16px;
+      animation: fadeInUp 0.6s 0.1s ease both;
+    }
+    .portal-hero-title .accent {
+      background: linear-gradient(135deg, #60A5FA, #34D399);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .portal-hero-subtitle {
+      font-size: 1.05rem; color: rgba(255,255,255,0.65); max-width: 500px; margin: 0 auto 0;
+      animation: fadeInUp 0.6s 0.2s ease both;
+    }
+
+    /* ══════════════════════════════════════════════
+       LOGIN / REGISTER SECTION
+    ══════════════════════════════════════════════ */
+    #login-view { background: var(--bg-secondary); }
+    .login-section {
+      padding: 60px 0 80px;
+      background: var(--bg-secondary);
+    }
+    .login-card {
+      max-width: 480px; margin: 0 auto;
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0,102,255,0.12);
+      border-radius: 28px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.12), 0 1px 0 rgba(255,255,255,0.8) inset;
+      overflow: hidden;
+      animation: scaleIn 0.5s ease both;
+    }
+    [data-theme="dark"] .login-card {
+      background: rgba(30,41,59,0.9);
+      border-color: rgba(0,102,255,0.2);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+    }
+    .login-card-header {
+      background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+      padding: 32px 36px 28px;
+      text-align: center;
+    }
+    .login-card-icon {
+      width: 64px; height: 64px; border-radius: 18px;
+      background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; margin: 0 auto 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    .login-card-header h2 {
+      color: white; font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 4px;
+    }
+    .login-card-header p { color: rgba(255,255,255,0.75); font-size: 0.85rem; }
+
+    /* Auth Tabs */
+    .auth-tabs {
+      display: flex; background: var(--bg-tertiary); margin: 0; border-radius: 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .auth-tab {
+      flex: 1; padding: 14px; text-align: center; font-weight: 600; font-size: 0.9rem;
+      color: var(--text-secondary); cursor: pointer; transition: all 0.25s ease;
+      background: transparent; border: none; font-family: 'Inter', sans-serif;
+      position: relative;
+    }
+    .auth-tab::after {
+      content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 0; height: 3px; background: var(--primary);
+      border-radius: 3px 3px 0 0; transition: width 0.3s ease;
+    }
+    .auth-tab.active { color: var(--primary); background: var(--bg-primary); }
+    .auth-tab.active::after { width: 60%; }
+
+    .auth-panel { display: none; padding: 32px 36px 36px; }
+    .auth-panel.active { display: block; animation: fadeInUp 0.35s ease both; }
+
+    /* Form fields */
+    .form-group { margin-bottom: 20px; }
+    .form-label {
+      display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-secondary);
+      margin-bottom: 7px; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .form-input {
+      width: 100%; padding: 12px 16px; border: 1.5px solid var(--border);
+      border-radius: 10px; font-size: 0.92rem; color: var(--text-primary);
+      background: var(--bg-primary); transition: all 0.2s ease;
+    }
+    .form-input:focus {
+      border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-glow); outline: none;
+    }
+    .form-input::placeholder { color: var(--text-muted); }
+    .input-wrap { position: relative; }
+    .input-wrap .form-input { padding-right: 44px; }
+    .input-icon-btn {
+      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: var(--text-muted); font-size: 1rem;
+      cursor: pointer; padding: 2px; line-height: 1;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* Checkbox + forgot */
+    .form-check-row {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;
+    }
+    .form-check { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; }
+    .form-check input[type="checkbox"] { width: 15px; height: 15px; accent-color: var(--primary); cursor: pointer; }
+    .forgot-link { font-size: 0.83rem; color: var(--primary); font-weight: 600; }
+    .forgot-link:hover { text-decoration: underline; }
+
+    /* Auth buttons */
+    .auth-btn-primary {
+      width: 100%; padding: 14px; background: linear-gradient(135deg, #0066FF, #0052CC);
+      color: white; border: none; border-radius: 12px; font-size: 1rem; font-weight: 700;
+      font-family: 'Poppins', sans-serif; cursor: pointer; transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(0,102,255,0.3); margin-bottom: 18px; letter-spacing: 0.02em;
+    }
+    .auth-btn-primary:hover {
+      transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,102,255,0.4);
+    }
+    .auth-btn-primary:active { transform: translateY(0); }
+
+    .auth-divider {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
+      font-size: 0.78rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .auth-divider::before, .auth-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    .auth-btn-google {
+      width: 100%; padding: 13px; background: var(--bg-primary);
+      border: 1.5px solid var(--border); border-radius: 12px; font-size: 0.93rem;
+      font-weight: 600; color: var(--text-primary); cursor: pointer; transition: all 0.2s ease;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .auth-btn-google:hover { background: var(--bg-secondary); border-color: var(--gray-300); transform: translateY(-1px); }
+
+    .demo-note {
+      margin-top: 20px; padding: 12px 16px;
+      background: var(--primary-light); border: 1px solid rgba(0,102,255,0.15); border-radius: 10px;
+      font-size: 0.8rem; color: var(--primary); text-align: center; font-weight: 500;
+    }
+
+    /* Features row */
+    .features-row {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+      max-width: 700px; margin: 48px auto 0;
+    }
+    @media (max-width: 640px) { .features-row { grid-template-columns: repeat(2,1fr); } }
+    .feature-pill {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      background: var(--bg-primary); border: 1px solid var(--border); border-radius: 16px;
+      padding: 20px 12px; text-align: center; transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .feature-pill:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(0,102,255,0.25); }
+    .feature-pill-icon { font-size: 1.75rem; }
+    .feature-pill-label { font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); line-height: 1.3; }
+
+    /* ══════════════════════════════════════════════
+       DASHBOARD
+    ══════════════════════════════════════════════ */
+    #dashboard-view { display: none; }
+
+    /* Dashboard Header */
+    .dashboard-header {
+      background: linear-gradient(135deg, #0A0F2E 0%, #0D1B6E 100%);
+      padding: 80px 0 28px; /* top accounts for fixed navbar */
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .dashboard-header-inner {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .dash-user-info { display: flex; align-items: center; gap: 16px; }
+    .dash-avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, #0066FF, #0CB67F);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; font-weight: 800; color: white;
+      border: 3px solid rgba(255,255,255,0.25); flex-shrink: 0;
+    }
+    .dash-user-name {
+      font-family: 'Poppins', sans-serif; font-size: 1.25rem; font-weight: 700; color: white;
+    }
+    .dash-user-sub { font-size: 0.82rem; color: rgba(255,255,255,0.55); margin-top: 2px; }
+    .dash-header-right { display: flex; align-items: center; gap: 12px; }
+    .dash-date-badge {
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+      padding: 9px 16px; border-radius: 10px; color: rgba(255,255,255,0.8);
+      font-size: 0.82rem; font-weight: 500;
+    }
+    .dash-logout-btn {
+      display: flex; align-items: center; gap: 7px;
+      background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.35);
+      color: #FCA5A5; padding: 9px 18px; border-radius: 10px;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;
+    }
+    .dash-logout-btn:hover { background: rgba(239,68,68,0.3); color: white; }
+
+    /* Dashboard Layout */
+    .dashboard-layout {
+      display: grid; grid-template-columns: 260px 1fr; gap: 0;
+      min-height: calc(100vh - 200px); background: var(--bg-secondary);
+    }
+    @media (max-width: 900px) {
+      .dashboard-layout { grid-template-columns: 1fr; }
+      .dash-sidebar { display: none; }
+    }
+
+    /* Sidebar */
+    .dash-sidebar {
+      background: var(--bg-primary); border-right: 1px solid var(--border);
+      padding: 28px 16px; position: sticky; top: 70px;
+      height: fit-content; min-height: calc(100vh - 200px);
+    }
+    .sidebar-section-label {
+      font-size: 0.68rem; font-weight: 700; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.1em; margin: 20px 10px 8px;
+    }
+    .sidebar-nav-item {
+      display: flex; align-items: center; gap: 12px; padding: 12px 14px;
+      border-radius: 12px; cursor: pointer; transition: all 0.2s ease;
+      font-size: 0.88rem; font-weight: 500; color: var(--text-secondary);
+      margin-bottom: 2px; position: relative;
+    }
+    .sidebar-nav-item:hover { background: var(--bg-secondary); color: var(--text-primary); }
+    .sidebar-nav-item.active {
+      background: var(--primary-light); color: var(--primary); font-weight: 600;
+    }
+    .sidebar-icon { font-size: 1.1rem; flex-shrink: 0; width: 22px; text-align: center; }
+    .sidebar-badge {
+      margin-left: auto; background: var(--danger); color: white;
+      font-size: 0.65rem; font-weight: 700; padding: 2px 7px; border-radius: 99px; line-height: 1.4;
+    }
+
+    /* Main Panel */
+    .dash-main { padding: 32px 28px; }
+    @media (max-width: 640px) { .dash-main { padding: 20px 16px; } }
+    .dash-panel { display: none; }
+    .dash-panel.active { display: block; animation: fadeInUp 0.35s ease both; }
+
+    .panel-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 28px; flex-wrap: wrap; gap: 12px;
+    }
+    .panel-title {
+      font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--text-primary);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .panel-title-icon { font-size: 1.3rem; }
+
+    /* Analytics Cards */
+    .analytics-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 32px;
+    }
+    @media (max-width: 1024px) { .analytics-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 500px) { .analytics-grid { grid-template-columns: 1fr; } }
+
+    .analytics-card {
+      background: var(--bg-primary); border: 1px solid var(--border);
+      border-radius: 18px; padding: 24px 22px;
+      box-shadow: var(--shadow-sm); transition: all 0.25s ease; position: relative; overflow: hidden;
+    }
+    .analytics-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    }
+    .analytics-card.blue::before { background: linear-gradient(90deg, #0066FF, #60A5FA); }
+    .analytics-card.green::before { background: linear-gradient(90deg, #0CB67F, #34D399); }
+    .analytics-card.orange::before { background: linear-gradient(90deg, #F59E0B, #FCD34D); }
+    .analytics-card.purple::before { background: linear-gradient(90deg, #8B5CF6, #A78BFA); }
+    .analytics-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+    .analytics-card-icon {
+      width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; font-size: 1.3rem; margin-bottom: 14px;
+    }
+    .analytics-card.blue .analytics-card-icon { background: var(--primary-light); }
+    .analytics-card.green .analytics-card-icon { background: var(--secondary-light); }
+    .analytics-card.orange .analytics-card-icon { background: #FFFBEB; }
+    .analytics-card.purple .analytics-card-icon { background: #F5F3FF; }
+    .analytics-card-value {
+      font-family: 'Poppins', sans-serif; font-size: 1.6rem; font-weight: 800;
+      color: var(--text-primary); line-height: 1; margin-bottom: 4px;
+    }
+    .analytics-card-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; margin-bottom: 2px; }
+    .analytics-card-sub { font-size: 0.75rem; color: var(--text-muted); }
+    .analytics-card-badge {
+      display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 99px;
+      margin-top: 6px; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .badge-new { background: #DCFCE7; color: #16A34A; }
+    .badge-pending { background: #FEF3C7; color: #D97706; }
+    .badge-info { background: var(--primary-light); color: var(--primary); }
+
+    /* Tables */
+    .data-table-wrap {
+      background: var(--bg-primary); border: 1px solid var(--border);
+      border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-sm);
+      margin-bottom: 28px;
+    }
+    .data-table-header {
+      padding: 18px 24px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+    .data-table-title {
+      font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text-primary);
+    }
+    .data-table { width: 100%; border-collapse: collapse; }
+    .data-table th {
+      padding: 12px 20px; font-size: 0.75rem; font-weight: 700; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.06em; background: var(--bg-secondary);
+      text-align: left; white-space: nowrap;
+    }
+    .data-table td {
+      padding: 14px 20px; font-size: 0.88rem; color: var(--text-primary);
+      border-top: 1px solid var(--border-light); vertical-align: middle;
+    }
+    .data-table tr:hover td { background: var(--bg-secondary); }
+    .data-table td:last-child { white-space: nowrap; }
+
+    /* Status Badges */
+    .status-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.72rem; font-weight: 700; padding: 4px 10px;
+      border-radius: 99px; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .status-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+    .status-confirmed { background: #DCFCE7; color: #16A34A; }
+    .status-confirmed::before { background: #16A34A; }
+    .status-completed { background: var(--primary-light); color: var(--primary); }
+    .status-completed::before { background: var(--primary); }
+    .status-cancelled { background: var(--danger-light); color: var(--danger); }
+    .status-cancelled::before { background: var(--danger); }
+    .status-pending { background: #FEF3C7; color: #D97706; }
+    .status-pending::before { background: #D97706; }
+    .status-paid { background: #DCFCE7; color: #16A34A; }
+    .status-paid::before { background: #16A34A; }
+
+    /* Action buttons */
+    .action-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 6px 13px; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
+      cursor: pointer; transition: all 0.2s ease; border: 1.5px solid transparent;
+    }
+    .action-btn-outline {
+      background: transparent; border-color: var(--border); color: var(--text-secondary);
+    }
+    .action-btn-outline:hover { background: var(--bg-secondary); color: var(--text-primary); }
+    .action-btn-primary {
+      background: var(--primary-light); border-color: rgba(0,102,255,0.2); color: var(--primary);
+    }
+    .action-btn-primary:hover { background: var(--primary); color: white; }
+    .action-btn-danger {
+      background: var(--danger-light); border-color: rgba(239,68,68,0.2); color: var(--danger);
+    }
+    .action-btn-danger:hover { background: var(--danger); color: white; }
+    .action-btn-green {
+      background: var(--secondary-light); border-color: rgba(12,182,127,0.2); color: var(--secondary);
+    }
+    .action-btn-green:hover { background: var(--secondary); color: white; }
+
+    /* Quick Actions Grid */
+    .quick-actions-overview {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px;
+    }
+    @media (max-width: 900px) { .quick-actions-overview { grid-template-columns: repeat(2,1fr); } }
+    .qa-card {
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      background: var(--bg-primary); border: 1px solid var(--border); border-radius: 16px;
+      padding: 24px 16px; cursor: pointer; transition: all 0.2s ease;
+      text-decoration: none; text-align: center; box-shadow: var(--shadow-sm);
+    }
+    .qa-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(0,102,255,0.25); }
+    .qa-card-icon { font-size: 2rem; }
+    .qa-card-label { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); }
+
+    /* Prescription Cards */
+    .prescriptions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 900px) { .prescriptions-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 640px) { .prescriptions-grid { grid-template-columns: 1fr; } }
+
+    .rx-card {
+      background: var(--bg-primary); border: 1px solid var(--border); border-radius: 18px;
+      padding: 24px; box-shadow: var(--shadow-sm); transition: all 0.2s ease;
+    }
+    .rx-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .rx-card-header {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
+      padding-bottom: 14px; border-bottom: 1px solid var(--border);
+    }
+    .rx-doctor-avatar {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--primary-light); display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .rx-doctor-name { font-weight: 700; font-size: 0.92rem; color: var(--text-primary); }
+    .rx-date { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+    .rx-med-list { list-style: none; margin-bottom: 20px; }
+    .rx-med-list li {
+      display: flex; align-items: flex-start; gap: 8px; font-size: 0.82rem;
+      color: var(--text-secondary); padding: 5px 0; border-bottom: 1px solid var(--border-light);
+    }
+    .rx-med-list li:last-child { border-bottom: none; }
+    .rx-med-list li::before { content: '💊'; flex-shrink: 0; margin-top: 1px; }
+
+    /* Notification Items */
+    .notif-list { display: flex; flex-direction: column; gap: 12px; }
+    .notif-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: var(--bg-primary); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px 18px; transition: all 0.2s ease;
+    }
+    .notif-item:hover { border-color: rgba(0,102,255,0.2); box-shadow: var(--shadow-sm); }
+    .notif-item.unread { border-left: 3px solid var(--primary); }
+    .notif-icon {
+      width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+    }
+    .notif-body { flex: 1; }
+    .notif-title { font-weight: 600; font-size: 0.88rem; color: var(--text-primary); margin-bottom: 3px; }
+    .notif-msg { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+    .notif-time { font-size: 0.72rem; color: var(--text-muted); margin-top: 5px; }
+    .notif-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--primary);
+      flex-shrink: 0; margin-top: 6px;
+    }
+
+    /* Profile Form */
+    .profile-section { display: grid; grid-template-columns: 240px 1fr; gap: 28px; }
+    @media (max-width: 768px) { .profile-section { grid-template-columns: 1fr; } }
+    .profile-photo-area {
+      background: var(--bg-primary); border: 1px solid var(--border); border-radius: 20px;
+      padding: 32px 24px; text-align: center; box-shadow: var(--shadow-sm); height: fit-content;
+    }
+    .profile-photo-circle {
+      width: 100px; height: 100px; border-radius: 50%;
+      background: linear-gradient(135deg, #0066FF, #0CB67F);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem; font-weight: 800; color: white;
+      margin: 0 auto 16px; border: 4px solid rgba(0,102,255,0.2);
+    }
+    .profile-photo-name { font-weight: 700; font-size: 1rem; color: var(--text-primary); margin-bottom: 4px; }
+    .profile-photo-id { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px; }
+    .profile-upload-btn {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      width: 100%; padding: 10px; border: 1.5px dashed var(--primary);
+      border-radius: 10px; color: var(--primary); font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; transition: all 0.2s ease; background: var(--primary-light);
+    }
+    .profile-upload-btn:hover { background: var(--primary); color: white; border-style: solid; }
+    .profile-form-card {
+      background: var(--bg-primary); border: 1px solid var(--border); border-radius: 20px;
+      padding: 32px; box-shadow: var(--shadow-sm);
+    }
+    .profile-form-title {
+      font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.05rem;
+      color: var(--text-primary); margin-bottom: 24px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .profile-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 600px) { .profile-form-grid { grid-template-columns: 1fr; } }
+    .profile-form-grid .full-width { grid-column: 1 / -1; }
+    .save-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 32px; background: linear-gradient(135deg, #0066FF, #0052CC);
+      color: white; border: none; border-radius: 12px; font-size: 0.95rem; font-weight: 700;
+      font-family: 'Poppins', sans-serif; cursor: pointer; transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(0,102,255,0.3); margin-top: 24px;
+    }
+    .save-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,102,255,0.4); }
+
+    /* Payment Modal */
+    .pay-modal-overlay {
+      display: none; position: fixed; inset: 0; background: var(--bg-overlay);
+      z-index: var(--z-modal); align-items: center; justify-content: center;
+      backdrop-filter: blur(6px);
+    }
+    .pay-modal-overlay.open { display: flex; }
+    .pay-modal {
+      background: var(--bg-primary); border-radius: 24px; padding: 40px;
+      max-width: 440px; width: 90%; box-shadow: 0 32px 80px rgba(0,0,0,0.2);
+      animation: scaleIn 0.3s ease both; position: relative;
+    }
+    .pay-modal-close {
+      position: absolute; top: 16px; right: 20px; background: none; border: none;
+      font-size: 1.5rem; color: var(--text-muted); cursor: pointer; line-height: 1;
+    }
+    .pay-modal-icon { font-size: 3rem; text-align: center; margin-bottom: 16px; }
+    .pay-modal h3 {
+      font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 700;
+      color: var(--text-primary); text-align: center; margin-bottom: 8px;
+    }
+    .pay-modal p { text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 28px; }
+    .pay-methods { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .pay-method-item {
+      display: flex; align-items: center; gap: 12px; padding: 14px 18px;
+      border: 1.5px solid var(--border); border-radius: 12px; cursor: pointer;
+      transition: all 0.2s ease; font-size: 0.9rem; font-weight: 500; color: var(--text-primary);
+    }
+    .pay-method-item:hover { border-color: var(--primary); background: var(--primary-light); color: var(--primary); }
+    .pay-method-item input[type="radio"] { accent-color: var(--primary); }
+    .pay-confirm-btn {
+      width: 100%; padding: 14px; background: linear-gradient(135deg, #0066FF, #0052CC);
+      color: white; border: none; border-radius: 12px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: all 0.25s ease; box-shadow: 0 6px 20px rgba(0,102,255,0.3);
+    }
+    .pay-confirm-btn:hover { transform: translateY(-2px); }
+
+    /* Empty/Placeholder states */
+    .section-divider-label {
+      font-size: 0.72rem; font-weight: 700; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.08em; margin: 24px 0 12px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-divider-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* Mobile sidebar toggle */
+    .mobile-sidebar-toggle {
+      display: none; align-items: center; gap: 8px;
+      background: var(--primary-light); border: 1px solid rgba(0,102,255,0.2);
+      color: var(--primary); padding: 10px 16px; border-radius: 10px;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer; margin-bottom: 20px;
+    }
+    @media (max-width: 900px) { .mobile-sidebar-toggle { display: flex; } }
+    .mobile-sidebar {
+      display: none; background: var(--bg-primary); border: 1px solid var(--border);
+      border-radius: 16px; padding: 16px; margin-bottom: 20px;
+      grid-template-columns: repeat(2, 1fr); gap: 4px;
+    }
+    .mobile-sidebar.open { display: grid; }
+    .mobile-nav-item {
+      display: flex; align-items: center; gap: 8px; padding: 10px 12px;
+      border-radius: 10px; cursor: pointer; font-size: 0.82rem; font-weight: 500;
+      color: var(--text-secondary); transition: all 0.2s ease;
+    }
+    .mobile-nav-item:hover { background: var(--bg-secondary); color: var(--text-primary); }
+    .mobile-nav-item.active { background: var(--primary-light); color: var(--primary); font-weight: 600; }
+
+    /* Toast notification */
+    .portal-toast {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      background: #0F172A; color: white; padding: 14px 20px; border-radius: 14px;
+      font-size: 0.88rem; font-weight: 500; display: flex; align-items: center; gap: 10px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.25); transform: translateY(80px); opacity: 0;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .portal-toast.show { transform: translateY(0); opacity: 1; }
+    .portal-toast.success { background: #064E3B; border-left: 4px solid #10B981; }
+    .portal-toast.error { background: #7F1D1D; border-left: 4px solid #EF4444; }
+
+    /* Misc utilities */
+    .mt-0 { margin-top: 0; }
+    .select-input {
+      width: 100%; padding: 12px 16px; border: 1.5px solid var(--border);
+      border-radius: 10px; font-size: 0.92rem; color: var(--text-primary);
+      background: var(--bg-primary); transition: all 0.2s ease; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748B' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center;
+    }
+    .select-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-glow); }
+    textarea.form-input { resize: vertical; min-height: 90px; }
+
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     TOP BAR
+═══════════════════════════════════════════════════════ -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <span class="top-bar-item">📍 Medical Campus Road, City – 500001</span>
+      <span class="top-bar-divider">|</span>
+      <a href="tel:+919876543210" class="top-bar-item">📞 +91-9876-543210</a>
+    </div>
+    <div class="top-bar-right">
+      <a href="#" class="top-bar-item">🕐 OPD: Mon–Sat 8AM–8PM</a>
+      <span class="top-bar-divider">|</span>
+      <a href="emergency.html" class="top-bar-item" style="color:#FCA5A5;font-weight:700;">🚨 Emergency: 108</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════════════ -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo" aria-label="Nirmala Medical Center Home">
+      <div class="nav-logo-icon">🏥</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Nirmala Medical</span>
+        <span class="nav-logo-tagline">Center of Excellence</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu" id="nav-menu" role="menubar">
+      <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+      <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+      <li class="nav-item-dropdown" role="none">
+        <a href="departments.html" class="nav-link" role="menuitem">Departments ▾</a>
+        <div class="nav-dropdown">
+          <a href="departments.html#cardiology"><span class="nav-dropdown-icon">❤️</span> Cardiology</a>
+          <a href="departments.html#neurology"><span class="nav-dropdown-icon">🧠</span> Neurology</a>
+          <a href="departments.html#gynecology"><span class="nav-dropdown-icon">🌸</span> Gynecology</a>
+          <a href="departments.html#pediatrics"><span class="nav-dropdown-icon">👶</span> Pediatrics</a>
+          <a href="departments.html#orthopedics"><span class="nav-dropdown-icon">🦴</span> Orthopedics</a>
+          <a href="departments.html">View All Departments →</a>
+        </div>
+      </li>
+      <li role="none"><a href="doctors.html" class="nav-link" role="menuitem">Doctors</a></li>
+      <li role="none"><a href="appointment.html" class="nav-link" role="menuitem">Appointment</a></li>
+      <li role="none"><a href="patient-portal.html" class="nav-link active" role="menuitem">Patient Portal</a></li>
+      <li role="none"><a href="emergency.html" class="nav-link" role="menuitem">Emergency</a></li>
+      <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">🌙</button>
+      <a href="appointment.html" class="btn btn-primary btn-sm" id="nav-book-btn">📅 Book Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     LOGIN VIEW
+═══════════════════════════════════════════════════════ -->
+<div id="login-view">
+
+  <!-- PAGE HERO -->
+  <section class="portal-hero">
+    <div class="portal-hero-particles" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="container">
+      <div class="portal-hero-content">
+        <div class="portal-hero-badge">🔒 Secure Patient Portal</div>
+        <h1 class="portal-hero-title">
+          Your Health,<br><span class="accent">All in One Place.</span>
+        </h1>
+        <p class="portal-hero-subtitle">Access your medical records, reports, prescriptions, appointments, and billing — securely and instantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGIN / REGISTER CARD -->
+  <section class="login-section">
+    <div class="container">
+
+      <!-- Auth Card -->
+      <div class="login-card" id="auth-card">
+        <div class="login-card-header">
+          <div class="login-card-icon">🔐</div>
+          <h2>Patient Portal</h2>
+          <p>Nirmala Medical Center — Secure Access</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tab-login" onclick="switchAuthTab('login')">🔑 Login</button>
+          <button class="auth-tab" id="tab-register" onclick="switchAuthTab('register')">✨ Register</button>
+        </div>
+
+        <!-- LOGIN PANEL -->
+        <div class="auth-panel active" id="panel-login">
+          <form id="login-form" onsubmit="handleLogin(event)" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="login-email">Email / Patient ID</label>
+              <input type="text" class="form-input" id="login-email" placeholder="demo@nirmala.com or NMC-12345" autocomplete="username" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="login-password">Password</label>
+              <div class="input-wrap">
+                <input type="password" class="form-input" id="login-password" placeholder="Enter your password" autocomplete="current-password" />
+                <button type="button" class="input-icon-btn" id="pw-toggle" onclick="togglePassword()" aria-label="Show/hide password">👁️</button>
+              </div>
+            </div>
+
+            <div class="form-check-row">
+              <label class="form-check">
+                <input type="checkbox" id="remember-me" />
+                Remember me
+              </label>
+              <a href="#" class="forgot-link" onclick="showForgotPassword(event)">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="auth-btn-primary" id="sign-in-btn">🔑 Sign In to Portal</button>
+
+            <div class="auth-divider">or</div>
+
+            <button type="button" class="auth-btn-google" id="google-sign-in" onclick="handleGoogleLogin()">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.64 9.20455C17.64 8.56636 17.5827 7.95273 17.4764 7.36364H9V10.845H13.8436C13.635 11.97 13.0009 12.9232 12.0477 13.5614V15.8195H14.9564C16.6582 14.2527 17.64 11.9455 17.64 9.20455Z" fill="#4285F4"/>
+                <path d="M9 18C11.43 18 13.4673 17.1941 14.9564 15.8195L12.0477 13.5614C11.2418 14.1014 10.2109 14.4205 9 14.4205C6.65591 14.4205 4.67182 12.8373 3.96409 10.71H0.957275V13.0418C2.43818 15.9832 5.48182 18 9 18Z" fill="#34A853"/>
+                <path d="M3.96409 10.71C3.78409 10.17 3.68182 9.59318 3.68182 9C3.68182 8.40682 3.78409 7.83 3.96409 7.29V4.95818H0.957275C0.347727 6.17318 0 7.54773 0 9C0 10.4523 0.347727 11.8268 0.957275 13.0418L3.96409 10.71Z" fill="#FBBC05"/>
+                <path d="M9 3.57955C10.3214 3.57955 11.5077 4.03364 12.4405 4.92545L15.0218 2.34409C13.4632 0.891818 11.4259 0 9 0C5.48182 0 2.43818 2.01682 0.957275 4.95818L3.96409 7.29C4.67182 5.16273 6.65591 3.57955 9 3.57955Z" fill="#EA4335"/>
+              </svg>
+              Continue with Google
+            </button>
+
+            <div class="demo-note">
+              💡 <strong>Demo Access:</strong> Use <code>demo@nirmala.com</code> / <code>demo123</code>
+            </div>
+          </form>
+        </div>
+
+        <!-- REGISTER PANEL -->
+        <div class="auth-panel" id="panel-register">
+          <form id="register-form" onsubmit="handleRegister(event)" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="reg-name">Full Name</label>
+              <input type="text" class="form-input" id="reg-name" placeholder="E.g. Ramesh Krishnan" autocomplete="name" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="reg-phone">Phone Number</label>
+                <input type="tel" class="form-input" id="reg-phone" placeholder="+91 98765 43210" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-dob">Date of Birth</label>
+                <input type="date" class="form-input" id="reg-dob" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Email Address</label>
+              <input type="email" class="form-input" id="reg-email" placeholder="your@email.com" autocomplete="email" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="reg-password">Password</label>
+                <div class="input-wrap">
+                  <input type="password" class="form-input" id="reg-password" placeholder="Min 8 characters" />
+                  <button type="button" class="input-icon-btn" onclick="toggleRegPassword()" aria-label="Toggle password">👁️</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-confirm">Confirm Password</label>
+                <input type="password" class="form-input" id="reg-confirm" placeholder="Re-enter password" />
+              </div>
+            </div>
+            <button type="submit" class="auth-btn-primary" id="create-account-btn">✨ Create Account</button>
+            <p style="font-size:0.78rem; color:var(--text-muted); text-align:center; margin-top:14px; line-height:1.5;">
+              By creating an account, you agree to our <a href="#" style="color:var(--primary);">Privacy Policy</a> and <a href="#" style="color:var(--primary);">Terms of Service</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Features Pills -->
+      <div class="features-row">
+        <div class="feature-pill">
+          <div class="feature-pill-icon">📊</div>
+          <div class="feature-pill-label">My Reports</div>
+        </div>
+        <div class="feature-pill">
+          <div class="feature-pill-icon">📜</div>
+          <div class="feature-pill-label">Online Prescriptions</div>
+        </div>
+        <div class="feature-pill">
+          <div class="feature-pill-icon">📅</div>
+          <div class="feature-pill-label">Appointment History</div>
+        </div>
+        <div class="feature-pill">
+          <div class="feature-pill-icon">💳</div>
+          <div class="feature-pill-label">Billing &amp; Payments</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /#login-view -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     DASHBOARD VIEW
+═══════════════════════════════════════════════════════ -->
+<div id="dashboard-view">
+
+  <!-- Dashboard Header -->
+  <div class="dashboard-header">
+    <div class="container">
+      <div class="dashboard-header-inner">
+        <div class="dash-user-info">
+          <div class="dash-avatar" id="dash-avatar-initials">RK</div>
+          <div>
+            <div class="dash-user-name" id="dash-user-name">Welcome back, Ramesh Kumar</div>
+            <div class="dash-user-sub">Patient ID: NMC-20260001 &nbsp;|&nbsp; Last login: Just now</div>
+          </div>
+        </div>
+        <div class="dash-header-right">
+          <div class="dash-date-badge">📅 <span id="dash-today-date">Wednesday, 27 May 2026</span></div>
+          <button class="dash-logout-btn" onclick="handleLogout()" id="logout-btn">🚪 Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard Layout -->
+  <div class="dashboard-layout">
+
+    <!-- ── LEFT SIDEBAR ── -->
+    <aside class="dash-sidebar" aria-label="Dashboard navigation">
+      <div class="sidebar-section-label">Main Menu</div>
+
+      <div class="sidebar-nav-item active" data-panel="overview" onclick="switchPanel('overview')">
+        <span class="sidebar-icon">🏠</span> Overview
+      </div>
+      <div class="sidebar-nav-item" data-panel="appointments" onclick="switchPanel('appointments')">
+        <span class="sidebar-icon">📅</span> My Appointments
+      </div>
+      <div class="sidebar-nav-item" data-panel="reports" onclick="switchPanel('reports')">
+        <span class="sidebar-icon">📊</span> Medical Reports
+      </div>
+      <div class="sidebar-nav-item" data-panel="prescriptions" onclick="switchPanel('prescriptions')">
+        <span class="sidebar-icon">📜</span> Prescriptions
+      </div>
+      <div class="sidebar-nav-item" data-panel="billing" onclick="switchPanel('billing')">
+        <span class="sidebar-icon">💳</span> Billing History
+      </div>
+
+      <div class="sidebar-section-label">Account</div>
+
+      <div class="sidebar-nav-item" data-panel="notifications" onclick="switchPanel('notifications')">
+        <span class="sidebar-icon">🔔</span> Notifications
+        <span class="sidebar-badge" id="notif-badge">3</span>
+      </div>
+      <div class="sidebar-nav-item" data-panel="profile" onclick="switchPanel('profile')">
+        <span class="sidebar-icon">👤</span> Profile Settings
+      </div>
+      <div class="sidebar-nav-item" onclick="handleLogout()" style="margin-top:12px;">
+        <span class="sidebar-icon">🚪</span> Logout
+      </div>
+    </aside>
+
+    <!-- ── MAIN CONTENT ── -->
+    <main class="dash-main" id="dash-main">
+
+      <!-- Mobile Sidebar Toggle -->
+      <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()" id="mobile-sidebar-toggle">
+        ☰ Navigation Menu
+      </button>
+      <div class="mobile-sidebar" id="mobile-sidebar">
+        <div class="mobile-nav-item active" data-panel="overview" onclick="switchPanel('overview');toggleMobileSidebar()">🏠 Overview</div>
+        <div class="mobile-nav-item" data-panel="appointments" onclick="switchPanel('appointments');toggleMobileSidebar()">📅 Appointments</div>
+        <div class="mobile-nav-item" data-panel="reports" onclick="switchPanel('reports');toggleMobileSidebar()">📊 Reports</div>
+        <div class="mobile-nav-item" data-panel="prescriptions" onclick="switchPanel('prescriptions');toggleMobileSidebar()">📜 Prescriptions</div>
+        <div class="mobile-nav-item" data-panel="billing" onclick="switchPanel('billing');toggleMobileSidebar()">💳 Billing</div>
+        <div class="mobile-nav-item" data-panel="notifications" onclick="switchPanel('notifications');toggleMobileSidebar()">🔔 Notifications</div>
+        <div class="mobile-nav-item" data-panel="profile" onclick="switchPanel('profile');toggleMobileSidebar()">👤 Profile</div>
+        <div class="mobile-nav-item" onclick="handleLogout()">🚪 Logout</div>
+      </div>
+
+      <!-- ════════════════════════════
+           OVERVIEW PANEL
+      ════════════════════════════ -->
+      <div class="dash-panel active" id="panel-overview">
+        <div class="panel-header">
+          <h2 class="panel-title"><span class="panel-title-icon">🏠</span> Overview</h2>
+          <a href="appointment.html" class="action-btn action-btn-primary">📅 Book Appointment</a>
+        </div>
+
+        <!-- Analytics Cards -->
+        <div class="analytics-grid">
+          <div class="analytics-card blue">
+            <div class="analytics-card-icon">📅</div>
+            <div class="analytics-card-value">Jun 3</div>
+            <div class="analytics-card-label">Next Appointment</div>
+            <div class="analytics-card-sub">Dr. Rajesh Kumar</div>
+            <span class="analytics-card-badge badge-info">10:30 AM</span>
+          </div>
+          <div class="analytics-card green">
+            <div class="analytics-card-icon">📊</div>
+            <div class="analytics-card-value">2</div>
+            <div class="analytics-card-label">Reports Ready</div>
+            <div class="analytics-card-sub">Blood Test + MRI</div>
+            <span class="analytics-card-badge badge-new">New</span>
+          </div>
+          <div class="analytics-card orange">
+            <div class="analytics-card-icon">💳</div>
+            <div class="analytics-card-value">₹1,500</div>
+            <div class="analytics-card-label">Pending Bills</div>
+            <div class="analytics-card-sub">Invoice #NMC-2026-019</div>
+            <span class="analytics-card-badge badge-pending">Due Soon</span>
+          </div>
+          <div class="analytics-card purple">
+            <div class="analytics-card-icon">⭐</div>
+            <div class="analytics-card-value">450</div>
+            <div class="analytics-card-label">Loyalty Points</div>
+            <div class="analytics-card-sub">HealthCare Rewards</div>
+            <span class="analytics-card-badge badge-info">Silver Tier</span>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="data-table-wrap" style="margin-bottom:28px;">
+          <div class="data-table-header">
+            <div class="data-table-title">⚡ Quick Actions</div>
+          </div>
+          <div style="padding:20px;">
+            <div class="quick-actions-overview">
+              <a href="appointment.html" class="qa-card">
+                <span class="qa-card-icon">📅</span>
+                <span class="qa-card-label">Book Appointment</span>
+              </a>
+              <div class="qa-card" onclick="switchPanel('reports')">
+                <span class="qa-card-icon">📥</span>
+                <span class="qa-card-label">Download Report</span>
+              </div>
+              <div class="qa-card" onclick="switchPanel('prescriptions')">
+                <span class="qa-card-icon">📜</span>
+                <span class="qa-card-label">View Prescriptions</span>
+              </div>
+              <div class="qa-card" onclick="switchPanel('billing')">
+                <span class="qa-card-icon">💰</span>
+                <span class="qa-card-label">Pay Bill</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Appointments -->
+        <div class="data-table-wrap">
+          <div class="data-table-header">
+            <div class="data-table-title">📅 Recent Appointments</div>
+            <button class="action-btn action-btn-outline" onclick="switchPanel('appointments')">View All →</button>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Doctor</th>
+                  <th>Department</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jun 3, 2026</td>
+                  <td>👨‍⚕️ Dr. Rajesh Kumar</td>
+                  <td>Cardiology</td>
+                  <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td>May 15, 2026</td>
+                  <td>👩‍⚕️ Dr. Priya Sharma</td>
+                  <td>Gynecology</td>
+                  <td><span class="status-badge status-completed">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>Apr 28, 2026</td>
+                  <td>👨‍⚕️ Dr. Suresh Menon</td>
+                  <td>Neurology</td>
+                  <td><span class="status-badge status-completed">Completed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════
+           APPOINTMENTS PANEL
+      ════════════════════════════ -->
+      <div class="dash-panel" id="panel-appointments">
+        <div class="panel-header">
+          <h2 class="panel-title"><span class="panel-title-icon">📅</span> My Appointments</h2>
+          <a href="appointment.html" class="action-btn action-btn-primary">+ Book New</a>
+        </div>
+
+        <!-- Upcoming -->
+        <div class="data-table-wrap" style="margin-bottom:28px;">
+          <div class="data-table-header">
+            <div class="data-table-title">🔜 Upcoming Appointments</div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Date &amp; Time</th>
+                  <th>Doctor</th>
+                  <th>Department</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Jun 3, 2026</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">10:30 AM</div>
+                  </td>
+                  <td>👨‍⚕️ Dr. Rajesh Kumar</td>
+                  <td>Cardiology</td>
+                  <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                  <td>
+                    <div style="display:flex;gap:6px;">
+                      <button class="action-btn action-btn-outline" onclick="showToast('📅 Reschedule form opening...','info')">↩ Reschedule</button>
+                      <button class="action-btn action-btn-danger" onclick="cancelAppointment(this)">✕ Cancel</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Jun 10, 2026</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">2:00 PM</div>
+                  </td>
+                  <td>👩‍⚕️ Dr. Anitha Reddy</td>
+                  <td>Pediatrics</td>
+                  <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                  <td>
+                    <div style="display:flex;gap:6px;">
+                      <button class="action-btn action-btn-outline" onclick="showToast('📅 Reschedule form opening...','info')">↩ Reschedule</button>
+                      <button class="action-btn action-btn-danger" onclick="cancelAppointment(this)">✕ Cancel</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Jun 18, 2026</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">11:00 AM</div>
+                  </td>
+                  <td>👨‍⚕️ Dr. Suresh Menon</td>
+                  <td>Neurology</td>
+                  <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                  <td>
+                    <div style="display:flex;gap:6px;">
+                      <button class="action-btn action-btn-outline" onclick="showToast('📅 Reschedule form opening...','info')">↩ Reschedule</button>
+                      <button class="action-btn action-btn-danger" onclick="cancelAppointment(this)">✕ Cancel</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Past Appointments -->
+        <div class="data-table-wrap">
+          <div class="data-table-header">
+            <div class="data-table-title">🕐 Past Appointments</div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Date &amp; Time</th>
+                  <th>Doctor</th>
+                  <th>Department</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">May 15, 2026</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">3:30 PM</div>
+                  </td>
+                  <td>👩‍⚕️ Dr. Priya Sharma</td>
+                  <td>Gynecology</td>
+                  <td><span class="status-badge status-completed">Completed</span></td>
+                  <td>
+                    <button class="action-btn action-btn-primary" onclick="showToast('📄 Fetching summary...','info')">📄 Summary</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Apr 28, 2026</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">10:00 AM</div>
+                  </td>
+                  <td>👨‍⚕️ Dr. Suresh Menon</td>
+                  <td>Neurology</td>
+                  <td><span class="status-badge status-completed">Completed</span></td>
+                  <td>
+                    <button class="action-btn action-btn-primary" onclick="showToast('📄 Fetching summary...','info')">📄 Summary</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Mar 12, 2026</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">9:00 AM</div>
+                  </td>
+                  <td>👨‍⚕️ Dr. Rajesh Kumar</td>
+                  <td>Cardiology</td>
+                  <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                  <td>
+                    <a href="appointment.html" class="action-btn action-btn-outline">↩ Rebook</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════
+           MEDICAL REPORTS PANEL
+      ════════════════════════════ -->
+      <div class="dash-panel" id="panel-reports">
+        <div class="panel-header">
+          <h2 class="panel-title"><span class="panel-title-icon">📊</span> Medical Reports</h2>
+          <span style="font-size:0.82rem;color:var(--text-muted);">Secure. Encrypted. Private.</span>
+        </div>
+
+        <div class="data-table-wrap">
+          <div class="data-table-header">
+            <div class="data-table-title">🗂️ All Reports</div>
+            <button class="action-btn action-btn-outline" onclick="showToast('📥 Downloading all reports as ZIP...','success')">📥 Download All</button>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Report Name</th>
+                  <th>Date</th>
+                  <th>Doctor</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">🩸 Complete Blood Count</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);">CBC + Differential</div>
+                  </td>
+                  <td>May 14, 2026</td>
+                  <td>Dr. Rajesh Kumar</td>
+                  <td><span class="status-badge" style="background:#FEF3C7;color:#D97706;">🧪 Blood Test</span></td>
+                  <td><span class="analytics-card-badge badge-new" style="display:inline-block;padding:3px 10px;border-radius:99px;font-size:0.7rem;font-weight:700;">New</span></td>
+                  <td><button class="action-btn action-btn-green" onclick="downloadReport('CBC_Report_May2026.pdf')">📥 Download PDF</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">❤️ 12-Lead ECG</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);">Resting Electrocardiogram</div>
+                  </td>
+                  <td>May 14, 2026</td>
+                  <td>Dr. Rajesh Kumar</td>
+                  <td><span class="status-badge" style="background:#FEE2E2;color:#DC2626;">❤️ ECG</span></td>
+                  <td><span class="analytics-card-badge badge-new" style="display:inline-block;padding:3px 10px;border-radius:99px;font-size:0.7rem;font-weight:700;">New</span></td>
+                  <td><button class="action-btn action-btn-green" onclick="downloadReport('ECG_Report_May2026.pdf')">📥 Download PDF</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">🧠 Brain MRI</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);">3T MRI with Contrast</div>
+                  </td>
+                  <td>Apr 27, 2026</td>
+                  <td>Dr. Suresh Menon</td>
+                  <td><span class="status-badge" style="background:#F5F3FF;color:#7C3AED;">🧠 MRI</span></td>
+                  <td><span class="status-badge status-completed" style="font-size:0.7rem;">Ready</span></td>
+                  <td><button class="action-btn action-btn-green" onclick="downloadReport('MRI_Brain_Apr2026.pdf')">📥 Download PDF</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">📷 Chest X-Ray</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);">PA View</div>
+                  </td>
+                  <td>Mar 10, 2026</td>
+                  <td>Dr. Priya Sharma</td>
+                  <td><span class="status-badge" style="background:#E0F2FE;color:#0284C7;">📷 X-Ray</span></td>
+                  <td><span class="status-badge status-completed" style="font-size:0.7rem;">Ready</span></td>
+                  <td><button class="action-btn action-btn-green" onclick="downloadReport('XRay_Chest_Mar2026.pdf')">📥 Download PDF</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">🔊 Abdominal Ultrasound</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);">Upper Abdomen Scan</div>
+                  </td>
+                  <td>Feb 22, 2026</td>
+                  <td>Dr. Anitha Reddy</td>
+                  <td><span class="status-badge" style="background:#ECFDF5;color:#059669;">🔊 Ultrasound</span></td>
+                  <td><span class="status-badge status-completed" style="font-size:0.7rem;">Ready</span></td>
+                  <td><button class="action-btn action-btn-green" onclick="downloadReport('USG_Abdomen_Feb2026.pdf')">📥 Download PDF</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════
+           PRESCRIPTIONS PANEL
+      ════════════════════════════ -->
+      <div class="dash-panel" id="panel-prescriptions">
+        <div class="panel-header">
+          <h2 class="panel-title"><span class="panel-title-icon">📜</span> Prescriptions</h2>
+          <span style="font-size:0.82rem;color:var(--text-muted);">3 Active Prescriptions</span>
+        </div>
+
+        <div class="prescriptions-grid">
+          <!-- Prescription 1 -->
+          <div class="rx-card">
+            <div class="rx-card-header">
+              <div class="rx-doctor-avatar">❤️</div>
+              <div>
+                <div class="rx-doctor-name">Dr. Rajesh Kumar</div>
+                <div class="rx-date">📅 May 14, 2026 &nbsp;•&nbsp; Cardiology</div>
+              </div>
+            </div>
+            <ul class="rx-med-list">
+              <li>
+                <div>
+                  <div style="font-weight:600;font-size:0.85rem;">Tab. Metoprolol 50mg</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">1-0-1 after food × 30 days</div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div style="font-weight:600;font-size:0.85rem;">Tab. Aspirin 75mg</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">0-0-1 after dinner × 30 days</div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div style="font-weight:600;font-size:0.85rem;">Tab. Rosuvastatin 10mg</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">0-0-1 at night × 30 days</div>
+                </div>
+              </li>
+            </ul>
+            <button class="action-btn action-btn-green" style="width:100%;justify-content:center;" onclick="downloadReport('Rx_RajeshKumar_May2026.pdf')">📥 Download Prescription</button>
+          </div>
+
+          <!-- Prescription 2 -->
+          <div class="rx-card">
+            <div class="rx-card-header">
+              <div class="rx-doctor-avatar">🌸</div>
+              <div>
+                <div class="rx-doctor-name">Dr. Priya Sharma</div>
+                <div class="rx-date">📅 May 15, 2026 &nbsp;•&nbsp; Gynecology</div>
+              </div>
+            </div>
+            <ul class="rx-med-list">
+              <li>
+                <div>
+                  <div style="font-weight:600;font-size:0.85rem;">Tab. Iron + Folic Acid</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">1-0-0 after breakfast × 60 days</div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div style="font-weight:600;font-size:0.85rem;">Tab. Calcium + Vit D3</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">0-1-0 after lunch × 60 days</div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div style="font-weight:600;font-size:0.85rem;">Tab. Vitamin B12 500mcg</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">0-0-1 weekly × 8 weeks</div>
+                </div>
+              </li>
+            </ul>
+            <button class="action-btn action-btn-green" style="width:100%;justify-content:center;" onclick="downloadReport('Rx_PriyaSharma_May2026.pdf')">📥 Download Prescription</button>
+          </div>
+
+          <!-- Prescription 3 -->
+          <div class="rx-card">
+            <div class="rx-card-header">
+              <div class="rx-doctor-avatar">🧠</div>
+              <div>
+                <div class="rx-doctor-name">Dr. Suresh Menon</div>
+                <div class="rx-date">📅 Apr 28, 2026 &nbsp;•&nbsp; Neurology</div>
+              </div>
+            </div>
+            <ul class="rx-med-list">
+              <li>
+                <div>
+                  <div style="font-weight:600;font-size:0.85rem;">Tab. Levetiracetam 500mg</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">1-0-1 after food × 90 days</div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div style="font-weight:600;font-size:0.85rem;">Tab. Amitriptyline 10mg</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">0-0-1 at bedtime × 30 days</div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div style="font-weight:600;font-size:0.85rem;">Tab. Vitamin D3 60000 IU</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">1 weekly × 8 weeks</div>
+                </div>
+              </li>
+            </ul>
+            <button class="action-btn action-btn-green" style="width:100%;justify-content:center;" onclick="downloadReport('Rx_SureshMenon_Apr2026.pdf')">📥 Download Prescription</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════
+           BILLING PANEL
+      ════════════════════════════ -->
+      <div class="dash-panel" id="panel-billing">
+        <div class="panel-header">
+          <h2 class="panel-title"><span class="panel-title-icon">💳</span> Billing History</h2>
+          <span style="font-size:0.82rem;color:var(--text-muted);">Secure Payment Gateway</span>
+        </div>
+
+        <div class="analytics-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:28px;">
+          <div class="analytics-card blue">
+            <div class="analytics-card-icon">💰</div>
+            <div class="analytics-card-value">₹8,250</div>
+            <div class="analytics-card-label">Total Paid (2026)</div>
+          </div>
+          <div class="analytics-card orange">
+            <div class="analytics-card-icon">⏳</div>
+            <div class="analytics-card-value">₹1,500</div>
+            <div class="analytics-card-label">Pending Amount</div>
+            <span class="analytics-card-badge badge-pending">1 Invoice</span>
+          </div>
+          <div class="analytics-card green">
+            <div class="analytics-card-icon">🧾</div>
+            <div class="analytics-card-value">4</div>
+            <div class="analytics-card-label">Total Invoices</div>
+          </div>
+        </div>
+
+        <div class="data-table-wrap">
+          <div class="data-table-header">
+            <div class="data-table-title">🧾 Invoice History</div>
+            <button class="action-btn action-btn-outline" onclick="showToast('📥 Generating statement...','info')">📥 Statement</button>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Invoice #</th>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background:rgba(245,158,11,0.04);">
+                  <td style="font-weight:700;color:var(--primary);">NMC-2026-019</td>
+                  <td>May 14, 2026</td>
+                  <td>
+                    <div style="font-weight:600;">Cardiology Consultation</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);">CBC + ECG + Doctor Visit</div>
+                  </td>
+                  <td style="font-weight:700;">₹1,500</td>
+                  <td><span class="status-badge status-pending">Pending</span></td>
+                  <td>
+                    <button class="action-btn action-btn-primary" onclick="openPayModal('NMC-2026-019','₹1,500')">💳 Pay Now</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700;color:var(--primary);">NMC-2026-015</td>
+                  <td>May 15, 2026</td>
+                  <td>
+                    <div style="font-weight:600;">Gynecology Consultation</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);">Doctor Visit + Medications</div>
+                  </td>
+                  <td style="font-weight:700;">₹2,200</td>
+                  <td><span class="status-badge status-paid">Paid</span></td>
+                  <td>
+                    <button class="action-btn action-btn-outline" onclick="downloadReport('Invoice_NMC2026015.pdf')">📄 View</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700;color:var(--primary);">NMC-2026-009</td>
+                  <td>Apr 28, 2026</td>
+                  <td>
+                    <div style="font-weight:600;">Neurology + MRI</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);">3T MRI Brain + Consultation</div>
+                  </td>
+                  <td style="font-weight:700;">₹4,200</td>
+                  <td><span class="status-badge status-paid">Paid</span></td>
+                  <td>
+                    <button class="action-btn action-btn-outline" onclick="downloadReport('Invoice_NMC2026009.pdf')">📄 View</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700;color:var(--primary);">NMC-2026-003</td>
+                  <td>Mar 10, 2026</td>
+                  <td>
+                    <div style="font-weight:600;">General Checkup</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);">Blood Test + X-Ray + OPD</div>
+                  </td>
+                  <td style="font-weight:700;">₹850</td>
+                  <td><span class="status-badge status-paid">Paid</span></td>
+                  <td>
+                    <button class="action-btn action-btn-outline" onclick="downloadReport('Invoice_NMC2026003.pdf')">📄 View</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════
+           NOTIFICATIONS PANEL
+      ════════════════════════════ -->
+      <div class="dash-panel" id="panel-notifications">
+        <div class="panel-header">
+          <h2 class="panel-title"><span class="panel-title-icon">🔔</span> Notifications</h2>
+          <button class="action-btn action-btn-outline" onclick="markAllRead()" id="mark-read-btn">✓ Mark All Read</button>
+        </div>
+
+        <div class="notif-list" id="notif-list">
+          <div class="notif-item unread" id="notif-1">
+            <div class="notif-icon" style="background:#EFF6FF;">📅</div>
+            <div class="notif-body">
+              <div class="notif-title">Appointment Reminder</div>
+              <div class="notif-msg">Your appointment with Dr. Rajesh Kumar (Cardiology) is scheduled for June 3, 2026 at 10:30 AM. Please arrive 15 minutes early.</div>
+              <div class="notif-time">🕐 Today, 9:00 AM</div>
+            </div>
+            <div class="notif-dot"></div>
+          </div>
+
+          <div class="notif-item unread" id="notif-2">
+            <div class="notif-icon" style="background:#F0FDF4;">📊</div>
+            <div class="notif-body">
+              <div class="notif-title">Report Ready for Download</div>
+              <div class="notif-msg">Your Complete Blood Count (CBC) report and ECG report from May 14, 2026 are now available for download in the Medical Reports section.</div>
+              <div class="notif-time">🕐 Yesterday, 5:45 PM</div>
+            </div>
+            <div class="notif-dot"></div>
+          </div>
+
+          <div class="notif-item unread" id="notif-3">
+            <div class="notif-icon" style="background:#FFFBEB;">💡</div>
+            <div class="notif-body">
+              <div class="notif-title">Health Tip: Maintain Your Heart Health</div>
+              <div class="notif-msg">Regular exercise (30 min daily), balanced diet, and reducing sodium intake can significantly reduce your risk of heart disease. Stay active!</div>
+              <div class="notif-time">🕐 May 25, 2026</div>
+            </div>
+            <div class="notif-dot"></div>
+          </div>
+
+          <div class="notif-item" id="notif-4">
+            <div class="notif-icon" style="background:#FEF3C7;">🧾</div>
+            <div class="notif-body">
+              <div class="notif-title">Invoice Payment Due: NMC-2026-019</div>
+              <div class="notif-msg">You have a pending invoice of ₹1,500 for your Cardiology consultation on May 14, 2026. Please make the payment at your earliest convenience.</div>
+              <div class="notif-time">🕐 May 14, 2026</div>
+            </div>
+          </div>
+
+          <div class="notif-item" id="notif-5">
+            <div class="notif-icon" style="background:#F5F3FF;">📜</div>
+            <div class="notif-body">
+              <div class="notif-title">Prescription Updated</div>
+              <div class="notif-msg">Dr. Suresh Menon has updated your prescription. Please review your medication schedule in the Prescriptions section and consult if you have any concerns.</div>
+              <div class="notif-time">🕐 Apr 28, 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════
+           PROFILE SETTINGS PANEL
+      ════════════════════════════ -->
+      <div class="dash-panel" id="panel-profile">
+        <div class="panel-header">
+          <h2 class="panel-title"><span class="panel-title-icon">👤</span> Profile Settings</h2>
+        </div>
+
+        <div class="profile-section">
+          <!-- Photo Card -->
+          <div class="profile-photo-area">
+            <div class="profile-photo-circle" id="profile-avatar-circle">RK</div>
+            <div class="profile-photo-name" id="profile-display-name">Ramesh Kumar</div>
+            <div class="profile-photo-id">Patient ID: NMC-20260001</div>
+            <button class="profile-upload-btn" onclick="showToast('📁 File upload dialog opening...','info')">
+              📷 Change Photo
+            </button>
+            <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
+              <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;">Blood Group</div>
+              <div style="display:inline-flex;align-items:center;gap:6px;background:var(--danger-light);color:var(--danger);padding:6px 16px;border-radius:99px;font-weight:700;font-size:0.9rem;">
+                🩸 B+
+              </div>
+            </div>
+            <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);">
+              <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Member Since</div>
+              <div style="font-size:0.85rem;color:var(--text-primary);font-weight:600;">January 2026</div>
+            </div>
+          </div>
+
+          <!-- Form Card -->
+          <div class="profile-form-card">
+            <div class="profile-form-title">✏️ Edit Personal Information</div>
+            <form id="profile-form" onsubmit="saveProfile(event)" novalidate>
+              <div class="profile-form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="pf-name">Full Name</label>
+                  <input type="text" class="form-input" id="pf-name" value="Ramesh Kumar" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pf-phone">Phone Number</label>
+                  <input type="tel" class="form-input" id="pf-phone" value="+91 98765 43210" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pf-email">Email Address</label>
+                  <input type="email" class="form-input" id="pf-email" value="demo@nirmala.com" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pf-dob">Date of Birth</label>
+                  <input type="date" class="form-input" id="pf-dob" value="1985-06-15" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pf-blood">Blood Group</label>
+                  <select class="select-input" id="pf-blood">
+                    <option>A+</option><option>A-</option>
+                    <option>B+</option><option selected>B-</option>
+                    <option>O+</option><option>O-</option>
+                    <option>AB+</option><option>AB-</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pf-gender">Gender</label>
+                  <select class="select-input" id="pf-gender">
+                    <option selected>Male</option>
+                    <option>Female</option>
+                    <option>Non-Binary</option>
+                    <option>Prefer not to say</option>
+                  </select>
+                </div>
+                <div class="form-group full-width">
+                  <label class="form-label" for="pf-allergies">Known Allergies</label>
+                  <input type="text" class="form-input" id="pf-allergies" value="Penicillin, Sulfonamides" placeholder="E.g. Penicillin, Peanuts..." />
+                </div>
+                <div class="form-group full-width">
+                  <label class="form-label" for="pf-emergency">Emergency Contact</label>
+                  <input type="text" class="form-input" id="pf-emergency" value="Lakshmi Kumar — +91 98765 00000 (Spouse)" placeholder="Name — Phone (Relationship)" />
+                </div>
+                <div class="form-group full-width">
+                  <label class="form-label" for="pf-address">Home Address</label>
+                  <textarea class="form-input" id="pf-address" rows="2" placeholder="Your residential address">12/4, Sunflower Apartments, MG Road, City – 500001</textarea>
+                </div>
+              </div>
+              <button type="submit" class="save-btn">💾 Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div><!-- /.dashboard-layout -->
+
+</div><!-- /#dashboard-view -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     PAYMENT MODAL
+═══════════════════════════════════════════════════════ -->
+<div class="pay-modal-overlay" id="pay-modal-overlay" onclick="closePayModalOnBg(event)">
+  <div class="pay-modal" role="dialog" aria-label="Payment" aria-modal="true">
+    <button class="pay-modal-close" onclick="closePayModal()" aria-label="Close">×</button>
+    <div class="pay-modal-icon">💳</div>
+    <h3>Complete Payment</h3>
+    <p id="pay-modal-desc">Invoice <strong id="pay-invoice-id">NMC-2026-019</strong> — Amount: <strong id="pay-amount">₹1,500</strong></p>
+    <div class="pay-methods">
+      <label class="pay-method-item">
+        <input type="radio" name="pay-method" value="upi" checked /> 📱 UPI (Google Pay / PhonePe / Paytm)
+      </label>
+      <label class="pay-method-item">
+        <input type="radio" name="pay-method" value="card" /> 💳 Credit / Debit Card
+      </label>
+      <label class="pay-method-item">
+        <input type="radio" name="pay-method" value="netbanking" /> 🏦 Net Banking
+      </label>
+      <label class="pay-method-item">
+        <input type="radio" name="pay-method" value="cash" /> 💵 Cash at Counter
+      </label>
+    </div>
+    <button class="pay-confirm-btn" onclick="confirmPayment()">🔒 Confirm Payment</button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     TOAST NOTIFICATION (Portal)
+═══════════════════════════════════════════════════════ -->
+<div class="portal-toast" id="portal-toast-el">
+  <span id="portal-toast-msg">✅ Operation successful!</span>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-logo" style="margin-bottom:20px;">
+          <div class="nav-logo-icon">🏥</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Nirmala Medical</span>
+            <span class="nav-logo-tagline">Center of Excellence</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          Delivering world-class healthcare with compassionate service since 2001. NABH accredited, ISO certified, and trusted by over 1 lakh patients across the region.
+        </p>
+        <div class="footer-emergency-number">
+          <span>🚨</span> 108 / +91-9876-543210
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+          <a href="https://wa.me/919876543210" class="social-link" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="doctors.html">Our Doctors</a>
+          <a href="appointment.html">Book Appointment</a>
+          <a href="patient-portal.html">Patient Portal</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Health Blog</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Departments</h4>
+        <div class="footer-links">
+          <a href="departments.html#cardiology">Cardiology</a>
+          <a href="departments.html#neurology">Neurology</a>
+          <a href="departments.html#gynecology">Gynecology</a>
+          <a href="departments.html#pediatrics">Pediatrics</a>
+          <a href="departments.html#orthopedics">Orthopedics</a>
+          <a href="departments.html#dermatology">Dermatology</a>
+          <a href="departments.html#lab">Laboratory</a>
+          <a href="emergency.html">Emergency / ICU</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Contact Info</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📍</div>
+          <div>Medical Campus Road, Near City Station, City – 500001</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <div><a href="tel:+919876543210" style="color:inherit;">+91-9876-543210</a><br/><a href="tel:+919876000000" style="color:inherit;">+91-9876-000000</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✉️</div>
+          <div><a href="mailto:info@nirmalamedicare.com" style="color:inherit;">info@nirmalamedicare.com</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">⏰</div>
+          <div>OPD: Mon–Sat 8AM–8PM<br/>Emergency: 24 × 7</div>
+        </div>
+        <h4 class="footer-heading" style="margin-top:20px;">Newsletter</h4>
+        <p style="font-size:0.8rem;margin-bottom:8px;color:rgba(255,255,255,0.5);">Get health tips &amp; updates weekly.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" id="newsletter-submit">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Nirmala Medical Center. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     AI CHAT WIDGET
+═══════════════════════════════════════════════════════ -->
+<div class="chat-widget" id="chat-widget" aria-label="AI medical assistant">
+  <button class="chat-toggle-btn" id="chat-toggle" aria-label="Open AI medical assistant" aria-expanded="false">🤖</button>
+  <div class="chat-panel" id="chat-panel" role="dialog" aria-label="NirmalaCare AI Assistant">
+    <div class="chat-panel-header">
+      <div class="chat-bot-info">
+        <div class="chat-bot-avatar">🤖</div>
+        <div>
+          <div class="chat-bot-name">NirmalaCare AI</div>
+          <div class="chat-bot-status">Online — Always available</div>
+        </div>
+      </div>
+      <button class="modal-close chat-close" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+    <div class="chat-quick-replies">
+      <button class="quick-reply" id="qr-appointment">Book Appointment</button>
+      <button class="quick-reply" id="qr-emergency">Emergency?</button>
+      <button class="quick-reply" id="qr-doctors">Find Doctor</button>
+      <button class="quick-reply" id="qr-timing">OPD Timings</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chat-input" placeholder="Ask me anything..." aria-label="Chat message" />
+      <button class="chat-send-btn" id="chat-send" aria-label="Send message">➤</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     EMERGENCY FLOAT BUTTON
+═══════════════════════════════════════════════════════ -->
+<div class="emergency-float" id="emergency-float">
+  <a href="tel:108" class="emergency-float-btn" id="emergency-float-call" aria-label="Call emergency 108">
+    🚨 Emergency: 108
+  </a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════════════ -->
+<script src="js/main.js"></script>
+<script>
+  /* ════════════════════════════════════════════════
+     PORTAL STATE
+  ════════════════════════════════════════════════ */
+  const DEMO_EMAIL    = 'demo@nirmala.com';
+  const DEMO_PASSWORD = 'demo123';
+  let isLoggedIn = false;
+  let currentPanel = 'overview';
+  let mobileSidebarOpen = false;
+
+  /* ════════════════════════════════════════════════
+     INIT
+  ════════════════════════════════════════════════ */
+  document.addEventListener('DOMContentLoaded', function () {
+    // Set today's date in dashboard header
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const todayStr = now.toLocaleDateString('en-IN', options);
+    const el = document.getElementById('dash-today-date');
+    if (el) el.textContent = todayStr;
+
+    // Check sessionStorage for persisted login
+    if (sessionStorage.getItem('nmc_logged_in') === 'true') {
+      const uname = sessionStorage.getItem('nmc_user_name') || 'Ramesh Kumar';
+      doLogin(uname, false);
+    }
+  });
+
+  /* ════════════════════════════════════════════════
+     AUTH TAB SWITCHING
+  ════════════════════════════════════════════════ */
+  function switchAuthTab(tab) {
+    document.getElementById('tab-login').classList.toggle('active', tab === 'login');
+    document.getElementById('tab-register').classList.toggle('active', tab === 'register');
+    document.getElementById('panel-login').classList.toggle('active', tab === 'login');
+    document.getElementById('panel-register').classList.toggle('active', tab === 'register');
+  }
+
+  /* ════════════════════════════════════════════════
+     PASSWORD TOGGLE
+  ════════════════════════════════════════════════ */
+  function togglePassword() {
+    const pw = document.getElementById('login-password');
+    const btn = document.getElementById('pw-toggle');
+    if (pw.type === 'password') {
+      pw.type = 'text';
+      btn.textContent = '🙈';
+    } else {
+      pw.type = 'password';
+      btn.textContent = '👁️';
+    }
+  }
+  function toggleRegPassword() {
+    const pw = document.getElementById('reg-password');
+    pw.type = pw.type === 'password' ? 'text' : 'password';
+  }
+
+  /* ════════════════════════════════════════════════
+     FORGOT PASSWORD
+  ════════════════════════════════════════════════ */
+  function showForgotPassword(e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value.trim();
+    if (!email) {
+      showToast('📧 Please enter your email first, then click Forgot Password.', 'error');
+      return;
+    }
+    showToast('📧 Password reset link sent to ' + email + '!', 'success');
+  }
+
+  /* ════════════════════════════════════════════════
+     HANDLE LOGIN
+  ════════════════════════════════════════════════ */
+  function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+    const btn = document.getElementById('sign-in-btn');
+
+    if (!email || !password) {
+      showToast('⚠️ Please fill in all fields to continue.', 'error');
+      return;
+    }
+
+    // Simulate loading
+    btn.textContent = '⏳ Signing in...';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+
+    setTimeout(function () {
+      btn.textContent = '🔑 Sign In to Portal';
+      btn.disabled = false;
+      btn.style.opacity = '1';
+
+      if (email.toLowerCase() === DEMO_EMAIL && password === DEMO_PASSWORD) {
+        const remember = document.getElementById('remember-me').checked;
+        if (remember) {
+          sessionStorage.setItem('nmc_logged_in', 'true');
+          sessionStorage.setItem('nmc_user_name', 'Ramesh Kumar');
+        }
+        doLogin('Ramesh Kumar', true);
+      } else {
+        showToast('❌ Invalid credentials. Try demo@nirmala.com / demo123', 'error');
+        document.getElementById('login-password').value = '';
+        document.getElementById('login-password').focus();
+      }
+    }, 1200);
+  }
+
+  /* ════════════════════════════════════════════════
+     GOOGLE LOGIN (MOCK)
+  ════════════════════════════════════════════════ */
+  function handleGoogleLogin() {
+    const btn = document.getElementById('google-sign-in');
+    btn.textContent = '⏳ Connecting to Google...';
+    btn.disabled = true;
+    setTimeout(function () {
+      btn.disabled = false;
+      btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.64 9.20455C17.64 8.56636 17.5827 7.95273 17.4764 7.36364H9V10.845H13.8436C13.635 11.97 13.0009 12.9232 12.0477 13.5614V15.8195H14.9564C16.6582 14.2527 17.64 11.9455 17.64 9.20455Z" fill="#4285F4"/><path d="M9 18C11.43 18 13.4673 17.1941 14.9564 15.8195L12.0477 13.5614C11.2418 14.1014 10.2109 14.4205 9 14.4205C6.65591 14.4205 4.67182 12.8373 3.96409 10.71H0.957275V13.0418C2.43818 15.9832 5.48182 18 9 18Z" fill="#34A853"/><path d="M3.96409 10.71C3.78409 10.17 3.68182 9.59318 3.68182 9C3.68182 8.40682 3.78409 7.83 3.96409 7.29V4.95818H0.957275C0.347727 6.17318 0 7.54773 0 9C0 10.4523 0.347727 11.8268 0.957275 13.0418L3.96409 10.71Z" fill="#FBBC05"/><path d="M9 3.57955C10.3214 3.57955 11.5077 4.03364 12.4405 4.92545L15.0218 2.34409C13.4632 0.891818 11.4259 0 9 0C5.48182 0 2.43818 2.01682 0.957275 4.95818L3.96409 7.29C4.67182 5.16273 6.65591 3.57955 9 3.57955Z" fill="#EA4335"/></svg> Continue with Google';
+      doLogin('Ramesh Kumar', true);
+    }, 1500);
+  }
+
+  /* ════════════════════════════════════════════════
+     DO LOGIN (show dashboard)
+  ════════════════════════════════════════════════ */
+  function doLogin(userName, showWelcomeToast) {
+    isLoggedIn = true;
+
+    // Update dashboard user info
+    const firstName = userName.split(' ')[0];
+    const initials = userName.split(' ').map(function (n) { return n[0]; }).join('').toUpperCase().substring(0, 2);
+
+    const dashName = document.getElementById('dash-user-name');
+    const dashAvatar = document.getElementById('dash-avatar-initials');
+    const profileCircle = document.getElementById('profile-avatar-circle');
+    const profileDisplayName = document.getElementById('profile-display-name');
+
+    if (dashName) dashName.textContent = 'Welcome back, ' + firstName + '!';
+    if (dashAvatar) dashAvatar.textContent = initials;
+    if (profileCircle) profileCircle.textContent = initials;
+    if (profileDisplayName) profileDisplayName.textContent = userName;
+
+    // Prefill profile form
+    const pfName = document.getElementById('pf-name');
+    if (pfName) pfName.value = userName;
+
+    // Toggle views
+    document.getElementById('login-view').style.display = 'none';
+    document.getElementById('dashboard-view').style.display = 'block';
+
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Show welcome toast
+    if (showWelcomeToast) {
+      setTimeout(function () {
+        showToast('🎉 Welcome back, ' + firstName + '! You are now logged in.', 'success');
+      }, 500);
+    }
+  }
+
+  /* ════════════════════════════════════════════════
+     HANDLE REGISTER
+  ════════════════════════════════════════════════ */
+  function handleRegister(e) {
+    e.preventDefault();
+    const name     = document.getElementById('reg-name').value.trim();
+    const phone    = document.getElementById('reg-phone').value.trim();
+    const email    = document.getElementById('reg-email').value.trim();
+    const password = document.getElementById('reg-password').value;
+    const confirm  = document.getElementById('reg-confirm').value;
+    const btn      = document.getElementById('create-account-btn');
+
+    if (!name || !phone || !email || !password || !confirm) {
+      showToast('⚠️ Please fill in all fields.', 'error');
+      return;
+    }
+    if (password.length < 8) {
+      showToast('⚠️ Password must be at least 8 characters long.', 'error');
+      return;
+    }
+    if (password !== confirm) {
+      showToast('⚠️ Passwords do not match!', 'error');
+      return;
+    }
+
+    btn.textContent = '⏳ Creating your account...';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+
+    setTimeout(function () {
+      btn.textContent = '✨ Create Account';
+      btn.disabled = false;
+      btn.style.opacity = '1';
+
+      // Simulate successful registration
+      showToast('🎉 Account created successfully! Logging you in...', 'success');
+      setTimeout(function () {
+        doLogin(name, true);
+      }, 1500);
+    }, 1400);
+  }
+
+  /* ════════════════════════════════════════════════
+     LOGOUT
+  ════════════════════════════════════════════════ */
+  function handleLogout() {
+    isLoggedIn = false;
+    sessionStorage.removeItem('nmc_logged_in');
+    sessionStorage.removeItem('nmc_user_name');
+
+    document.getElementById('dashboard-view').style.display = 'none';
+    document.getElementById('login-view').style.display = 'block';
+
+    // Reset login form
+    document.getElementById('login-email').value = '';
+    document.getElementById('login-password').value = '';
+    document.getElementById('login-password').type = 'password';
+    document.getElementById('pw-toggle').textContent = '👁️';
+    switchAuthTab('login');
+    switchPanel('overview');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    showToast('👋 You have been logged out successfully.', 'success');
+  }
+
+  /* ════════════════════════════════════════════════
+     PANEL SWITCHING
+  ════════════════════════════════════════════════ */
+  function switchPanel(panelName) {
+    currentPanel = panelName;
+
+    // Hide all panels
+    document.querySelectorAll('.dash-panel').forEach(function (p) {
+      p.classList.remove('active');
+    });
+
+    // Deactivate all sidebar items
+    document.querySelectorAll('.sidebar-nav-item[data-panel]').forEach(function (item) {
+      item.classList.remove('active');
+    });
+    document.querySelectorAll('.mobile-nav-item[data-panel]').forEach(function (item) {
+      item.classList.remove('active');
+    });
+
+    // Show target panel
+    const target = document.getElementById('panel-' + panelName);
+    if (target) target.classList.add('active');
+
+    // Activate sidebar item
+    const sidebarItem = document.querySelector('.sidebar-nav-item[data-panel="' + panelName + '"]');
+    if (sidebarItem) sidebarItem.classList.add('active');
+
+    const mobileItem = document.querySelector('.mobile-nav-item[data-panel="' + panelName + '"]');
+    if (mobileItem) mobileItem.classList.add('active');
+
+    // Scroll main panel to top on mobile
+    if (window.innerWidth <= 900) {
+      document.getElementById('dash-main').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  /* ════════════════════════════════════════════════
+     MOBILE SIDEBAR TOGGLE
+  ════════════════════════════════════════════════ */
+  function toggleMobileSidebar() {
+    mobileSidebarOpen = !mobileSidebarOpen;
+    const sidebar = document.getElementById('mobile-sidebar');
+    const btn = document.getElementById('mobile-sidebar-toggle');
+    sidebar.classList.toggle('open', mobileSidebarOpen);
+    btn.textContent = mobileSidebarOpen ? '✕ Close Menu' : '☰ Navigation Menu';
+  }
+
+  /* ════════════════════════════════════════════════
+     CANCEL APPOINTMENT
+  ════════════════════════════════════════════════ */
+  function cancelAppointment(btn) {
+    if (!confirm('Are you sure you want to cancel this appointment?')) return;
+    const row = btn.closest('tr');
+    const statusCell = row.querySelector('td:nth-child(4)');
+    const actionsCell = row.querySelector('td:last-child');
+
+    // Update status badge
+    if (statusCell) {
+      statusCell.innerHTML = '<span class="status-badge status-cancelled">Cancelled</span>';
+    }
+    // Update action buttons
+    if (actionsCell) {
+      actionsCell.innerHTML = '<a href="appointment.html" class="action-btn action-btn-outline">↩ Rebook</a>';
+    }
+
+    showToast('✅ Appointment cancelled. You can rebook anytime.', 'success');
+  }
+
+  /* ════════════════════════════════════════════════
+     DOWNLOAD REPORT (MOCK)
+  ════════════════════════════════════════════════ */
+  function downloadReport(filename) {
+    showToast('📥 Downloading ' + filename + '...', 'success');
+  }
+
+  /* ════════════════════════════════════════════════
+     PAYMENT MODAL
+  ════════════════════════════════════════════════ */
+  function openPayModal(invoiceId, amount) {
+    document.getElementById('pay-invoice-id').textContent = invoiceId;
+    document.getElementById('pay-amount').textContent = amount;
+    document.getElementById('pay-modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePayModal() {
+    document.getElementById('pay-modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closePayModalOnBg(e) {
+    if (e.target === document.getElementById('pay-modal-overlay')) closePayModal();
+  }
+
+  function confirmPayment() {
+    const method = document.querySelector('input[name="pay-method"]:checked');
+    const methodLabel = method ? method.parentElement.textContent.trim() : 'selected method';
+    closePayModal();
+    showToast('✅ Payment of ₹1,500 confirmed via ' + methodLabel + '!', 'success');
+
+    // Update the invoice row status
+    const rows = document.querySelectorAll('#panel-billing .data-table tbody tr');
+    rows.forEach(function (row) {
+      const invoiceCell = row.querySelector('td:first-child');
+      if (invoiceCell && invoiceCell.textContent.trim() === 'NMC-2026-019') {
+        const statusCell = row.querySelector('td:nth-child(5)');
+        const actionCell = row.querySelector('td:last-child');
+        if (statusCell) statusCell.innerHTML = '<span class="status-badge status-paid">Paid</span>';
+        if (actionCell) actionCell.innerHTML = '<button class="action-btn action-btn-outline" onclick="downloadReport(\'Invoice_NMC2026019.pdf\')">📄 View</button>';
+        row.style.background = '';
+      }
+    });
+
+    // Update analytics card
+    const pendingCard = document.querySelector('.analytics-card.orange .analytics-card-value');
+    if (pendingCard) pendingCard.textContent = '₹0';
+    const pendingLabel = document.querySelector('.analytics-card.orange .analytics-card-sub');
+    if (pendingLabel) pendingLabel.textContent = 'All invoices cleared';
+    const pendingBadge = document.querySelector('.analytics-card.orange .analytics-card-badge');
+    if (pendingBadge) {
+      pendingBadge.className = 'analytics-card-badge badge-new';
+      pendingBadge.textContent = 'Cleared';
+    }
+  }
+
+  /* ════════════════════════════════════════════════
+     NOTIFICATIONS
+  ════════════════════════════════════════════════ */
+  function markAllRead() {
+    document.querySelectorAll('.notif-item.unread').forEach(function (item) {
+      item.classList.remove('unread');
+      const dot = item.querySelector('.notif-dot');
+      if (dot) dot.remove();
+    });
+    const badge = document.getElementById('notif-badge');
+    if (badge) badge.style.display = 'none';
+    const btn = document.getElementById('mark-read-btn');
+    if (btn) btn.textContent = '✓ All Read';
+    showToast('✅ All notifications marked as read.', 'success');
+  }
+
+  /* ════════════════════════════════════════════════
+     PROFILE SAVE
+  ════════════════════════════════════════════════ */
+  function saveProfile(e) {
+    e.preventDefault();
+    const name = document.getElementById('pf-name').value.trim();
+    const btn = e.target.querySelector('.save-btn');
+
+    btn.textContent = '⏳ Saving...';
+    btn.disabled = true;
+
+    setTimeout(function () {
+      btn.textContent = '💾 Save Changes';
+      btn.disabled = false;
+
+      // Update displayed name
+      const initials = name.split(' ').map(function (n) { return n[0]; }).join('').toUpperCase().substring(0, 2);
+      const profileCircle = document.getElementById('profile-avatar-circle');
+      const profileDisplayName = document.getElementById('profile-display-name');
+      const dashName = document.getElementById('dash-user-name');
+      const dashAvatar = document.getElementById('dash-avatar-initials');
+
+      if (profileCircle) profileCircle.textContent = initials;
+      if (profileDisplayName) profileDisplayName.textContent = name;
+      if (dashName) dashName.textContent = 'Welcome back, ' + name.split(' ')[0] + '!';
+      if (dashAvatar) dashAvatar.textContent = initials;
+
+      showToast('✅ Profile updated successfully!', 'success');
+    }, 1000);
+  }
+
+  /* ════════════════════════════════════════════════
+     PORTAL TOAST NOTIFICATION
+  ════════════════════════════════════════════════ */
+  let toastTimer = null;
+  function showToast(msg, type) {
+    const toast = document.getElementById('portal-toast-el');
+    const msgEl = document.getElementById('portal-toast-msg');
+    if (!toast || !msgEl) return;
+
+    if (toastTimer) clearTimeout(toastTimer);
+
+    msgEl.textContent = msg;
+    toast.className = 'portal-toast ' + (type || '');
+    // Force reflow
+    void toast.offsetWidth;
+    toast.classList.add('show');
+
+    toastTimer = setTimeout(function () {
+      toast.classList.remove('show');
+    }, 4000);
+  }
+
+  /* ════════════════════════════════════════════════
+     NEWSLETTER
+  ════════════════════════════════════════════════ */
+  function handleNewsletter(e) {
+    e.preventDefault();
+    showToast('🎉 Successfully subscribed to our health newsletter!', 'success');
+    e.target.reset();
+  }
+
+  /* ════════════════════════════════════════════════
+     KEYBOARD: CLOSE MODAL ON ESC
+  ════════════════════════════════════════════════ */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closePayModal();
+    }
+  });
+
+</script>
+</body>
+</html>
